@@ -1,0 +1,22 @@
+{
+	"name": "zenith-monorepo",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@prettier/plugin-pug": "^2.4.1",
+		"eslint": "^8.33.0",
+		"eslint-config-custom": "workspace:./packages/eslint-config-custom",
+		"prettier": "^2.8.3",
+		"prettier-plugin-svelte": "^2.9.0",
+		"prettier-plugin-tailwindcss": "^0.2.2",
+		"turbo": "^1.7.0"
+	},
+	"packageManager": "pnpm@7.24.3",
+	"type": "module"
+}
