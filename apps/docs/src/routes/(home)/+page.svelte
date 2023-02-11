@@ -2,14 +2,11 @@
 Gallery showing all available documents
 -->
 <script lang="ts">
-	// Components
-	import DocumentSummary from "$atoms/DocumentSummary.svelte";
+	// Imports from lj-svelte-ui
+	import { capitalize, DocumentSummary } from "lj-svelte-ui";
 
 	// stores
-	import { documents } from "$stores/documentTracking.js";
-
-	// functions
-	import { capitalize } from "$utils/helpers.js";
+	import { documents } from "$stores/documentTracking";
 
 	// get unique categories from $documents
 	$: categories = [...new Set($documents.map((doc) => doc.category))];
@@ -17,10 +14,9 @@ Gallery showing all available documents
 
 <template lang="pug">
 	svelte:head
-		title SecureLogix Document Center
+		title Zenith Document Center
 	.px-8.py-8
-		h1.mb-4.font-semibold SecureLogix Document Center
- d
+		h1.mb-4.font-semibold Zenith Document Center
 		+each('categories as category')
 			+const('docs = $documents.filter((doc) => doc.category === category)')
 			.py-8
@@ -28,6 +24,6 @@ Gallery showing all available documents
 				+each('docs as doc')
 					DocumentSummary(
 						docNumber!="{ doc.documentNumber }",
-						outerClasses!="mb-4"
-					)
+						documents!="{ $documents }",
+						outerClasses!="mb-4")
 </template>

@@ -3,7 +3,8 @@ module.exports = {
 		// app content
 		"./src/**/*.{html,pug,js,svelte,ts}",
 		// include packages if not transpiling
-		"../../packages/slx-ui/src/**/*.{html,pug,js,svelte,ts}",
+		"../../packages/zenith-ui/src/**/*.{html,pug,js,svelte,ts}",
+		"../../packages/lj-svelte-ui/src/**/*.{html,pug,js,svelte,ts}",
 	],
 	safelist: [
 		"aspect-square",
@@ -36,6 +37,12 @@ module.exports = {
 		"text-22",
 		"text-23",
 		"text-24",
+		"text-25",
+		"text-26",
+		"text-27",
+		"text-28",
+		"text-29",
+		"text-30",
 		"prose-p:text-14",
 		"font-montserrat",
 		"@xs/picture:hidden",
@@ -64,31 +71,20 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				antiFlash: "#eef0f2", // zenith light default -- anti-flash white
 				oxford: {
 					DEFAULT: "hsla(218, 100%, 16%, 1.0)",
 				},
 				midnight: {
 					DEFAULT: "hsla(210, 31%, 20%, 1.0)",
 				},
-				spanishRed: {
-					DEFAULT: "hsla(349, 100%, 46%, 1.0)",
-					600: "hsla(350, 100%, 40%, 1.0)",
-					700: "hsla(350, 100%, 32%, 1.0)",
-					800: "hsla(350, 100%, 24%, 1.0",
-					900: "hsla(350, 100%, 32%, 1.0)",
-					dark: "#D9002A",
-				},
 				cultured: "#ECECEC",
-				darkOrchid: "#A036B4", // call branding -- pri + sec blend
-				blueViolet: "#7D3EC9", // call branding -- secondary
-				byzantine: "#BC16A5", // call branding -- mellower primary
-				fashionFuchsia: "#ea009c", // call branding -- primary
-				magenta: "#FF00FF",
-				richBlack: "#081526", // securelogix.com -- dark
-				russianViolet: "#1F0144", // call branding -- dark primary
+				gunmetal: "#292f36", // zenith brand black
+				richBlack: "#081526",
 				selectiveYellow: "#FFBB00",
-				hestia: "#EA2700",
-				steelPink: "#DD23C4", // call branding -- primary
+				yellowGreen: "#7BC021", // zenith brand green
+				kellyGreen: "#6cad18", // zenith dark green
+				maize: "#FDE74C", //zenith brand yellow
 			},
 			fontFamily: {
 				apple:

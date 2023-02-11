@@ -4,10 +4,10 @@ Here's some documentation for this component.
 -->
 <script lang="ts">
 	// stores
-	import { documents } from "$stores/documentTracking.js";
+	export let documents: Document[] = [];
 
 	// types
-	import type { Document } from "$types/documentTypes.js";
+	import type { Document } from "../../types/documentTypes";
 
 	// props
 	export let docNumber: number = 0;
@@ -15,17 +15,17 @@ Here's some documentation for this component.
 
 	// get document info from documents store
 	let document: Document | undefined;
-	$: document = $documents.find(
+	$: document = documents.find(
 		(doc) => doc.documentNumber === docNumber,
 	);
 </script>
 
 <template lang="pug">
 	.grid.max-w-2xl.grid-cols-2.place-content-start.bg-neutral-100(
-		class="{ outerClasses }")
+		class!="{ outerClasses }")
 		// left column
 		img.block.h-auto.w-full.max-w-xs(
-			alt="{document.title} thumbnail",
+			alt!="{document.title} thumbnail",
 			decoding="async",
 			height="612",
 			loading="lazy",

@@ -3,10 +3,7 @@ import { readable, derived } from "svelte/store";
 // single source of truth for document versioning
 
 // types
-import {
-	type DocumentSettings,
-	Document,
-} from "$types/documentTypes";
+import { type DocumentSettings, Document } from "lj-svelte-ui";
 type DocumentLibrary = Document[];
 
 export const documentData: DocumentSettings[] = [

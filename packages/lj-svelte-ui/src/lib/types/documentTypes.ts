@@ -6,9 +6,8 @@ import {
 	getMonthNameFromDate,
 	getDaysUntilToday,
 	getTwoDigitYear,
-	capitalize,
-	slugify,
-} from "$utils/helpers";
+} from "../utils/timeUtils";
+import { capitalize, slugify } from "../utils/stringUtils";
 
 // local functions
 function docLink(category: string, slug: string, edition: string) {

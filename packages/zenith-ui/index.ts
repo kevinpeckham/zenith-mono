@@ -1,7 +1,7 @@
 // Re-export items here
 
 // components
-export { default as TestAtom} from "./src/lib/components/atoms/TestAtom.svelte";
+export { default as LogoZenith } from "./src/lib/components/atoms/LogoZenith.svelte";
 
 // colors
 export {

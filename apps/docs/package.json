@@ -12,7 +12,8 @@
 		"format": "prettier --write --ignore-path=../../.prettierignore ."
 	},
 	"dependencies": {
-		"zenith-ui": "workspace:../../packages/slx-ui"
+		"zenith-ui": "workspace:../../packages/zenith-ui",
+		"lj-svelte-ui": "workspace:../../packages/lj-svelte-ui"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.13",
