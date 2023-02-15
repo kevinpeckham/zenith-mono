@@ -27,6 +27,9 @@ Here's some documentation for this component.
 	import Page11 from "./Page11.svelte";
 	import Page12 from "./Page12.svelte";
 	import Page13 from "./Page13.svelte";
+	import Page14 from "./Page14.svelte";
+	import Page15 from "./Page15.svelte";
+	import Page16 from "./Page16.svelte";
 
 	// global stores
 	import { documents } from "$stores/documentTracking";
@@ -63,6 +66,9 @@ Here's some documentation for this component.
 	let page11: HTMLDivElement;
 	let page12: HTMLDivElement;
 	let page13: HTMLDivElement;
+	let page14: HTMLDivElement;
+	let page15: HTMLDivElement;
+	let page16: HTMLDivElement;
 
 	$: {
 		//- collect pages into array
@@ -80,6 +86,9 @@ Here's some documentation for this component.
 			page11,
 			page12,
 			page13,
+			page14,
+			page15,
+			page16,
 		];
 		//- update page count
 		pageCount = pages.length;
@@ -203,10 +212,37 @@ Here's some documentation for this component.
 
 	#page-13(
 		bind:this!="{ page13 }",
-		data-description="chapter 4, article 3, topic 3: 'Emission Reduction Goals'",
+		data-description="chapter 4, article 2ß, topic 3: 'Emission Reduction Goals'",
 		data-page="13")
 		Page13(
 			page!="{ 13 }",
+			{doc},
+			{edition})
+
+	#page-14(
+		bind:this!="{ page14 }",
+		data-description="chapter 4, article 3: 'Energy Management'",
+		data-page="14")
+		Page14(
+			page!="{ 14 }",
+			{doc},
+			{edition})
+
+	#page-15(
+		bind:this!="{ page15 }",
+		data-description="chapter 4, article 4: 'Air Quality'",
+		data-page="15")
+		Page15(
+			page!="{ 15 }",
+			{doc},
+			{edition})
+
+	#page-16(
+		bind:this!="{ page16 }",
+		data-description="chapter 5: 'Health, Safety, Environment & Quality'",
+		data-page="16")
+		Page16(
+			page!="{ 16 }",
 			{doc},
 			{edition})
 </template>

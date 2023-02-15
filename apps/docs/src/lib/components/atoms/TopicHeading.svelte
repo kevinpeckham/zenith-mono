@@ -12,7 +12,8 @@ Here's some documentation for this component.
 
 <template lang="pug">
 	h4.prose.prose-slate.text-15.opacity-9.mt-0.mb-2.font-semibold.leading-tight(
-		data-topic!="{ chapterNumber}.{articleNumber }.{topicNumber}")
+		data-index!="{ chapterNumber }.{ articleNumber }.{ topicNumber }",
+		data-type="topic")
 		span {  topicTitle  }
 		span.text.text-12.inline-block.font-normal &nbsp;- {  chapterNumber  }.{  articleNumber  }.{  topicNumber  }
 </template>

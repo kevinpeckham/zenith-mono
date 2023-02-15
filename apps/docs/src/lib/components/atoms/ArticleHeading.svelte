@@ -7,9 +7,13 @@ Here's some documentation for this component.
 	export let articleTitle = "";
 	export let articleNumber = 0;
 	export let chapterNumber = 0;
+	export let classes = "";
 </script>
 
 <template lang="pug">
 	h3.prose.prose-slate.mb-3.font-semibold.leading-tight(
-		data-article!="{ chapterNumber}.{articleNumber }") { chapterNumber }.{ articleNumber } {  articleTitle  }
+		class!="{ classes }",
+		data-index!="{ chapterNumber}.{articleNumber }",
+		data-type="article",
+		id!="article-{ chapterNumber }.{ articleNumber }") {  chapterNumber  }.{  articleNumber  } {  articleTitle  }
 </template>
