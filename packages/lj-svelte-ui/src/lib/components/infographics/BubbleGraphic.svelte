@@ -1,6 +1,12 @@
 <!--
 @component
 A statistic inside a circle.
+prop animate: boolean
+prop runAnimation: boolean
+prop primaryColor: string
+prop secondaryColor: string
+prop value: number
+prop width: number
 -->
 <script lang="ts">
 	// tween
@@ -34,7 +40,8 @@ A statistic inside a circle.
 	// for managing different states of the big number
 	let bigNumber = "";
 	$: {
-		if (animate && runAnimation) bigNumber = Math.round($animatedValue) + "%";
+		if (animate && runAnimation)
+			bigNumber = Math.round($animatedValue) + "%";
 		else if (animate && !runAnimation) bigNumber = "";
 		else bigNumber = value + "%";
 	}

@@ -5,6 +5,6 @@
 	"editor.formatOnSave": true, // optional
 	"editor.formatOnSaveMode": "file", // required to format on save
 	"files.autoSave": "onFocusChange",
-	"cSpell.words": ["infographics"],
-	"cSpell.ignoreWords": ["Serv"] // optional but recommended
+	"cSpell.words": ["biodiesel", "infographics", "renewables"],
+	"cSpell.ignoreWords": ["ILTA", "Serv"] // optional but recommended
 }

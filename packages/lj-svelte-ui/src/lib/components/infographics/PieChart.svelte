@@ -1,8 +1,14 @@
 <!--
 @component
 Generates a simple pie chart given a number input.
+* prop animate: boolean -- Whether to animate the pie chart.
+* prop runAnimation: boolean -- Whether to run the animation.
+* prop primaryColor: string -- The color of the pie chart data line.
+* prop secondaryColor: string -- The color of the pie chart background.
+* prop valueClass: string -- to inject classes on the value text element for styling purposes.
 * prop value: number -- The value to display in the pie chart.
 * prop thickness: number -- The thickness of the pie chart data line.
+* prop width: number -- The width of the pie chart.
 -->
 <script lang="ts">
 	// tween
@@ -79,7 +85,7 @@ Generates a simple pie chart given a number input.
 				style="width: {width  - thickness * 2}px; background-color: {secondaryColor};")
 		// text
 		.absolute.inset-0.grid.place-content-center
-			.w-full.text-center.z-10(class="{valueClass}") {bigNumber}
+			.w-full.text-center.z-10(class!="{valueClass}") {bigNumber}
 			.w-full.text-center.text-xs.z-10
 				slot(name="caption")
 

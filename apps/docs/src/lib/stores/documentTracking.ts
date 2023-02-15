@@ -1,4 +1,4 @@
-import { readable, derived } from "svelte/store";
+import { readable, writable, derived } from "svelte/store";
 // Notes
 // single source of truth for document versioning
 
@@ -16,11 +16,13 @@ export const documentData: DocumentSettings[] = [
 		currentVersionDate: "2/10/2023",
 		documentNumber: 0,
 		editions: ["general"],
+		longTitle: "Zenith Energy U.S. - 2021 Sustainability Report",
+		pageCount: 0,
 		status: "draft",
 	},
 ];
 
-export const documentSettings = readable(documentData);
+export const documentSettings = writable(documentData);
 
 export const documents = derived(
 	documentSettings,

@@ -13,7 +13,7 @@
 
 	// props
 
-	export let document: Document;
+	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
 	export let pageCount = 0;

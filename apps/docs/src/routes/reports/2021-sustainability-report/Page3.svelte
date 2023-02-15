@@ -1,141 +1,65 @@
 <script lang="ts">
-	// Components
-	import BodyText from "$atoms/BodyText.svelte";
-	import ColumnsTwo from "$atoms/ColumnsTwo.svelte";
+	// components
+	import ArticleHeading from "$atoms/ArticleHeading.svelte";
+	import ChapterHeading from "$atoms/ChapterHeading.svelte";
+	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
+	import Header from "$molecules/Header.svelte";
 	import Main from "$atoms/Main.svelte";
-	import PageLayout from "$atoms/PageLayout.svelte";
-	import SectionHeading from "$atoms/SectionHeading.svelte";
-	import FactoidBubble from "$atoms/FactoidBubble.svelte";
-	import Footer from "$molecules/Footer.svelte";
-	import PageNumber from "$atoms/PageNumber.svelte";
-
-	import { LogoAcme } from "slx-ui";
-	import { LogoATT } from "slx-ui";
-	import { LogoBrandedCallSecure } from "slx-ui";
-	import { LogoSecureLogix } from "slx-ui";
-	import { IconNorthAmerica } from "slx-ui";
-	import { IconOutboundCallSpoofing } from "slx-ui";
-	import { IPhoneFrame } from "slx-ui";
-	import { IPhoneUtilityBar } from "slx-ui";
-
-	// from stores
-	import { imageSourceNightMountain } from "slx-ui";
-
-	// types
-	import type { Document } from "$types/documentTypes.js";
+	import { PageLayout } from "lj-svelte-ui";
 
 	// props
-
-	export let document: Document;
-
+	export let doc: Document;
 	export let edition = "";
-
 	export let page = 0;
-
-	export let pageCount = 0;
-
-	// settings
-	let headerHeight = 0;
-
-	// calculated
-	$: mainHeight = 1008 - headerHeight;
 </script>
 
 <template lang="pug">
-	PageLayout(
-		classes!="font-montserrat !p-0 bg-gradient-to-br from-[#BB17A2] via-[#BD2986] to-[#370F66] text-white")
-		//-Main(
-			headerHeight!="{headerHeight}"
-			style!="padding-top:0px;"
-			)
-		// gradient bar
-		.w-full.bg-transparent(class="h-[14px]")
+	PageLayout(classes!="font-sans !p-0 text-richBlack text-15 ")
+		//- Header
+		Header(
+			{doc},
+			{page})
 
-		// Header
-		.px-12.pt-8
-			.flex.items-center.justify-between.border-b.pb-4(class="border-white/60")
-				.uppercase.tracking-wider.text-white(class="text-[26px] leading-none") Pain Points
-				.italic.tracking-wide.text-white Global Insurance Company
+		//- Main
+		Main
+			ChapterHeading(
+				chapterNumber!="{ 1 }",
+				chapterTitle!="Message from the CEO")
 
-		// Body
-		.px-6.pt-6
-			ColumnsTwo
-				// left
-				div(slot="left")
-					//-SectionHeading
-						.pb-1.font-medium.leading-snug.tracking-wide Outbound Calling Customer Pain Points
-					p.mb-3(class="text-[13px] leading-[19px]") The company detailed how low answer rates of calls to policy holders were negatively impacting corporate operations, costs, and reputation. General industry averages report that around 87% of unidentified calls U.S.-wide go unanswered. The insurance company confirmed that they were having similar difficulty in getting customers to answer their calls, and the time and cost to resolve policy claims and complete other policy coverage transactions had dramatically risen as a result.
+			ArticleHeading(
+				articleNumber!="{ 1 }",
+				articleTitle!="CEO Letter",
+				chapterNumber!="{ 1 }")
 
-					p.mb-3(class="text-[13px] leading-[19px]") The company highlighted one specific answer rate use case among many in its disability line-of-business. Customers want and need disability payments to begin as soon as possible following an accident The insurance company requires a series of phone conversations as part of a process to document and initialize payments. However, customers often wouldn’t recognize and answer calls from the insurance company agents, thereby substantially delaying the emergency payments process.
+			//- text columns
+			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal
+				p.font-medium.tracking-tight
+					span Welcome to Zenith Energy’s Second Annual Sustainability Report:&nbsp;
+					span.italic Storage for the New Energy Age
 
-					p.mb-3(class="text-[13px] leading-[19px]") Equally important to the insurance company was the timely adjustment or ceasing of payments once the injured customers had recovered and returned to work. This process also involves a phone interview and questionnaire with the policy holder, if and when the agents can successfully reach the policy holder by phone. Delays in this process are again very costly and disruptive. The insurance company also shared many examples of customers calling to
+				p Sustainability is a core of Zenith Energy’s mission and values through contributing to the new energy future. In publishing our 2021 Sustainability Report we highlight our progress to date and our path forward to fulfilling our commitment to progress in our sustainability journey and positioning ourselves for the new energy future.
 
-					.flex
-						//-div(style="width:200px; height:400px")
-							IPhoneFrame(
-								batteryLevel!="{0.8}"
-								branded!="{true}"
-								brandedHeading='+1 (888) 867-5309'
-								brandedSubheading='New York, NY'
-								brandedLogo!="{false}"
-								brandedLogoDefault!="{false}"
-								caseDropShadow!="{false}"
-								cellReception!="{3}"
-								description='This is a mockup of an iPhone screen.'
-								fixedSize!="{true}"
-								frameHide!="{false}"
-								height: undefined,
-								locked!="{true}"
-								notchHide!="{false}"
-								ringing!="{true}"
-								screenBackgroundShading!="{0.2}"
-								screenContentShadow!="{true}"
-								screenContentShadowColor!="{undefined}"
-								textColor='white'
-								timeValue='8:02'
-								timeHide!="{false}"
-								wallpaperBackgroundClasses="bg-gradient-to-tr from-[#0E141B] via-[#151F29] to-[#1B2632]"
-								wallpaperImageSource=""
-								wallpaperImageStack!="{undefined}"
-								width!="{200}"
-								wifiReception!="{3}"
-							)
-						//- .h-full
-						//- 	.mb-4 New Outbound Challenges:
-						//- 	.text-13.mb-4.w-full.rounded-md.border.border-transparent.py-3.pl-3.pr-1.italic.leading-normal.tracking-normal(
-						//- 		class="bg-russianViolet/40 leading-tight") Company was having trouble getting customers to answer the phone.
-						//- 	.text-13.mb-4.w-full.rounded-md.border.border-transparent.px-3.py-3.italic.tracking-normal(
-						//- 		class="bg-russianViolet/40 leading-normal") Customers were receiving calls from spoofed numbers posing as the company.
-						//- 	.text-13.mb-4.w-full.rounded-md.border.border-transparent.px-3.py-3.italic.tracking-normal(
-						//- 		class="bg-russianViolet/40 leading-normal") Legitimate company calls were now getting labeled as fraud / spam.
-						//- 	.text-13.mb-4.w-full.rounded-md.border.border-transparent.px-3.py-3.italic.tracking-normal(
-						//- 		class="bg-russianViolet/40 leading-normal") Low call answer rates were having a negative impact on business operations and revenue.
+				p Reflecting on 2021 and beyond, four key concepts support our confidence in Zenith Energy’s current and long-term success in operating a sustainable business and positioning for the new energy age.
 
-				// right
-				div(slot="right")
-					p.mb-3(class="text-[13px] leading-[19px]") report unusual calls seemingly from the insurance company asking for personal customer security information. These documented fraud attempts where attackers had spoofed the company’s legitimate outbound calling numbers not only threatened customer accounts, but also illustrated why legitimate calls by the insurance agents from the same corporate number were now being labeled as potential fraud by the fraud monitoring agencies. The company estimated they were receiving 5-10 calls per week from customers complaining that calls from the insurance company came with fraud / spam labels attached.
-					.text.mb-4(class="text-[13px] leading-[19px]") Apart from customer service and support issues, use cases from other lines of business illustrated the impact low call answer rates were having on business operations and revenue	growth. Primary among them were the declining results in up-sell policy, renewal, and new policy sales campaigns. Sales conversion numbers showed that company representatives had maintained the same success levels in closing business once they were able to connect with new and existing policy holders by phone. But the number of daily connections and interactions company agents were able to have with customers and prospects had declined due to the overall loss of trust by the public in answering calls from unidentified numbers, not to mention any calls from the company that were being mislabeled as fraud/spam due to previous spoofing attacks.
+				//- Bullets
+				ul.text-13.pl-3
+					li Zenith’s investment in the low carbon future and strategic terminal locations
+					li Zenith’s ability to support energy reliability and security
+					li Our commitment to safety and operational excellence
+					li Achievements in Environmental Stewardship
 
-		//- Picture Section
-		.mb-3.mt-3.px-12
-			.border-t.pt-4(class="border-white/40") Outbound Pain Points
-		.grid.w-full.grid-cols-2.gap-x-8.gap-y-3.px-12
-			.text-13.mb-0.w-full.rounded-md.border.border-transparent.py-3.pl-3.pr-1.italic.leading-normal.tracking-normal(
-				class="bg-russianViolet/40 leading-tight") Company was having trouble getting customers to answer the phone.
-			.text-13.mb-0.w-full.rounded-md.border.border-transparent.px-3.py-3.italic.tracking-normal(
-				class="bg-russianViolet/40 leading-normal") Customers were receiving calls from spoofed numbers posing as the company.
-			.text-13.mb-0.w-full.rounded-md.border.border-transparent.px-3.py-3.italic.tracking-normal(
-				class="bg-russianViolet/40 leading-normal") Legitimate company calls were now getting labeled as fraud / spam.
-			.text-13.mb-0.w-full.rounded-md.border.border-transparent.px-3.py-3.italic.tracking-normal(
-				class="bg-russianViolet/40 leading-normal") Low call answer rates were having a negative impact on business operations and revenue.
+				p In 2021, we continued our investment in our renewable fuels campaign at our Portland terminal that includes biodiesel and renewable diesel blending services, additional tankage for renewable fuel storage, renewables rail service and an offloading station to deliver renewable diesel to the Pacific Northwest. Our Portland terminal serves as a critical entry point and logistics hub for distribution of renewable diesel to the Greater Portland area. Zenith is also moving forward with new projects to bring Sustainable Aviation Fuel (SAF) into the west coast via Portland.
 
-		//- Footer
-		Footer(
-			cobranded!="{ edition }",
-			primaryColor!="#ffffff")
+				p To-date, we have invested $12.8 million into this campaign and plan to finish out the investment within the next year as we work toward our goal of converting over 96-percent of the fuel stored at our Portland facility to renewable fuels. These assets are critical in supporting the end-use of renewable fuels, which will ultimately support the reduction of carbon emissions globally.
 
-		.absolute.bottom-0.right-0.p-8.pr-12
-			PageNumber(
-				{pageCount},
-				{page})
+				p Our sustainability initiatives extend beyond the renewable solutions we provide to our customers, and we are making enhancements to our operations to reduce our carbon impacts through infrastructure improvements to reduce our terminals emissions, development of decarbonization strategies using a third-party consultant, and use of carbon offset credits.
+
+				p Our commitment to innovation to meet the demands of a clean energy future while supporting energy reliability and security has positioned Zenith Energy as an industry leader. This commitment begins with our leadership team and is upheld across every level of our organization. Our decisions are driven by our core values – safety first, environmental stewardship, customer driven and operational excellence, which are guided under a strong governance and oversight program.
+
+				p As you read this report, you will not only learn about our approach to sustainability, you will also gain insight into Zenith Energy’s performance in the areas of environment, energy transition, health and safety, our employees, our customers, community involvement, and governance during the 2021 calendar year. Thank you for your interest in Zenith Energy and, on behalf of our dedicated team, we look forward to continuing to share our progress with you.
+
+				.font-semibold Jeff Armstrong
+				div Chief Executive Officer
+
+		ContentPageFooter
 </template>

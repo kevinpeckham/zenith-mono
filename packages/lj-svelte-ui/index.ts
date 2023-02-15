@@ -39,9 +39,17 @@ export { default as PictureStackSource } from "./src/lib/components/pictures/Pic
 
 // Colors
 export {
+	colors,
+	antiFlash,
+	cultured,
+	gunmetal,
+	kellyGreen,
+	maize,
 	midnight,
 	oxford,
 	richBlack,
+	selectiveYellow,
+	yellowGreen,
 } from "./src/lib/stores/colorStore";
 
 // image types

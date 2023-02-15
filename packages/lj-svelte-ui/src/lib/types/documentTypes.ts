@@ -40,6 +40,7 @@ export class DocumentSettings {
 		| (() => string)
 		| (() => number);
 	title: string;
+	longTitle: string;
 	slug: string;
 	category: string;
 	createdDate: string;
@@ -47,6 +48,7 @@ export class DocumentSettings {
 	currentVersionDate: string;
 	documentNumber: number;
 	editions: string[];
+	pageCount: number;
 	status: string;
 	constructor() {
 		this.title = "";
@@ -57,6 +59,8 @@ export class DocumentSettings {
 		this.currentVersionDate = "";
 		this.documentNumber = 0;
 		this.editions = [];
+		this.longTitle = "";
+		this.pageCount = 0;
 		this.status = "";
 	}
 }
@@ -92,6 +96,8 @@ export class Document extends DocumentSettings {
 		this.currentVersionDate = ds.currentVersionDate;
 		this.documentNumber = ds.documentNumber;
 		this.editions = ds.editions;
+		this.longTitle = ds.longTitle;
+		this.pageCount = ds.pageCount;
 		this.status = ds.status;
 		this.docLink = (edition: string) =>
 			docLink(slugify(this.category), this.slug, edition);

@@ -1,171 +1,98 @@
-<!-- Example Svelte Page / Starter Web Page-->
 <script lang="ts">
-	// Components
-	import BodyText from "$atoms/BodyText.svelte";
-	import ColumnsTwo from "$atoms/ColumnsTwo.svelte";
+	// components
+	import ArticleHeading from "$atoms/ArticleHeading.svelte";
+	import ChapterHeading from "$atoms/ChapterHeading.svelte";
+	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
+	import Header from "$molecules/Header.svelte";
 	import Main from "$atoms/Main.svelte";
-	import PageLayout from "$atoms/PageLayout.svelte";
-	import SectionHeading from "$atoms/SectionHeading.svelte";
-	import FactoidBubble from "$atoms/FactoidBubble.svelte";
-	import Footer from "$molecules/Footer.svelte";
-	import VersionInfo from "$atoms/VersionInfo.svelte";
-
-	import { CopyrightLanguage } from "slx-ui";
-	import { IconAuthentication } from "slx-ui";
-	import { IconCallSecurity } from "slx-ui";
-	import { IconNorthAmerica } from "slx-ui";
-	import { IconOutboundCallSpoofing } from "slx-ui";
-	import { IPhoneFrame } from "slx-ui";
-	import { IPhoneUtilityBar } from "slx-ui";
-	import { LogoAcme } from "slx-ui";
-	import { LogoBrandedCallSecure } from "slx-ui";
-	import { LogoSecureLogix } from "slx-ui";
-
-	// types
-	import type { Document } from "$types/documentTypes.js";
+	import { PageLayout } from "lj-svelte-ui";
+	import TerminalsMap from "$atoms/TerminalsMap.svelte";
+	import TerminalsOverview from "$atoms/TerminalsOverview.svelte";
+	import TopicHeading from "$atoms/TopicHeading.svelte";
 
 	// props
-
-	export let document: Document;
-
+	export let doc: Document;
 	export let edition = "";
-
 	export let page = 0;
-
-	export let pageCount = 0;
-
-	// settings
-	const headerHeight = 0;
-	const russianViolet = "#1F0144";
-
-	const content = {
-		bullets: [
-			"Call Security & Network Protection",
-			"Inbound Call Authentication",
-			"Outbound Call Branding & Spoofing Protection",
-		],
-	};
 </script>
 
 <template lang="pug">
-PageLayout(classes="font-montserrat !p-0 bg-white text-russianViolet overflow-hidden")
+	PageLayout(classes!="font-sans !p-0 text-richBlack text-15 ")
+		//- Header
+		Header(
+			{doc},
+			{page})
 
-	// background full bleed image
-	.absolute.inset-0.flex(class="bg-gradient-to-br from-[#FF00D0] via-[#B428A7] to-[#670F83] flex ")
-		.absolute.inset-0.text-white.grid.grid-cols-1.place-items-center.place-content-center(class="overflow-hidden")
-			div.relative(class="w-[320px] pt-40 mix-blend-normal")
-				IPhoneFrame(
-					aspectRatio!="{.5}"
-					batteryLevel!="{0.76}"
-					branded!="{true}"
-					brandedHeading='SecureLogix'
-					brandedSubheading=''
-					brandedLogo!="{true}"
-					brandedLogoDefault!="{false}"
-					caseDropShadow!="{true}"
-					cellReception!="{2}"
-					description='This is a mockup of an iPhone screen with the SecureLogix logo on it .'
-					fixedSize!="{false}"
-					frameHide!="{false}"
-					height!="{undefined}",
-					locked!="{true}"
-					notchHide!="{false}"
-					ringing!="{true}"
-					screenBackgroundShading!="{0}"
-					screenContentShadow!="{true}"
-					screenContentShadowColor!="{undefined}"
-					textColor='white'
-					timeValue='8:02'
-					timeHide!="{false}"
-					wallpaperBackgroundClasses="bg-gradient-to-b from-[#5A1CB4] to-[#400E8B]"
-					wallpaperImageSource=""
-					wallpaperImageStack!="{undefined}"
-					width!="{undefined}"
-					wifiReception!="{2}"
-					)
-					svelte:fragment(slot="brandedLogo")
-						.absolute.w-full.left-0(class="top-[24%] scale-[.8] orgin-center")
-							LogoSecureLogix(
-								primaryColor="#fff"
-								orientation="mark"
-								)
+		//- Main
+		Main
+			.grid.grid-cols-1.gap-2
+				//- section 1
+				section
+					.mb-4
+						ArticleHeading(
+							articleNumber!="{ 2 }",
+							articleTitle!="Awards & Recognition",
+							chapterNumber!="{ 3 }")
+					div
+						TopicHeading(
+							articleNumber!="{ 2 }",
+							chapterNumber!="{ 3 }",
+							topicNumber!="{ 0 }",
+							topicTitle!="Energy Star Award")
 
-		// background image
-		.absolute.top-0.left-0.w-full.h-full
-			img(src="/images/white-ripped.webp" alt="ripped" class="object-cover min-w-full min-h-full")
+					//- text columns
+					.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-snug
+						p We are pleased that our ESG efforts are being recognized. Our Portland Terminal achieved the U.S. Environmental Protection Agency (EPA) ENERGY STAR Challenge for Industry. This challenge recognizes that we achieved at least a 10-percent reduction in energy intensity within 5 years. Zenith Energy achieved a 64-percent reduction in energy intensity in two years. We are incredibly proud of all of our teams that worked together to make this significant reduction and achievement.
 
+						.w-full.bg-slate-100.px-4.py-3
+							.mb-4 [graphic placeholder]
+							div Zenith Energy Portland Terminals reduced energy intensity at the Portland site by 64% in 2 years
+				//- section 2
+				section
+					.mb-2
+						ArticleHeading(
+							articleNumber!="{ 3 }",
+							articleTitle!="Mission, Vision, & Values",
+							chapterNumber!="{ 3 }")
 
+					//- text columns
+					.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-snug
+						//- topic 1
+						.mb-4
+							TopicHeading(
+								articleNumber!="{ 3 }",
+								chapterNumber!="{ 3 }",
+								topicNumber!="{ 1 }",
+								topicTitle!="Safety First")
+							p Our ability to create jobs for hardworking men and women is why we all come to work every day, and we are committed to keeping the environment, our neighbors, and our teams safe across our operations. We continue to invest in infrastructure modernization to ensure our terminals are equipped with best-in-class safety equipment and conduct regular trainings that protect our employees, contractors, and the communities where we operate. Zenith Energy is recognized within the industry as a model for safe operations.
+							p Zenith Energy is an active member of the International Liquid Terminals Association (ILTA) and we have won numerous awards for our strict standards for the safe handling and shipment of products. Our goal is zero incidents, period.
 
+						//- topic 2
+						.mb-4
+							TopicHeading(
+								articleNumber!="{ 3 }",
+								chapterNumber!="{ 3 }",
+								topicNumber!="{ 2 }",
+								topicTitle!="Environmental Stewardship")
+							p Zenith Energy works every day to responsibly operate our terminals to protect the environment and the products we handle and store. We understand the growing role of alternative energy sources in our society, and we see ourselves as a partner for customers in this transition. For example, we are overhauling our Portland terminal by converting approximately 500,000 barrels of storage capacity for renewable fuels, developing a safe, economic rail solution for renewable fuels and constructing a new offloading station to deliver renewable diesel across the Pacific Northwest.
 
+						//- topic 3
+						.mb-4
+							TopicHeading(
+								articleNumber!="{ 3 }",
+								chapterNumber!="{ 3 }",
+								topicNumber!="{ 3 }",
+								topicTitle!="Customer Driven")
+							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
 
-	.absolute.inset-0.flex-column.h-full
-		.absolute.inset-0.bg-transparent.w-full(class="h-[14px]") &nbsp;
+						//- topic 4
+						.mb-4
+							TopicHeading(
+								articleNumber!="{ 3 }",
+								chapterNumber!="{ 3 }",
+								topicNumber!="{ 4 }",
+								topicTitle!="Operational Excellence")
+							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
 
-		div(class="h-[50%] ")
-			// Header
-			.px-12.pt-8
-				.border-b.pb-4.flex.justify-between.items-center.text-russianViolet(class="border-russianViolet/60")
-					.uppercase.tracking-wider(class="text-[26px] leading-none") Full Call Security & Trust
-					div.italic.tracking-widest &nbsp;
-			div.p-6
-				ColumnsTwo
-					div(slot="left")
-						.mb-6
-							p.text-xs.mb-2.text-russianViolet SecureLogix is the only vendor providing a single, unified solution set for the full range of voice security and call trust issues threatening the enterprise, from Telephony Denial of Service attacks, to contact center fraud, robocalls, vishing scams, malicious calls, voice spam, and call spoofing.
-							p.text-xs.mb-2.text-russianViolet
-								span Industry leading SecureLogix is solely dedicated corporate-wide to solving call security and trust issues
-								span.block for the enterprise, and has been a trusted partner
-								span.block helping clients navigate the ever-evolving call
-								span.block security and trust risk landscape for over
-								span.block 20 years.
-
-
-					div(slot="right")
-						.grid.grid-cols-3.text-russianViolet.mb-8
-							div
-								.mb-2.text-center.grid.place-content-center.text-xs.w-full
-									.grid.place-content-center(class="h-[50px] w-[50px]")
-										IconCallSecurity(
-											circle!="{false}"
-											primaryColor!="{russianViolet}"
-										)
-								.text-center.font-semibold(class="text-[11px]") Security
-							div
-								.mb-2.text-center.grid.place-content-center.text-xs.w-full
-									.grid.place-content-center(class="h-[50px] w-[50px]")
-										IconAuthentication(
-											circle!="{false}"
-											primaryColor!="{russianViolet}"
-										)
-								.text-center.font-semibold(class="text-[11px]") Authentication
-							div
-								.mb-2.text-center.grid.place-content-center.text-xs.w-full
-									.grid.place-content-center(class="h-[50px] w-[50px]")
-										IconOutboundCallSpoofing(
-											circle!="{false}"
-											primaryColor!="{russianViolet}"
-											style="max-height:48px;"
-											)
-								.text-center.font-semibold(class="text-[11px]") Trust
-						ul.pl-8.text-xs.mb-8.text-russianViolet(class="list-disc list-inside")
-							+each('content.bullets as bullet, index')
-								li.mb-2.font-medium {bullet}
-
-
-		div.flex(class="h-[50%]") &nbsp;
-
-	//- Footer
-	Footer(
-		primaryColor!="{russianViolet}"
-		cobranded!="{edition}"
-		)
-
-
-	.absolute.bottom-0.right-0.px-8.pb-8(class="w-1/2 text-midnight" style="font-family: 'Arial', sans-serif;")
-		CopyrightLanguage("{document}")
-	.absolute.bottom-0.right-0.pr-8.pb-4(class=" text-midnight")
-		VersionInfo("{document}")
-
-
-
+		ContentPageFooter
 </template>
