@@ -26,12 +26,14 @@
 		Main
 			ChapterHeading(
 				chapterNumber!="{ 3 }",
-				chapterTitle!="About Zenith Energy & This Report")
+				chapterTitle!="About Zenith Energy & This Report",
+				page!="{ page }")
 
 			ArticleHeading(
 				articleNumber!="{ 1 }",
 				articleTitle!="About Us",
-				chapterNumber!="{ 3 }")
+				chapterNumber!="{ 3 }",
+				page!="{ page }")
 
 			//- text columns
 			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal

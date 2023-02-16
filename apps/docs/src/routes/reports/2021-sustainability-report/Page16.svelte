@@ -29,12 +29,14 @@
 		Main
 			ChapterHeading(
 				chapterNumber!="{ 5 }",
-				chapterTitle!="Health, Safety, Environment & Quality")
+				chapterTitle!="Health, Safety, Environment & Quality",
+				page!="{ page }")
 
 			ArticleHeading(
 				articleNumber!="{ 1 }",
 				articleTitle!="Workforce Health & Safety",
-				chapterNumber!="{ 5 }")
+				chapterNumber!="{ 5 }",
+				page!="{ page }")
 
 			.prose.prose-sm.prose-slate.relative.mb-6.grid.max-w-none.grid-cols-2.gap-8.pb-4.leading-normal(
 				class="border-richBlack/40")

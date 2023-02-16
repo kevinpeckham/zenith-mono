@@ -31,7 +31,8 @@
 			ArticleHeading(
 				articleNumber!="{ 2 }",
 				articleTitle!="Commitment to ESG",
-				chapterNumber!="{ 1 }")
+				chapterNumber!="{ 1 }",
+				page!="{ page }")
 
 			//- text columns
 			.relative.grid.grid-cols-2.gap-8.leading-normal

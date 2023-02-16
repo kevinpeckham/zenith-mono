@@ -32,12 +32,14 @@
 						ArticleHeading(
 							articleNumber!="{ 2 }",
 							articleTitle!="Awards & Recognition",
-							chapterNumber!="{ 3 }")
+							chapterNumber!="{ 3 }",
+							page!="{ page }")
 					div
 						TopicHeading(
 							articleNumber!="{ 2 }",
 							chapterNumber!="{ 3 }",
-							topicNumber!="{ 0 }",
+							page!="{ page }",
+							topicNumber!="{ 1 }",
 							topicTitle!="Energy Star Award")
 
 					//- text columns
@@ -53,7 +55,8 @@
 						ArticleHeading(
 							articleNumber!="{ 3 }",
 							articleTitle!="Mission, Vision, & Values",
-							chapterNumber!="{ 3 }")
+							chapterNumber!="{ 3 }",
+							page!="{ page }")
 
 					//- text columns
 					.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-snug
@@ -62,6 +65,7 @@
 							TopicHeading(
 								articleNumber!="{ 3 }",
 								chapterNumber!="{ 3 }",
+								page!="{ page }",
 								topicNumber!="{ 1 }",
 								topicTitle!="Safety First")
 							p Our ability to create jobs for hardworking men and women is why we all come to work every day, and we are committed to keeping the environment, our neighbors, and our teams safe across our operations. We continue to invest in infrastructure modernization to ensure our terminals are equipped with best-in-class safety equipment and conduct regular trainings that protect our employees, contractors, and the communities where we operate. Zenith Energy is recognized within the industry as a model for safe operations.
@@ -72,6 +76,7 @@
 							TopicHeading(
 								articleNumber!="{ 3 }",
 								chapterNumber!="{ 3 }",
+								page!="{ page }",
 								topicNumber!="{ 2 }",
 								topicTitle!="Environmental Stewardship")
 							p Zenith Energy works every day to responsibly operate our terminals to protect the environment and the products we handle and store. We understand the growing role of alternative energy sources in our society, and we see ourselves as a partner for customers in this transition. For example, we are overhauling our Portland terminal by converting approximately 500,000 barrels of storage capacity for renewable fuels, developing a safe, economic rail solution for renewable fuels and constructing a new offloading station to deliver renewable diesel across the Pacific Northwest.
@@ -81,6 +86,7 @@
 							TopicHeading(
 								articleNumber!="{ 3 }",
 								chapterNumber!="{ 3 }",
+								page!="{ page }",
 								topicNumber!="{ 3 }",
 								topicTitle!="Customer Driven")
 							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
@@ -90,6 +96,7 @@
 							TopicHeading(
 								articleNumber!="{ 3 }",
 								chapterNumber!="{ 3 }",
+								page!="{ page }",
 								topicNumber!="{ 4 }",
 								topicTitle!="Operational Excellence")
 							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.

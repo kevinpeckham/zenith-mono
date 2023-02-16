@@ -30,13 +30,15 @@
 			ArticleHeading(
 				articleNumber!="{ 2 }",
 				articleTitle!="Climate Change",
-				chapterNumber!="{ 4 }")
+				chapterNumber!="{ 4 }",
+				page!="{ page }")
 
 			.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-normal
 				div
 					TopicHeading(
 						articleNumber!="{ 2 }",
 						chapterNumber!="{ 4 }",
+						page!="{ page }",
 						topicNumber!="{ 1 }",
 						topicTitle!="Offsets and Carbon Neutral Operations")
 

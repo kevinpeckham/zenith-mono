@@ -86,6 +86,7 @@
 			TopicHeading(
 				articleNumber!="{ 2 }",
 				chapterNumber!="{ 4 }",
+				page!="{ page }",
 				topicNumber!="{ 2 }",
 				topicTitle!="Greenhouse Gas Emissions")
 

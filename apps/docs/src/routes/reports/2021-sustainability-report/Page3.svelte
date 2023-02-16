@@ -24,12 +24,14 @@
 		Main
 			ChapterHeading(
 				chapterNumber!="{ 1 }",
-				chapterTitle!="Message from the CEO")
+				chapterTitle!="Message from the CEO",
+				page!="{ page }")
 
 			ArticleHeading(
 				articleNumber!="{ 1 }",
 				articleTitle!="CEO Letter",
-				chapterNumber!="{ 1 }")
+				chapterNumber!="{ 1 }",
+				page!="{ page }")
 
 			//- text columns
 			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal

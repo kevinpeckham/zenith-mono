@@ -29,12 +29,14 @@
 		Main
 			ChapterHeading(
 				chapterNumber!="{ 4 }",
-				chapterTitle!="Environment")
+				chapterTitle!="Environment",
+				page!="{ page }")
 
 			ArticleHeading(
 				articleNumber!="{ 1 }",
 				articleTitle!="Clean Energy Future",
-				chapterNumber!="{ 4 }")
+				chapterNumber!="{ 4 }",
+				page!="{ page }")
 
 			//- text columns
 			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.columns-2.gap-8.border-b.pb-4.leading-normal(
@@ -48,6 +50,7 @@
 					TopicHeading(
 						articleNumber!="{ 1 }",
 						chapterNumber!="{ 4 }",
+						page!="{ page }",
 						topicNumber!="{ 1 }",
 						topicTitle!="Energy Transition & Climate Strategy")
 

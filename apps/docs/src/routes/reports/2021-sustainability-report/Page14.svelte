@@ -30,7 +30,8 @@
 			ArticleHeading(
 				articleNumber!="{ 3 }",
 				articleTitle!="Energy Management",
-				chapterNumber!="{ 4 }")
+				chapterNumber!="{ 4 }",
+				page!="{ page }")
 
 			.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-normal
 				//- left column
@@ -53,6 +54,7 @@
 					TopicHeading(
 						articleNumber!="{ 3 }",
 						chapterNumber!="{ 4 }",
+						page!="{ page }",
 						topicNumber!="{ 1 }",
 						topicTitle!="Managing Energy Consumption through Renewable Power Solutions ")
 

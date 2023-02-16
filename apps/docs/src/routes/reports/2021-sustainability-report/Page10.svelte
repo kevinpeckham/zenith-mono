@@ -37,6 +37,7 @@
 					TopicHeading(
 						articleNumber!="{ 1 }",
 						chapterNumber!="{ 4 }",
+						page!="{ page }",
 						topicNumber!="{ 2 }",
 						topicTitle!="Case Study: Renewable Diesel Handling and Storage at Portland Terminal")
 

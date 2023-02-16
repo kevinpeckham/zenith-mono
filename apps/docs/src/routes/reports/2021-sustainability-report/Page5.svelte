@@ -126,7 +126,8 @@
 		Main
 			ChapterHeading(
 				chapterNumber!="{ 2 }",
-				chapterTitle!="Report Highlights")
+				chapterTitle!="Report Highlights",
+				page!="{ page }")
 			//-ArticleHeading(
 				articleNumber!="{ 1 }",
 				articleTitle!="Report Highlights",

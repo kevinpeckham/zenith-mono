@@ -32,6 +32,7 @@
 					TopicHeading(
 						articleNumber!="{ 2 }",
 						chapterNumber!="{ 4 }",
+						page!="{ page }",
 						topicNumber!="{ 3 }",
 						topicTitle!="Emission Reduction Goals")
 
@@ -52,6 +53,7 @@
 					TopicHeading(
 						articleNumber!="{ 2 }",
 						chapterNumber!="{ 4 }",
+						page!="{ page }",
 						topicNumber!="{ 4 }",
 						topicTitle!="Climate Risk Management")
 

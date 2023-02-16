@@ -69,7 +69,8 @@
 						ArticleHeading(
 							articleNumber!="{ 4 }",
 							articleTitle!="About This Report",
-							chapterNumber!="{ 3 }")
+							chapterNumber!="{ 3 }",
+							page!="{ page }")
 
 					//- text columns
 					.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-snug
@@ -81,6 +82,7 @@
 							TopicHeading(
 								articleNumber!="{ 4 }",
 								chapterNumber!="{ 3 }",
+								page!="{ page }",
 								topicNumber!="{ 1 }",
 								topicTitle!="Forward-Looking Statements")
 							p Information in this report may involve outlook, expectations, beliefs, plans, intentions, strategies, or other statements regarding the future, which are forward-looking statements. These forward-looking statements involve risks and uncertainties. All forward-looking statements included in this report are based upon information available to Zenith Energy as of the date of the report, and Zenith Energy assumes no obligation to update any such forward-looking statements. The statements in this report are not guarantees of future performance and actions, and actual results could differ materially from current expectations. Numerous factors could cause or contribute to such differences.
@@ -90,6 +92,7 @@
 							TopicHeading(
 								articleNumber!="{ 4 }",
 								chapterNumber!="{ 3 }",
+								page!="{ page }",
 								topicNumber!="{ 2 }",
 								topicTitle!="Materiality Assessment & Reporting")
 							p Our reporting process began in 2021 with a materiality assessment conducted by a third-party consultant to support the development of our sustainability reporting initiatives and long-term sustainability strategy. The materiality assessment considered 29 topics within environmental, social, and governance categories. Our assessment captured the perspectives of stakeholders via surveys, proxy research, and an internal review exercise. The assessments findings were validated by the Zenith Energy Leadership Team to then become the foundation for our sustainability reporting. Our goal is to ensure our approach to sustainability is aligned with our internal business strategy and will resonate with our stakeholders as the landscape continues to evolve.
