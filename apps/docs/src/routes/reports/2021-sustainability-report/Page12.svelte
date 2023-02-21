@@ -17,26 +17,6 @@
 	export let edition = "";
 	export let page = 0;
 
-	/*
-	Total gross Scope 2 GHG Emissions, location-based
-	CO2e (t)
-	6,720
-	8,785
-	8,984
-
-	Total GHG Emissions (Scope 1 + Scope 2)
-	CO2e (t)
-	32,748
-	41,908
-	40,332
-
-	GHG emission intensity, in metric tons (t) CO2-e per BOE throughput
-	CO2e (t) /BOE
-	0.0010
-	0.0010
-	0.0005
-*/
-
 	const tableData = [
 		["", "Units", "2019", "2020", "2021"],
 		[
@@ -109,8 +89,7 @@
 								+each('row as cell, cellIndex')
 									+if('rowIndex == 0')
 										//- header row
-										td.bg-yellowGreen.text-14.border.px-2.font-medium.text-white(
-											class="py-[6px]") {  cell  }
+										td.bg-yellowGreen.text-14.border.px-2.font-medium.text-white(class="py-[6px]") {  cell  }
 										+else
 											td.bg-antiFlash.text-richBlack.border.px-2.py-2 {  cell  }
 

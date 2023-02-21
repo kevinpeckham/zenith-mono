@@ -3,11 +3,11 @@
 Main page component for the docs app.
 Adds padding for body of page (below header and above footer).
 -->
-
 <script lang="ts">
+	export let classes = "";
 </script>
 
 <template lang="pug">
-	main.px-12
+	main.px-12(class!="{ classes }")
 		slot
 </template>

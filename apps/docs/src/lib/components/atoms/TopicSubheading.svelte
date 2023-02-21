@@ -7,5 +7,6 @@ Here's some documentation for this component.
 </script>
 
 <template lang="pug">
-	div test home page
+	h5.mb-2.font-medium.italic
+		slot
 </template>

@@ -19,3 +19,6 @@ yarn.lock
 ## test only
 app.d.ts
 
+# read me
+README.md
+

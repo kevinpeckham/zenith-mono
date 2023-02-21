@@ -2,11 +2,10 @@
 @component
 Here's some documentation for this component.
 -->
-
 <script lang="ts">
 	export let articleTitle = "";
-	export let articleNumber = 0;
-	export let chapterNumber = 0;
+	export let articleNumber: number | string = 0;
+	export let chapterNumber: number | string = 0;
 	export let classes = "";
 	export let page = 0;
 </script>

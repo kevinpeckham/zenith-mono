@@ -2,7 +2,6 @@
 @component
 Here's some documentation for this component.
 -->
-
 <script lang="ts">
 	// settings
 
@@ -30,6 +29,17 @@ Here's some documentation for this component.
 	import Page14 from "./Page14.svelte";
 	import Page15 from "./Page15.svelte";
 	import Page16 from "./Page16.svelte";
+	import Page17 from "./Page17.svelte";
+	import Page18 from "./Page18.svelte";
+	import Page19 from "./Page19.svelte";
+	import Page20 from "./Page20.svelte";
+	import Page21 from "./Page21.svelte";
+	import Page22 from "./Page22.svelte";
+	import Page23 from "./Page23.svelte";
+	import Page24 from "./Page24.svelte";
+	import Page25 from "./Page25.svelte";
+	import Page26 from "./Page26.svelte";
+	import Appendix1 from "./Appendix1.svelte";
 
 	// global stores
 	import { documents } from "$stores/documentTracking";
@@ -48,8 +58,7 @@ Here's some documentation for this component.
 	// document -- find settings for this document in the master store
 	// short-circuit eval for type safety
 	$: doc =
-		$documents.find((doc) => doc.documentNumber === docNumber) ||
-		dummyDocument;
+		$documents.find((doc) => doc.documentNumber === docNumber) || dummyDocument;
 
 	// page refs
 	let pages: HTMLDivElement[];
@@ -69,6 +78,17 @@ Here's some documentation for this component.
 	let page14: HTMLDivElement;
 	let page15: HTMLDivElement;
 	let page16: HTMLDivElement;
+	let page17: HTMLDivElement;
+	let page18: HTMLDivElement;
+	let page19: HTMLDivElement;
+	let page20: HTMLDivElement;
+	let page21: HTMLDivElement;
+	let page22: HTMLDivElement;
+	let page23: HTMLDivElement;
+	let page24: HTMLDivElement;
+	let page25: HTMLDivElement;
+	let page26: HTMLDivElement;
+	let appendix1: HTMLDivElement;
 
 	$: {
 		//- collect pages into array
@@ -89,6 +109,17 @@ Here's some documentation for this component.
 			page14,
 			page15,
 			page16,
+			page17,
+			page18,
+			page19,
+			page20,
+			page21,
+			page22,
+			page23,
+			page24,
+			page25,
+			page26,
+			appendix1,
 		];
 		//- update page count
 		pageCount = pages.length;
@@ -243,6 +274,105 @@ Here's some documentation for this component.
 		data-page="16")
 		Page16(
 			page!="{ 16 }",
+			{doc},
+			{edition})
+
+	#page-17(
+		bind:this!="{ page17 }",
+		data-description="chapter 5, article1: 'Leading Initiatives'",
+		data-page="17")
+		Page17(
+			page!="{ 17 }",
+			{doc},
+			{edition})
+
+	#page-18(
+		bind:this!="{ page18 }",
+		data-description="chapter 5, article 1, topic 3: 'Health & Safety Indicators'",
+		data-page="18")
+		Page18(
+			page!="{ 18 }",
+			{doc},
+			{edition})
+
+	#page-19(
+		bind:this!="{ page19 }",
+		data-description="chapter 5, article 1, topic 6: 'Emergency Preparedness and Response'",
+		data-page="19")
+		Page19(
+			page!="{ 19 }",
+			{doc},
+			{edition})
+
+	#page-20(
+		bind:this!="{ page20 }",
+		data-description="chapter 5, article 1, topic 9: 'Release Prevention'",
+		data-page="20")
+		Page20(
+			page!="{ 20 }",
+			{doc},
+			{edition})
+
+	#page-21(
+		bind:this!="{ page21 }",
+		data-description="chapter 6, 'Our People'",
+		data-page="21")
+		Page21(
+			page!="{ 21 }",
+			{doc},
+			{edition})
+
+	#page-22(
+		bind:this!="{ page22 }",
+		data-description="chapter 6, 'Our People'",
+		data-page="22")
+		Page22(
+			page!="{ 22 }",
+			{doc},
+			{edition})
+
+	#page-23(
+		bind:this!="{ page23 }",
+		data-description="chapter 7, 'Customers & Communities'",
+		data-page="23")
+		Page23(
+			page!="{ 23 }",
+			{doc},
+			{edition})
+
+	#page-24(
+		bind:this!="{ page24 }",
+		data-description="chapter 7, article 2: 'Customers'",
+		data-page="24")
+		Page24(
+			page!="{ 24 }",
+			{doc},
+			{edition})
+
+	#page-25(
+		bind:this!="{ page25 }",
+		data-description="chapter 8, 'Governance & Ethics'",
+		data-page="25")
+		Page25(
+			page!="{ 25 }",
+			{doc},
+			{edition})
+
+	#page-26(
+		bind:this!="{ page26 }",
+		data-description="chapter 8, article 4 'Policy Section'",
+		data-page="26")
+		Page26(
+			page!="{ 26 }",
+			{doc},
+			{edition})
+
+	#page-27(
+		bind:this!="{ appendix1 }",
+		data-description="Appendix, article 1 'Use of SASB and GRI Standards'",
+		data-page="27")
+		Appendix1(
+			page!="{ 27 }",
 			{doc},
 			{edition})
 </template>

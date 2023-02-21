@@ -2,12 +2,12 @@
 @component
 Here's some documentation for this component.
 -->
-
 <script lang="ts">
 	export let topicTitle = "";
 	export let topicNumber = 0;
 	export let articleNumber = 0;
 	export let chapterNumber = 0;
+	export let hideNumber = false;
 	export let page = 0;
 </script>
 
@@ -19,5 +19,6 @@ Here's some documentation for this component.
 		data-type="topic",
 		id!="topic-{ chapterNumber }.{ articleNumber }.{ topicNumber }")
 		span {  topicTitle  }
-		span.text.text-12.inline-block.font-normal &nbsp;- {  chapterNumber  }.{  articleNumber  }.{  topicNumber  }
+		+if('!hideNumber')
+			span.text.text-12.inline-block.font-normal &nbsp;- {  chapterNumber  }.{  articleNumber  }.{  topicNumber  }
 </template>
