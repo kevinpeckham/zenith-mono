@@ -39,6 +39,7 @@ Here's some documentation for this component.
 	import Page24 from "./Page24.svelte";
 	import Page25 from "./Page25.svelte";
 	import Page26 from "./Page26.svelte";
+	import Page27 from "./Page27.svelte";
 	import Appendix1 from "./Appendix1.svelte";
 
 	// global stores
@@ -51,6 +52,7 @@ Here's some documentation for this component.
 	import type { PageData } from "./$types";
 	import { dummyDocument } from "lj-svelte-ui";
 	import HamburgerButton from "lj-svelte-ui/src/lib/components/nav/HamburgerButton.svelte";
+	import Header from "$molecules/Header.svelte";
 
 	// edition -- this value comes from the URL request e.g. '?edition=att'
 	$: edition = data.edition ? data.edition : "";
@@ -88,7 +90,8 @@ Here's some documentation for this component.
 	let page24: HTMLDivElement;
 	let page25: HTMLDivElement;
 	let page26: HTMLDivElement;
-	let appendix1: HTMLDivElement;
+	let page27: HTMLDivElement;
+	let page28: HTMLDivElement;
 
 	$: {
 		//- collect pages into array
@@ -119,7 +122,8 @@ Here's some documentation for this component.
 			page24,
 			page25,
 			page26,
-			appendix1,
+			page27,
+			page28,
 		];
 		//- update page count
 		pageCount = pages.length;
@@ -148,20 +152,18 @@ Here's some documentation for this component.
 			{doc},
 			{edition})
 
-	//- chapter 1, article 1
+	//- toc continued
 	#page-3(
 		bind:this!="{ page3 }",
-		data-description="chapter 1, article 1",
+		data-description="table of contents - continued",
 		data-page="3")
 		Page3(
 			page!="{ 3 }",
 			{doc},
 			{edition})
 
-	//- chapter 1, article 2
 	#page-4(
 		bind:this!="{ page4 }",
-		data-description="chapter 1, article 2",
 		data-page="4")
 		Page4(
 			page!="{ 4 }",
@@ -171,7 +173,6 @@ Here's some documentation for this component.
 	//- chapter 1, article 2
 	#page-5(
 		bind:this!="{ page5 }",
-		data-description="chapter 2, article 1",
 		data-page="5")
 		Page5(
 			page!="{ 5 }",
@@ -180,7 +181,6 @@ Here's some documentation for this component.
 
 	#page-6(
 		bind:this!="{ page6 }",
-		data-description="chapter 3, article 1",
 		data-page="6")
 		Page6(
 			page!="{ 6 }",
@@ -189,7 +189,6 @@ Here's some documentation for this component.
 
 	#page-7(
 		bind:this!="{ page7 }",
-		data-description="chapter 3, article 2: 'Awards & Recognition'",
 		data-page="7")
 		Page7(
 			page!="{ 7 }",
@@ -198,7 +197,6 @@ Here's some documentation for this component.
 
 	#page-8(
 		bind:this!="{ page8 }",
-		data-description="chapter 3, article 3: 'About this Report'",
 		data-page="8")
 		Page8(
 			page!="{ 8 }",
@@ -207,7 +205,6 @@ Here's some documentation for this component.
 
 	#page-9(
 		bind:this!="{ page9 }",
-		data-description="chapter 4, article 1: 'Clean Energy Future'",
 		data-page="9")
 		Page9(
 			page!="{ 9 }",
@@ -216,7 +213,6 @@ Here's some documentation for this component.
 
 	#page-10(
 		bind:this!="{ page10 }",
-		data-description="chapter 4, article 1, topic 2: 'Case Study'",
 		data-page="10")
 		Page10(
 			page!="{ 10 }",
@@ -225,7 +221,6 @@ Here's some documentation for this component.
 
 	#page-11(
 		bind:this!="{ page11 }",
-		data-description="chapter 4, article 2: 'Climate Change'",
 		data-page="11")
 		Page11(
 			page!="{ 11 }",
@@ -234,7 +229,6 @@ Here's some documentation for this component.
 
 	#page-12(
 		bind:this!="{ page12 }",
-		data-description="chapter 4, article 2, topic 2: 'Greenhouse Gas Emissions'",
 		data-page="12")
 		Page12(
 			page!="{ 12 }",
@@ -243,7 +237,6 @@ Here's some documentation for this component.
 
 	#page-13(
 		bind:this!="{ page13 }",
-		data-description="chapter 4, article 2ß, topic 3: 'Emission Reduction Goals'",
 		data-page="13")
 		Page13(
 			page!="{ 13 }",
@@ -252,7 +245,6 @@ Here's some documentation for this component.
 
 	#page-14(
 		bind:this!="{ page14 }",
-		data-description="chapter 4, article 3: 'Energy Management'",
 		data-page="14")
 		Page14(
 			page!="{ 14 }",
@@ -261,7 +253,6 @@ Here's some documentation for this component.
 
 	#page-15(
 		bind:this!="{ page15 }",
-		data-description="chapter 4, article 4: 'Air Quality'",
 		data-page="15")
 		Page15(
 			page!="{ 15 }",
@@ -270,7 +261,6 @@ Here's some documentation for this component.
 
 	#page-16(
 		bind:this!="{ page16 }",
-		data-description="chapter 5: 'Health, Safety, Environment & Quality'",
 		data-page="16")
 		Page16(
 			page!="{ 16 }",
@@ -279,7 +269,6 @@ Here's some documentation for this component.
 
 	#page-17(
 		bind:this!="{ page17 }",
-		data-description="chapter 5, article1: 'Leading Initiatives'",
 		data-page="17")
 		Page17(
 			page!="{ 17 }",
@@ -288,7 +277,6 @@ Here's some documentation for this component.
 
 	#page-18(
 		bind:this!="{ page18 }",
-		data-description="chapter 5, article 1, topic 3: 'Health & Safety Indicators'",
 		data-page="18")
 		Page18(
 			page!="{ 18 }",
@@ -297,7 +285,6 @@ Here's some documentation for this component.
 
 	#page-19(
 		bind:this!="{ page19 }",
-		data-description="chapter 5, article 1, topic 6: 'Emergency Preparedness and Response'",
 		data-page="19")
 		Page19(
 			page!="{ 19 }",
@@ -306,7 +293,6 @@ Here's some documentation for this component.
 
 	#page-20(
 		bind:this!="{ page20 }",
-		data-description="chapter 5, article 1, topic 9: 'Release Prevention'",
 		data-page="20")
 		Page20(
 			page!="{ 20 }",
@@ -315,7 +301,6 @@ Here's some documentation for this component.
 
 	#page-21(
 		bind:this!="{ page21 }",
-		data-description="chapter 6, 'Our People'",
 		data-page="21")
 		Page21(
 			page!="{ 21 }",
@@ -324,7 +309,6 @@ Here's some documentation for this component.
 
 	#page-22(
 		bind:this!="{ page22 }",
-		data-description="chapter 6, 'Our People'",
 		data-page="22")
 		Page22(
 			page!="{ 22 }",
@@ -333,7 +317,6 @@ Here's some documentation for this component.
 
 	#page-23(
 		bind:this!="{ page23 }",
-		data-description="chapter 7, 'Customers & Communities'",
 		data-page="23")
 		Page23(
 			page!="{ 23 }",
@@ -342,7 +325,6 @@ Here's some documentation for this component.
 
 	#page-24(
 		bind:this!="{ page24 }",
-		data-description="chapter 7, article 2: 'Customers'",
 		data-page="24")
 		Page24(
 			page!="{ 24 }",
@@ -351,7 +333,6 @@ Here's some documentation for this component.
 
 	#page-25(
 		bind:this!="{ page25 }",
-		data-description="chapter 8, 'Governance & Ethics'",
 		data-page="25")
 		Page25(
 			page!="{ 25 }",
@@ -360,7 +341,6 @@ Here's some documentation for this component.
 
 	#page-26(
 		bind:this!="{ page26 }",
-		data-description="chapter 8, article 4 'Policy Section'",
 		data-page="26")
 		Page26(
 			page!="{ 26 }",
@@ -368,11 +348,18 @@ Here's some documentation for this component.
 			{edition})
 
 	#page-27(
-		bind:this!="{ appendix1 }",
-		data-description="Appendix, article 1 'Use of SASB and GRI Standards'",
+		bind:this!="{ page27 }",
 		data-page="27")
-		Appendix1(
+		Page27(
 			page!="{ 27 }",
+			{doc},
+			{edition})
+
+	#page-28(
+		bind:this!="{ page28 }",
+		data-page="28")
+		Appendix1(
+			page!="{ 28 }",
 			{doc},
 			{edition})
 </template>

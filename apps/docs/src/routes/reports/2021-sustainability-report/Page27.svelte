@@ -19,6 +19,23 @@
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
+
+	const policies = [
+		"Workplace Safety and Health Policy",
+		"Drug Testing/Substance Abuse Policy",
+		"Driving Safety Policy",
+		"Anti-Harassment & Non-Discriminatory Policy",
+		"Harassment Free Workplace",
+		"Telecommuting Policy",
+		"Energy Management Policy",
+		"Code of Business Conduct and Ethics",
+		"Insider Trading Policy",
+		"Whistleblower Policy",
+		"Anti-Corruption Policy",
+		"Foreign Corrupt Practices Act Training",
+		"Unconscious Bias Training",
+		"Sexual Harassment Training",
+	];
 </script>
 
 <template lang="pug">
@@ -36,17 +53,20 @@
 				section
 					.mb-2
 						ArticleHeading(
-							articleNumber!="{ 2 }",
-							articleTitle!="Customers",
-							chapterNumber!="{ 7 }",
+							articleNumber!="{ 4 }",
+							articleTitle!="Policy Section",
+							chapterNumber!="{ 8 }",
 							page!="{ page }")
 						//- content
 					.mb-8.prose.prose-sm.prose-slate
-						p.mt-0 At Zenith Energy, we put a premium on the needs of our customers to ensure that our services align with their goals. We support a diverse and sustainable customer base by providing reliable service and timely communications to support our customer goals. In 2021, we made progress towards the major infrastructure changes to our Portland Terminal to respond to the growing demand from refiners and the Portland community transition to renewable fuel.
+						p.mt-0 Zenith Energy has the following policies and training programs, which guide our employees every day:
+						ul.px-3
+							+each('policies as policy')
+								li {  policy  }
 
 			section
 				//- image
-				.bg-slate-200.rounded-sm.text-xs.flex.justify-center.items-center(class="h-[400px]")
+				//-.bg-slate-200.rounded-sm.text-xs.flex.justify-center.items-center(class="h-[400px]")
 					.opacity-60.w-full.text-center.px-4 [ image: portland ]
 
 		ContentPageFooter

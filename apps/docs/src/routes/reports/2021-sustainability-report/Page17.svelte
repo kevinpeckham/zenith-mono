@@ -4,59 +4,18 @@
 	import ChapterHeading from "$atoms/ChapterHeading.svelte";
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
-	import IconAndText from "$atoms/IconAndText.svelte";
 	import Main from "$atoms/Main.svelte";
 	import TopicHeading from "$atoms/TopicHeading.svelte";
-	import TopicSubheading from "$atoms/TopicSubheading.svelte";
 	import { midnight, PageLayout } from "lj-svelte-ui";
 	//-import { BubbleGraphic } from "lj-svelte-ui";
 	import { PieChart } from "lj-svelte-ui";
 
 	// store
 	import { colors } from "lj-svelte-ui";
-	import { init } from "svelte/internal";
 	// props
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
-
-	interface Initiative {
-		icon: string;
-		heading: string;
-		text: string;
-		bullets?: string[];
-	}
-	const initiatives = [
-		{
-			icon: "icon",
-			heading: "Industrial Hygiene Exposure Assessments",
-			text: "Conducted Industrial Hygiene Exposure Assessments for noise and light at all U.S. terminals to understand exposure levels and confirmed that employees have access and are using correct PPE for the required job",
-		},
-		{
-			icon: "icon",
-			heading: "SMARTPLAN™ HSER Plans Digital Repository",
-			text: "Uploaded all regulatory and response plans into a digital platform to streamline and customize our regulatory plans and preparedness program",
-		},
-		{
-			icon: "icon",
-			heading: "Fire Contingency Planning",
-			text: "",
-			bullets: [
-				"Completed Fire Department Capability Surveys for each location to catalogue capabilities of local fire response services and identify procedures that Zenith Energy must implement to fill gaps.",
-				"Developed a fire prevention plan to define how terminals would prevent fires from occurring and what resources were needed to contain fires.",
-				"Created Fire Tactics Pre-Plans on a tank-by-tank basis for proper offensive and defensive fire fighting tactics should a fire occur at our facilities.",
-			],
-		},
-	];
-
-	const transformations = [
-		"Regulatory plans stored and managed in SmartPlan Software. This allows for streamlined plan maintenance, secure access to regulatory plans while offsite and stakeholder access to update our plans 24/7.",
-		"HSER Policies and Procedures are managed within a SharePoint site repository allowing for quick access to all policies and procedures across the organization.",
-		"For workforce safety and compliance management our team has digitized our entire program using SiteDocs Safety Management Software.  This allows for increased visibility of potential incidents and reporting, digital form completion, safety document management, worker certifications and training.",
-		"Our incident management tool for all-hazards emergency response is Incident Action Plan (IAP) Software.  The tool employs integrated forms and processes for management of an incident throughout all stages of an event by facilitating the flow of information throughout the organization to manage major incidents comprehensively and efficiently.",
-		"Veriforce Software is used for contractor safety management and operator qualifications. This supply chain risk and compliance management tool facilitates risk management, data collection, and verification of contractors including U.S. Department of Transportation (DOT) regulated activities.",
-		"Our Lone Worker Program utilizes SafeSignal to monitor personnel while working alone after hours and enhance workforce safety.",
-	];
 </script>
 
 <template lang="pug">
@@ -68,66 +27,54 @@
 
 		//- Main
 		Main
+			ChapterHeading(
+				chapterNumber!="{ 5 }",
+				chapterTitle!="Health, Safety, Environment & Quality",
+				page!="{ page }")
+
+			ArticleHeading(
+				articleNumber!="{ 1 }",
+				articleTitle!="Workforce Health & Safety",
+				chapterNumber!="{ 5 }",
+				page!="{ page }")
+
 			.prose.prose-sm.prose-slate.relative.mb-6.grid.max-w-none.grid-cols-2.gap-8.pb-4.leading-normal(
 				class="border-richBlack/40")
-				//- left column
 				div
-					//- leading
-					TopicHeading(
-						articleNumber!="{ 1 }",
-						chapterNumber!="{ 5 }",
-						page!="{ page }",
-						topicNumber!="{ 1 }",
-						topicTitle!="Leading Initiatives")
-					//- content
-					div
-						p.mt-0 Every year, Zenith Energy selects three initiatives to continue to propel our health and safety program to the forefront of the industry while not detracting the necessary attention from the day-to-day operations.
+					p.mt-0 Zenith Energy recognizes the importance of Health, Safety, Environment and Quality and the impact that it has on our business, employees, and surrounding environments in which we operate. Our culture of Health & Safety places employees at the core of day-to-day operations and the center of our vision for the future. We are committed to high standards for Health, Safety, and Environmental practices. Our Vision is to have zero recordable injuries, zero regulatory citations, zero product quality incidents, and zero reportable spills. We work every day to make this goal a reality, achieve full compliance with regulatory and corporate standards, and seek continuous improvement.
+					p To fulfill our commitments, we have implemented specific programs designed to prevent and mitigate safety incidents. Since beginning operations in 2017, Zenith Energy has established a team of experts to address topics ranging from environmental management to site assessments and emergency response.
+					p To monitor our progress, we have tracked metrics such as the number of first aid cases per year, medical treatment cases, total recordable incident rate (TRIR), and restricted work and lost time cases every year since 2019.
 
-						.mb-2
-							TopicSubheading 2021 HSE Initiatives
+				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-6
+					.prose.prose-sm.w-full
+						//- quote
+						.bg-antiFlash.order-1.grid.grid-cols-2.place-content-center.place-items-center.gap-4.rounded-md.px-4.py-4.font-normal.leading-normal
+							.mb-2
+								.text-26.mb-1 300%
+								.text-13.italic.leading-snug
+									div increase in training
+									div hours year over year
+							.mb-2
+								.text-26.mb-1 3,842
+								.text-13.italic.leading-snug
+									div EH&amp;S training
+									div hours in 2021
 
-						//- Icon & Text
-						+each('initiatives as initiative')
-							+if('initiative.text')
-								IconAndText
-									svelte:fragment(slot="icon") icon
-									svelte:fragment(slot="heading")
-										span {  initiative.heading  }
-									svelte:fragment(slot="text") {  initiative.text  }
-								+else
-									IconAndText
-										svelte:fragment(slot="icon") icon
-										svelte:fragment(slot="heading")
-											div {  initiative.heading  }
-											ul.font-normal.pl-3(class="text-[13.5px]")
-												+each('initiative.bullets as bullet')
-													li.mb-2 {  bullet  }
-
-				div
-					//- leading
-					TopicHeading(
-						articleNumber!="{ 1 }",
-						chapterNumber!="{ 5 }",
-						page!="{ page }",
-						topicNumber!="{ 2 }",
-						topicTitle!="Digital Transformation")
-					//- content
-					div
-						p.mt-0 We have advanced our health and safety preparedness, processes and procedures through investments in digital platforms for management of multiple plan types for every U.S. terminal. Our digital software and management programs include:
-
-						//- Icon & Text
-						ul.pl-3
-							+each('transformations as transformation')
-								li.mb-2(class="text-[13.5px]") {  transformation  }
-
-						//- trailing paragraph
-						p With increased innovation, digitization, and automation, we are able to improve our financial and HSE outcomes, while building a highly trained, agile workforce and culture of safety.
+					.bg-antiFlash.w-full.rounded-md.px-4.pt-4
+						//- bubble graphic
+						.text-richBlack.grid.grid-cols-1.gap-1
+							.order-1
+								//-PieChart(
+									primaryColor!="{ $colors.yellowGreen }",
+									secondaryColor!="rgba(255, 255, 255, 1)",
+									value!="{ 29 }",
+									width!="{ 145 }")
+								.grid.grid-cols-1.place-content-center.place-items-center
+									img.px-12(
+										height="312",
+										src="/images/award-medallion.webp",
+										width="312")
+							.text-13.order-0.font-medium We have won numerous awards for our strict standards for the safe handling and shipment of products such as the Safe Handling Award from CN Railroad for the past three years (2019-2021)
 
 		ContentPageFooter
 </template>
-
-<style>
-	::marker {
-		color: #7cc022;
-	}
-</style>

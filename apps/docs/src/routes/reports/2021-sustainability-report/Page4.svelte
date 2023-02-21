@@ -1,13 +1,11 @@
 <script lang="ts">
 	// components
 	import ArticleHeading from "$atoms/ArticleHeading.svelte";
-	import ArticleSubheading from "$atoms/ArticleSubheading.svelte";
 	import ChapterHeading from "$atoms/ChapterHeading.svelte";
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
 	import Main from "$atoms/Main.svelte";
 	import { PageLayout } from "lj-svelte-ui";
-	import { PictureCloudinary } from "lj-svelte-ui";
 
 	// props
 	export let doc: Document;
@@ -24,41 +22,46 @@
 
 		//- Main
 		Main
-			//-ChapterHeading(
+			ChapterHeading(
 				chapterNumber!="{ 1 }",
-				chapterTitle!="Message from the CEO")
+				chapterTitle!="Message from the CEO",
+				page!="{ page }")
 
 			ArticleHeading(
-				articleNumber!="{ 2 }",
-				articleTitle!="Commitment to ESG",
+				articleNumber!="{ 1 }",
+				articleTitle!="CEO Letter",
 				chapterNumber!="{ 1 }",
 				page!="{ page }")
 
 			//- text columns
-			.relative.grid.grid-cols-2.gap-8.leading-normal
-				//- col left
-				.prose.prose-sm.prose-slate
-					ArticleSubheading
-						| Dedicated to the sustainability of our environment, business, and community.
+			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal
+				p.font-medium.tracking-tight
+					span Welcome to Zenith Energy’s Second Annual Sustainability Report:&nbsp;
+					span.italic Storage for the New Energy Age
 
-					p Zenith Energy is committed to protecting the health and safety of our employees and community and minimizing the impact of our operations on the environment. We work every day to responsibly operate our terminals and protect the environment and the products we handle and store. Through rigorous trainings, extensive emergency response planning, and investments in our infrastructure, Zenith Energy is helping to ensure that our business is sustainable and well-prepared to serve our communities for years to come.
+				p Sustainability is a core of Zenith Energy’s mission and values through contributing to the new energy future. In publishing our 2021 Sustainability Report we highlight our progress to date and our path forward to fulfilling our commitment to progress in our sustainability journey and positioning ourselves for the new energy future.
 
-					p In 2021, Zenith Energy built on our commitments established in our inaugural Sustainability Report, further solidifying our Environmental, Social and Governance (ESG) practices. Advancements include establishing sustainability targets, including commitments to reduce greenhouse gas (GHG) emissions to support a low carbon future, as well as taking steps toward greater transparency, including adopting the Sustainability Accounting Standards Board (SASB) framework for reporting.
+				p Reflecting on 2021 and beyond, four key concepts support our confidence in Zenith Energy’s current and long-term success in operating a sustainable business and positioning for the new energy age.
 
-					p We also created a number of new ESG policies and procedures in our Employee Handbook to facilitate employee contribution to our ESG targets to better reflect our commitments to ensure all our associates and partners are aligned with our values.
+				//- Bullets
+				ul.text-13.pl-3
+					li Zenith’s investment in the low carbon future and strategic terminal locations
+					li Zenith’s ability to support energy reliability and security
+					li Our commitment to safety and operational excellence
+					li Achievements in Environmental Stewardship
 
-				//- col right
-				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-4
-					.prose.prose-sm.order-1
-						blockquote.text-kellyGreen.order-1.italic.leading-relaxed
-							.mb-4 “Sustainability is not only a core part of our values but is essential to the future of our business. Our focus to build more sustainable practices provides us with our social license to operate. We are committed to institutionalizing sustainability into all areas of our business and improving our performance based on best practices.”
-							.font-normal - Jeff Armstrong, CEO
+				p In 2021, we continued our investment in our renewable fuels campaign at our Portland terminal that includes biodiesel and renewable diesel blending services, additional tankage for renewable fuel storage, renewables rail service and an offloading station to deliver renewable diesel to the Pacific Northwest. Our Portland terminal serves as a critical entry point and logistics hub for distribution of renewable diesel to the Greater Portland area. Zenith is also moving forward with new projects to bring Sustainable Aviation Fuel (SAF) into the west coast via Portland.
 
-					//- image
-					.order-0
-						PictureCloudinary(
-							alt="3:2",
-							aspectRatio!="3:2",
-							sourceUrl="https://res.cloudinary.com/dn0pqjjbq/image/upload/v1676225453/image-from-rawpixel-id-31304-jpeg_edhqqk.jpg")
+				p To-date, we have invested $12.8 million into this campaign and plan to finish out the investment within the next year as we work toward our goal of converting over 96-percent of the fuel stored at our Portland facility to renewable fuels. These assets are critical in supporting the end-use of renewable fuels, which will ultimately support the reduction of carbon emissions globally.
+
+				p Our sustainability initiatives extend beyond the renewable solutions we provide to our customers, and we are making enhancements to our operations to reduce our carbon impacts through infrastructure improvements to reduce our terminals emissions, development of decarbonization strategies using a third-party consultant, and use of carbon offset credits.
+
+				p Our commitment to innovation to meet the demands of a clean energy future while supporting energy reliability and security has positioned Zenith Energy as an industry leader. This commitment begins with our leadership team and is upheld across every level of our organization. Our decisions are driven by our core values – safety first, environmental stewardship, customer driven and operational excellence, which are guided under a strong governance and oversight program.
+
+				p As you read this report, you will not only learn about our approach to sustainability, you will also gain insight into Zenith Energy’s performance in the areas of environment, energy transition, health and safety, our employees, our customers, community involvement, and governance during the 2021 calendar year. Thank you for your interest in Zenith Energy and, on behalf of our dedicated team, we look forward to continuing to share our progress with you.
+
+				.font-semibold Jeff Armstrong
+				div Chief Executive Officer
+
 		ContentPageFooter
 </template>

@@ -67,79 +67,62 @@
 			{page})
 
 		//- Main
-		Main(classes="h-[890px]")
-			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.grid.grid-cols-2.gap-8.leading-normal.h-full(
+		Main
+			.prose.prose-sm.prose-slate.relative.mb-6.grid.max-w-none.grid-cols-2.gap-8.pb-4.leading-normal(
 				class="border-richBlack/40")
 				//- left column
-				.grid.grid-cols-1.place-content-between.h-full
+				div
+					//- leading
+					TopicHeading(
+						articleNumber!="{ 1 }",
+						chapterNumber!="{ 5 }",
+						page!="{ page }",
+						topicNumber!="{ 1 }",
+						topicTitle!="Leading Initiatives")
+					//- content
 					div
-						//- leading
-						TopicHeading(
-							articleNumber!="{ 1 }",
-							chapterNumber!="{ 5 }",
-							page!="{ page }",
-							topicNumber!="{ 3 }",
-							topicTitle!="Health &amp; Safety Indicator")
+						p.mt-0 Every year, Zenith Energy selects three initiatives to continue to propel our health and safety program to the forefront of the industry while not detracting the necessary attention from the day-to-day operations.
 
-						//- content
-						.mb-4
-							p.mt-0 We created an internal workforce H&amp;S indicator for Zenith Energy, the Incident Composite Rate (ICR), to better represent the factors that could attribute to workplace incidents. The ICR considers employee tenure with the company because an increased rate of error can be expected from employees within the first stages of employment and when there is a high turnover rate. The maximum score for the ICR is 100, representing work successfully performed every time, and our annual target is 90.
+						.mb-2
+							TopicSubheading 2021 HSE Initiatives
 
-						//- content
-						.mb-4
-							p.mt-0 Some of the best safety improvement ideas come from employees. We encourage our employees with ideas, concerns, or suggestions for improved safety in the workplace to raise them and bring them to the attention of the Health, Safety, Environmental, and Regulatory Manager. Reports and concerns about workplace safety issues may be made anonymously if the employee wishes and all reports can be made without fear of reprisal.
+						//- Icon & Text
+						+each('initiatives as initiative')
+							+if('initiative.text')
+								IconAndText
+									svelte:fragment(slot="icon") icon
+									svelte:fragment(slot="heading")
+										span {  initiative.heading  }
+									svelte:fragment(slot="text") {  initiative.text  }
+								+else
+									IconAndText
+										svelte:fragment(slot="icon") icon
+										svelte:fragment(slot="heading")
+											div {  initiative.heading  }
+											ul.font-normal.pl-3(class="text-[13.5px]")
+												+each('initiative.bullets as bullet')
+													li.mb-2 {  bullet  }
 
-					//- shunt to the bottom
-					.self-end
-						.italic.text-13.opacity-80 Meeting ICR Goals
-						//- graphic
-						.bg-slate-200.w-full.h-48.flex.justify-center.items-center
-							.text-white [ Graphic Placeholder ]
-							//-  During 2021, all our terminals had industrial hygiene surveys conducted.
-
-							//PieChart(
-								{colors},
-								{midnight},
-								{transformations})
-
-				//-right column
-
-				.grid.grid-cols-1.place-content-between.h-full
+				div
+					//- leading
+					TopicHeading(
+						articleNumber!="{ 1 }",
+						chapterNumber!="{ 5 }",
+						page!="{ page }",
+						topicNumber!="{ 2 }",
+						topicTitle!="Digital Transformation")
+					//- content
 					div
-						//- leading
-						TopicHeading(
-							articleNumber!="{ 1 }",
-							chapterNumber!="{ 5 }",
-							page!="{ page }",
-							topicNumber!="{ 4 }",
-							topicTitle!="Contractor Safety")
+						p.mt-0 We have advanced our health and safety preparedness, processes and procedures through investments in digital platforms for management of multiple plan types for every U.S. terminal. Our digital software and management programs include:
 
-						//- content
-						.mb-6
-							p.mt-0.mb-6 We created an internal workforce H&amp;S indicator for Zenith Energy, the Incident Composite Rate (ICR), to better represent the factors that could attribute to workplace incidents. The ICR considers employee tenure with the company because an increased rate of error can be expected from employees within the first stages of employment and when there is a high turnover rate. The maximum score for the ICR is 100, representing work successfully performed every time, and our annual target is 90.
+						//- Icon & Text
+						ul.pl-3
+							+each('transformations as transformation')
+								li.mb-2(class="text-[13.5px]") {  transformation  }
 
-						//- leading
-						TopicHeading(
-							articleNumber!="{ 1 }",
-							chapterNumber!="{ 5 }",
-							page!="{ page }",
-							topicNumber!="{ 5 }",
-							topicTitle!="Safety in Our Facilities")
+						//- trailing paragraph
+						p With increased innovation, digitization, and automation, we are able to improve our financial and HSE outcomes, while building a highly trained, agile workforce and culture of safety.
 
-						//- content
-						.mb-6
-							p.mt-0 As part of our comprehensive Health, Safety, Environmental, and Regulatory (HSER) framework we have implemented specific safety measures and procedures at all our facilities ranging from training of site management and staff to monitoring and inspections of facilities, and incident related protocols. Frontline supervisors must complete a verification to evaluate on-site personnel safety performance and utilize reporting channels in place for disclosure of unsafe conditions including an anonymous hotline. There are onsite safety personnel at our four largest terminals, rigorous on-site inspections at all our facilities, and routine incident response drills and training of our operations teams. In an effort to continuously improve, Zenith Energy conducts annual assessments and has digitized our plan management.
-
-					//- shunt to the bottom
-					div
-						.italic.text-13.opacity-80 Meeting ICR Goals
-						//- Placeholder
-						.bg-slate-200.w-full.h-48.flex.justify-center.items-center
-							.text-white [ Graphic Placeholder ]
-							//PieChart(
-								{colors},
-								{midnight},
-								{transformations})
 		ContentPageFooter
 </template>
 

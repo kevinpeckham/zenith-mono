@@ -31,9 +31,16 @@
 				headingsArray = [...headingsArray, el];
 			}
 		});
-
-		console.log(headingsArray);
 	});
+
+	function limit(num: number, upper: number, lower?: number) {
+		const derivedLower = lower || 0;
+		if (num < upper && num > derivedLower) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 </script>
 
 <template lang="pug">
@@ -51,31 +58,32 @@
 
 			//- text columns
 			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal
-			+each('headingsArray as index')
+			+each('headingsArray as heading, index')
 				//- index
-				+if('index.dataset.index != "0"')
-					.grid.grid-cols-3.text-slate-800.leading-normal(
+				+if('heading.dataset.index != "0" && limit(index, 31)')
+					.mt-0.grid.grid-cols-3.text-slate-800(
 						style="grid-template-columns: 1fr 12fr 1fr"
-						class!="{(index.dataset.type == 'chapter') ? 'font-semibold mt-3 text-15' : ''}"
-						class!="{(index.dataset.type == 'article') ? 'font-normal my-0 text-13' : ''}"
-						class!="{(index.dataset.type == 'topic') ? 'font-normal my-0 text-13' : ''}"
+						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index == '1') ? 'font-semibold text-15 mb-2' : ''}"
+						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index != '1') ? 'font-semibold mt-6 mb-2 text-15' : ''}"
+						class!="{(heading.dataset.type == 'article') ? 'font-normal my-0 text-14 mb-1' : ''}"
+						class!="{(heading.dataset.type == 'topic') ? 'font-normal my-0 text-14 mb-1' : ''}"
 						)
 
 						//- if topic
-						+if('index.dataset.type == "topic"')
-							.opacity-80 {  index.dataset.index  }
-							a.opacity-80.text-12.italic(href!="#{index.id}") {  index.dataset.title  }
-							.font-normal.text-13.opacity-80 {	index.dataset.page  }
+						+if('heading.dataset.type == "topic"')
+							.text-14.opacity-80 {  heading.dataset.index  }
+							a.opacity-80.text-14(href!="#{heading.id}") {  heading.dataset.title  }
+							.font-normal.text-14.opacity-80 {	heading.dataset.page  }
 
-							+elseif('index.dataset.type == "article"')
-								.opacity-80 {  index.dataset.index  }
-								a.opacity-100.font-semibold.text-12.text-kellyGreen(href!="#{index.id}") {  index.dataset.title  }
-								.font-normal.text-13.opacity-80 {	index.dataset.page  }
+							+elseif('heading.dataset.type == "article"')
+								.text-14.opacity-80 {  heading.dataset.index  }
+								a.opacity-100.font-medium.text-14.text-kellyGreen(href!="#{heading.id}") {  heading.dataset.title  }
+								.font-normal.text-14.opacity-80 {	heading.dataset.page  }
 
-							+elseif('index.dataset.type == "chapter"')
-								.text-14 {  index.dataset.index  }.0
-								a(href!="#{index.id}") {  index.dataset.title  }
-								.font-extrabold.text-13.opacity-80 {	index.dataset.page  }
+							+elseif('heading.dataset.type == "chapter"')
+								.text-15 {  heading.dataset.index  }.0
+								a(href!="#{heading.id}") {  heading.dataset.title  }
+								.font-extrabold.text-15.opacity-80 {	heading.dataset.page  }
 
 		ContentPageFooter
 </template>

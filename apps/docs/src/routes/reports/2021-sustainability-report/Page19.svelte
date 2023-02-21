@@ -68,50 +68,78 @@
 
 		//- Main
 		Main(classes="h-[890px]")
-			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.columns-2.gap-8.leading-normal.h-full(
+			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.grid.grid-cols-2.gap-8.leading-normal.h-full(
 				class="border-richBlack/40")
-				// section
-				section
-					.mb-2
+				//- left column
+				.grid.grid-cols-1.place-content-between.h-full
+					div
+						//- leading
 						TopicHeading(
 							articleNumber!="{ 1 }",
 							chapterNumber!="{ 5 }",
 							page!="{ page }",
-							topicNumber!="{ 6 }",
-							topicTitle!="Emergency Preparedness & Response")
+							topicNumber!="{ 3 }",
+							topicTitle!="Health &amp; Safety Indicator")
+
 						//- content
-					.mb-4
-						p.mt-0 As part of our HSER framework and overall risk management we continue to drive continuous improvement in our ability to manage our emergency preparedness and response. The safety and environmental sustainability of our operations extends beyond our facilities. We see the communities where we operate as key partners, and we are investing in their health and well-being.
-						p We have local Emergency Response Teams to ensure that any incident is managed in a timely and professional manner. Our local teams are supported by our Crisis Response Team (CRT) and our Crisis Management Support Team (CMST). Through our All-Hazards Response Plan, we define our approach to emergency response to major incidents. Our plan includes a response checklist, an overview of potential crisis situations, a notification chart, a list of the Crisis Management Support Team and Crisis Response Team, and a summary of the emergency levels. The categorization of the level of an emergency is based on several factors, including type of incident, injuries, damages, regulatory reporting, offsite impact, and media coverage. The more serious an incident and the broader its potential impact, the higher the level and the more extensive the response procedures.
+						.mb-4
+							p.mt-0 We created an internal workforce H&amp;S indicator for Zenith Energy, the Incident Composite Rate (ICR), to better represent the factors that could attribute to workplace incidents. The ICR considers employee tenure with the company because an increased rate of error can be expected from employees within the first stages of employment and when there is a high turnover rate. The maximum score for the ICR is 100, representing work successfully performed every time, and our annual target is 90.
 
-				section
-					.mb-2
+						//- content
+						.mb-4
+							p.mt-0 Some of the best safety improvement ideas come from employees. We encourage our employees with ideas, concerns, or suggestions for improved safety in the workplace to raise them and bring them to the attention of the Health, Safety, Environmental, and Regulatory Manager. Reports and concerns about workplace safety issues may be made anonymously if the employee wishes and all reports can be made without fear of reprisal.
+
+					//- shunt to the bottom
+					.self-end
+						.italic.text-13.opacity-80 Meeting ICR Goals
+						//- graphic
+						.bg-slate-200.w-full.h-48.flex.justify-center.items-center
+							.text-white [ Graphic Placeholder ]
+							//-  During 2021, all our terminals had industrial hygiene surveys conducted.
+
+							//PieChart(
+								{colors},
+								{midnight},
+								{transformations})
+
+				//-right column
+
+				.grid.grid-cols-1.place-content-between.h-full
+					div
+						//- leading
 						TopicHeading(
 							articleNumber!="{ 1 }",
 							chapterNumber!="{ 5 }",
 							page!="{ page }",
-							topicNumber!="{ 7 }",
-							topicTitle!="Coordination with First Responders")
-					.mb-4
-						p.mt-0 To better prepare personnel and practice our emergency response, we regularly conduct worst case discharge and spill drill emergency preparedness exercises with first responders. By conducting these exercises, employees and emergency responders are not only able to test their equipment, personnel, and procedures, but also to meet and work together face-to-face prior to an actual emergency.
-						p We are currently implementing individualized fire plans for each of our diverse tanks to ensure both our employees and local first responders have all the information they need to address an emergency swiftly and effectively. These plans include details such as what could burn, how much fire retardant foam would be required to put out a fire, escalation prevention, and defensive roadmaps to prevent additional assets from igniting.
+							topicNumber!="{ 4 }",
+							topicTitle!="Contractor Safety")
 
-					.mb-2
+						//- content
+						.mb-6
+							p.mt-0.mb-6 We created an internal workforce H&amp;S indicator for Zenith Energy, the Incident Composite Rate (ICR), to better represent the factors that could attribute to workplace incidents. The ICR considers employee tenure with the company because an increased rate of error can be expected from employees within the first stages of employment and when there is a high turnover rate. The maximum score for the ICR is 100, representing work successfully performed every time, and our annual target is 90.
+
+						//- leading
 						TopicHeading(
 							articleNumber!="{ 1 }",
 							chapterNumber!="{ 5 }",
 							page!="{ page }",
-							topicNumber!="{ 8 }",
-							topicTitle!="Asset Integrity Management")
-					.mb-4
-						p.mt-0 Terminals are a vital component of our nation's supply chain, providing critical logistics services that spur trade both within the United States and with overseas markets. We work to provide safe, reliable, and efficient terminal operations. Our primary tool is our asset integrity management program. This program includes an assessment of operational risks related to our assets and development programs, policies, and procedures to address those risks.
-						p We share a collective goal with our customers to operate at the highest standards possible. We comply with all environmental, regulatory, and legislative requirements to ensure safe, clean, and efficient storage and handling of vital bulk liquid products within the footprint of our terminals. To ensure quality of service for our customers we conduct routine inspections for storage tank integrity using a third-party contractor for certified inspection services and superior knowledge of industry requirements. We document our integrity testing, inspections, and maintenance throughout the life of our tanks.
+							topicNumber!="{ 5 }",
+							topicTitle!="Safety in Our Facilities")
 
-						//- image
-						.bg-slate-200.rounded-sm.text-xs.flex.justify-center.items-center(
-							class="h-[260px]")
-							.opacity-60 [ image]
+						//- content
+						.mb-6
+							p.mt-0 As part of our comprehensive Health, Safety, Environmental, and Regulatory (HSER) framework we have implemented specific safety measures and procedures at all our facilities ranging from training of site management and staff to monitoring and inspections of facilities, and incident related protocols. Frontline supervisors must complete a verification to evaluate on-site personnel safety performance and utilize reporting channels in place for disclosure of unsafe conditions including an anonymous hotline. There are onsite safety personnel at our four largest terminals, rigorous on-site inspections at all our facilities, and routine incident response drills and training of our operations teams. In an effort to continuously improve, Zenith Energy conducts annual assessments and has digitized our plan management.
 
+					//- shunt to the bottom
+					div
+						.italic.text-13.opacity-80 Meeting ICR Goals
+						//- Placeholder
+						.bg-slate-200.w-full.h-48.flex.justify-center.items-center
+							.text-white [ Graphic Placeholder ]
+							//PieChart(
+								{colors},
+								{midnight},
+								{transformations})
 		ContentPageFooter
 </template>
 

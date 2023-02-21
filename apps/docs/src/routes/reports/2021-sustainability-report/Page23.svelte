@@ -1,32 +1,38 @@
 <script lang="ts">
-	import { integerToArray } from "lj-svelte-ui";
 	// components
 	import ArticleHeading from "$atoms/ArticleHeading.svelte";
 	import ChapterHeading from "$atoms/ChapterHeading.svelte";
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
+	import IconAndText from "$atoms/IconAndText.svelte";
 	import Main from "$atoms/Main.svelte";
 	import TopicHeading from "$atoms/TopicHeading.svelte";
+	import TopicSubheading from "$atoms/TopicSubheading.svelte";
 	import { midnight, PageLayout } from "lj-svelte-ui";
 	//-import { BubbleGraphic } from "lj-svelte-ui";
 	import { PieChart } from "lj-svelte-ui";
 
 	// store
 	import { colors } from "lj-svelte-ui";
+	import { init } from "svelte/internal";
 	// props
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
 
-	const charities = [
-		//Nature Conservancy, Ozanam Family Shelter, Easter Seals, Volunteer for America, PHFS Homeless Shelter, Easter Seals, Gulf Coast Food Bank and Toys for Tots.
-		"Nature Conservancy",
-		"Ozanam Family Shelter",
-		"Easter Seals",
-		"Volunteer for America",
-		"PHFS Homeless Shelter",
-		"Gulf Coast Food Bank",
-		"Toys for Tots",
+	interface Initiative {
+		icon: string;
+		heading: string;
+		text: string;
+		bullets?: string[];
+	}
+
+	const goals = [
+		"Increase the proportion of female employees to align with the industry average",
+		"Partner with different organizations to bring more females in as operators",
+		"Create Employee Resource Groups (ERGs) for minorities and underrepresented workers",
+		"Continue to ensure equal compensation for men and women in each employee category",
+		"Work to disclose the percent of spending on minority and women owned businesses",
 	];
 </script>
 
@@ -38,53 +44,39 @@
 			{page})
 
 		//- Main
-		Main
-			ChapterHeading(
-				chapterNumber!="{ 7 }",
-				chapterTitle!="Customers & Community",
-				page!="{ page }")
-
-			.relative.mb-2.grid.max-w-none.grid-cols-2.gap-8.pb-0.leading-normal(
+		Main(classes="h-[890px]")
+			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.grid.grid-cols-2.gap-8.leading-normal.h-full(
 				class="border-richBlack/40")
-				section.mt-0.pt-0
-					//- left column
-					ArticleHeading(
-						classes="mb-0",
-						articleNumber!="{ 1 }",
-						articleTitle!="Community Engagement",
-						chapterNumber!="{ 7 }",
-						page!="{ page }")
+				// section
+				section
+					.mb-2
+						TopicHeading(
+							articleNumber!="{ 2 }",
+							chapterNumber!="{ 6 }",
+							page!="{ page }",
+							topicNumber!="{ 2 }",
+							topicTitle!="Diversity, Equity, &amp; Inclusion")
+						//- content
+					.mb-8
+						p.mt-0 Zenith Energy is committed to supporting workplace diversity and inclusion by committing to equal employment opportunities. To promote a wide array of diversity amongst our employees and to support all religious preferences, we have zero tolerance for any form of discrimination and provide flexible leave.
+						p Creating a gender-inclusive world is important to us and essential to advancing progress and opportunities, particularly within the energy sector. We have made it our priority to achieve greater gender balance throughout our company and this starts at the top of our organization.
+						p To achieve our diversity goals, we also focus on increasing the diversity of our suppliers and examine the gender pay equity ratio annually across Zenith Energy, which is shared with our Board of Directors. Each year our compensation committee and board of directors conduct a review of the gender pay equity ratio at Zenith Energy to ensure women and men are compensated equally.
+						p Currently at Zenith Energy, 42 percent of the leadership team is comprised of women and there is a multi-generational workforce. Age, gender, and other indicators of diversity are tracked internally as a Human Resources practice. Zenith Energy set a goal for 2021 to increase the proportion of female employees to at least meet industry averages.
 
-					//- text content
-					.prose.prose-sm.prose-slate.mb-6.leading-normal
-						div
-							p.mt-0 Zenith Energy recognizes that community engagement is a critical component to create long-lasting partnerships with the communities in which we operate. Since our founding in 2014, we have focused on ways we can contribute to the communities where we are located.
-
-							p More recently, Zenith Energy has engaged in holiday gift giving for low-income families and food drives. Every year, a company-wide volunteer day is organized in which all employees are encouraged to participate.
-
-							p Zenith Energy is committed to strictly adhering to all information sharing requirements to provide local communities necessary information as required by local, state, and federal regulations. Zenith Energy takes any opportunity possible to educate their local communities and external stakeholders through public open houses and meetings to build trust and foster collaboration. Zenith Energy is fully in support of community-based safety programs to help educate and protect individuals who live in their neighboring communities. To engage with these communities, emergency contingency situations have been discussed with the local communities through spill drills with the area first responders and community representatives as well as the hosting of local fire departments for facility overview training on how to jointly respond to a potential incident.
-
-							p Looking forward, our goal is to engage with all Zenith Energy communities at least annually through philanthropic and educational outreach, including but not limited to conducting community-based safety and awareness campaigns in all communities where Zenith Energy is active.
-
-							p Additionally, we aim to track the number of local hires as a result of workforce training programs sponsored by Zenith Energy.
-
-				aside
-					.mb-6
-						.mb-2.font-medium.text-14 Charitable Giving
-						.w-full.grid.grid-cols-2.gap-4
-							+each('charities as charity, index')
-								.bg-slate-200.rounded-sm.h-24.text-center.font-medium.flex.justify-center.items-center.text-12(
-									class="bg-yellowGreen/20") {  charity  }
-
-					.bg-antiFlash.w-full.rounded-md.px-4.py-4
-						.text-richBlack.grid.grid-cols-1.gap-4
-							.order-1
-								PieChart(
-									primaryColor!="{ $colors.yellowGreen }",
-									secondaryColor!="rgba(255, 255, 255, 1)",
-									value!="{ 77 }",
-									width!="{ 145 }")
-							.text-13.order-0.font-medium 77% of new hires in 2021 were local to community
+				section
+					//- image
+					.bg-slate-200.rounded-sm.text-xs.flex.justify-center.items-center(class="h-[260px]")
+						.opacity-60.w-full.text-center.px-4 [ to do: enhance graphic ]
+							ul.px-3.text-left
+								+each('goals as goal')
+									li {  goal  }
+									// section
 
 		ContentPageFooter
 </template>
+
+<style>
+	::marker {
+		color: #7cc022;
+	}
+</style>

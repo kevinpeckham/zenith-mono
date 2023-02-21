@@ -8,7 +8,6 @@
 	import { PageLayout } from "lj-svelte-ui";
 	import TerminalsMap from "$atoms/TerminalsMap.svelte";
 	import TerminalsOverview from "$atoms/TerminalsOverview.svelte";
-	import TopicHeading from "$atoms/TopicHeading.svelte";
 
 	// props
 	export let doc: Document;
@@ -25,81 +24,27 @@
 
 		//- Main
 		Main
-			.grid.grid-cols-1.gap-2
-				//- section 1
-				section
-					.mb-4
-						ArticleHeading(
-							articleNumber!="{ 2 }",
-							articleTitle!="Awards & Recognition",
-							chapterNumber!="{ 3 }",
-							page!="{ page }")
-					div
-						TopicHeading(
-							articleNumber!="{ 2 }",
-							chapterNumber!="{ 3 }",
-							page!="{ page }",
-							topicNumber!="{ 1 }",
-							topicTitle!="Energy Star Award")
+			ChapterHeading(
+				chapterNumber!="{ 3 }",
+				chapterTitle!="About Zenith Energy & This Report",
+				page!="{ page }")
 
-					//- text columns
-					.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-snug
-						p We are pleased that our ESG efforts are being recognized. Our Portland Terminal achieved the U.S. Environmental Protection Agency (EPA) ENERGY STAR Challenge for Industry. This challenge recognizes that we achieved at least a 10-percent reduction in energy intensity within 5 years. Zenith Energy achieved a 64-percent reduction in energy intensity in two years. We are incredibly proud of all of our teams that worked together to make this significant reduction and achievement.
+			ArticleHeading(
+				articleNumber!="{ 1 }",
+				articleTitle!="About Us",
+				chapterNumber!="{ 3 }",
+				page!="{ page }")
 
-						.w-full.bg-slate-100.px-4.py-3
-							.mb-4 [graphic placeholder]
-							div Zenith Energy Portland Terminals reduced energy intensity at the Portland site by 64% in 2 years
-				//- section 2
-				section
-					.mb-2
-						ArticleHeading(
-							articleNumber!="{ 3 }",
-							articleTitle!="Mission, Vision, & Values",
-							chapterNumber!="{ 3 }",
-							page!="{ page }")
+			//- text columns
+			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal
+				p Zenith Energy is a world-class midstream company that owns and operates over 32 million barrels of renewable fuels, crude oil, petroleum products, chemicals and vegetable oil storage across North America, Europe, and Latin America through its subsidiaries Zenith International and Zenith U.S. The Company's focus is on building a sustainable, independent liquid storage terminals business that provides safe and reliable solutions for its customers in the years to come. The entities share a common management team and headquarters in Houston, as well as core values, including Safety First and Environmental Protection.
 
-					//- text columns
-					.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-snug
-						//- topic 1
-						.mb-4
-							TopicHeading(
-								articleNumber!="{ 3 }",
-								chapterNumber!="{ 3 }",
-								page!="{ page }",
-								topicNumber!="{ 1 }",
-								topicTitle!="Safety First")
-							p Our ability to create jobs for hardworking men and women is why we all come to work every day, and we are committed to keeping the environment, our neighbors, and our teams safe across our operations. We continue to invest in infrastructure modernization to ensure our terminals are equipped with best-in-class safety equipment and conduct regular trainings that protect our employees, contractors, and the communities where we operate. Zenith Energy is recognized within the industry as a model for safe operations.
-							p Zenith Energy is an active member of the International Liquid Terminals Association (ILTA) and we have won numerous awards for our strict standards for the safe handling and shipment of products. Our goal is zero incidents, period.
-
-						//- topic 2
-						.mb-4
-							TopicHeading(
-								articleNumber!="{ 3 }",
-								chapterNumber!="{ 3 }",
-								page!="{ page }",
-								topicNumber!="{ 2 }",
-								topicTitle!="Environmental Stewardship")
-							p Zenith Energy works every day to responsibly operate our terminals to protect the environment and the products we handle and store. We understand the growing role of alternative energy sources in our society, and we see ourselves as a partner for customers in this transition. For example, we are overhauling our Portland terminal by converting approximately 500,000 barrels of storage capacity for renewable fuels, developing a safe, economic rail solution for renewable fuels and constructing a new offloading station to deliver renewable diesel across the Pacific Northwest.
-
-						//- topic 3
-						.mb-4
-							TopicHeading(
-								articleNumber!="{ 3 }",
-								chapterNumber!="{ 3 }",
-								page!="{ page }",
-								topicNumber!="{ 3 }",
-								topicTitle!="Customer Driven")
-							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
-
-						//- topic 4
-						.mb-4
-							TopicHeading(
-								articleNumber!="{ 3 }",
-								chapterNumber!="{ 3 }",
-								page!="{ page }",
-								topicNumber!="{ 4 }",
-								topicTitle!="Operational Excellence")
-							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
+			div
+				TerminalsMap
+			div
+				TerminalsOverview(
+					liquids!="{ ['Bio Diesel', 'Ethanol', 'Renewable Diesel', 'Traditional Fuel', 'Vegetable Oils'] }",
+					stats!="{ [[22, 'Terminals in North America'], [17, 'Million barrels of storage capacity']] }")
 
 		ContentPageFooter
 </template>

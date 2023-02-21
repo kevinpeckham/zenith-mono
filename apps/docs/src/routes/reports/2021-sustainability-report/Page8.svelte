@@ -14,44 +14,6 @@
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
-
-	/*
-	Workforce Health & Safety
-	Operational Excellence (Operational Safety, Emergency Preparedness & Response)
-	Environmental Compliance
-	Diversity and Inclusion
-	Air Quality
-	Greenhouse Gas (GHG) Emissions
-	Community Engagement
-	ESG Board Oversight
-*/
-
-	const topics = [
-		{
-			name: "Workforce Health & Safety",
-		},
-		{
-			name: "Operational Excellence",
-		},
-		{
-			name: "Environmental Compliance",
-		},
-		{
-			name: "Diversity & Inclusion",
-		},
-		{
-			name: "Air Quality",
-		},
-		{
-			name: "Greenhouse Gas (GHG) Emissions",
-		},
-		{
-			name: "Community Engagement",
-		},
-		{
-			name: "ESG Board Oversight",
-		},
-	];
 </script>
 
 <template lang="pug">
@@ -63,50 +25,81 @@
 
 		//- Main
 		Main
-			.grid.grid-cols-1.gap-6
+			.grid.grid-cols-1.gap-2
+				//- section 1
+				section
+					.mb-4
+						ArticleHeading(
+							articleNumber!="{ 2 }",
+							articleTitle!="Awards & Recognition",
+							chapterNumber!="{ 3 }",
+							page!="{ page }")
+					div
+						TopicHeading(
+							articleNumber!="{ 2 }",
+							chapterNumber!="{ 3 }",
+							page!="{ page }",
+							topicNumber!="{ 1 }",
+							topicTitle!="Energy Star Award")
+
+					//- text columns
+					.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-snug
+						p We are pleased that our ESG efforts are being recognized. Our Portland Terminal achieved the U.S. Environmental Protection Agency (EPA) ENERGY STAR Challenge for Industry. This challenge recognizes that we achieved at least a 10-percent reduction in energy intensity within 5 years. Zenith Energy achieved a 64-percent reduction in energy intensity in two years. We are incredibly proud of all of our teams that worked together to make this significant reduction and achievement.
+
+						.w-full.bg-slate-100.px-4.py-3
+							.mb-4 [graphic placeholder]
+							div Zenith Energy Portland Terminals reduced energy intensity at the Portland site by 64% in 2 years
+				//- section 2
 				section
 					.mb-2
 						ArticleHeading(
-							articleNumber!="{ 4 }",
-							articleTitle!="About This Report",
+							articleNumber!="{ 3 }",
+							articleTitle!="Mission, Vision, & Values",
 							chapterNumber!="{ 3 }",
 							page!="{ page }")
 
 					//- text columns
 					.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-snug
-						p Our second annual Sustainability Report covers Zenith Energy’s performance in the areas of environment, energy transition, health and safety, our employees, our customers, community involvement, and governance during the 2021 calendar year.
-						p We’ve included an ESG Content Index at the end of this report, which references each standard as it’s reported and cross-references the SASB Standards with supplemental Global Reporting Initiative’s (GRI) standards.
-
 						//- topic 1
 						.mb-4
 							TopicHeading(
-								articleNumber!="{ 4 }",
+								articleNumber!="{ 3 }",
 								chapterNumber!="{ 3 }",
 								page!="{ page }",
 								topicNumber!="{ 1 }",
-								topicTitle!="Forward-Looking Statements")
-							p Information in this report may involve outlook, expectations, beliefs, plans, intentions, strategies, or other statements regarding the future, which are forward-looking statements. These forward-looking statements involve risks and uncertainties. All forward-looking statements included in this report are based upon information available to Zenith Energy as of the date of the report, and Zenith Energy assumes no obligation to update any such forward-looking statements. The statements in this report are not guarantees of future performance and actions, and actual results could differ materially from current expectations. Numerous factors could cause or contribute to such differences.
+								topicTitle!="Safety First")
+							p Our ability to create jobs for hardworking men and women is why we all come to work every day, and we are committed to keeping the environment, our neighbors, and our teams safe across our operations. We continue to invest in infrastructure modernization to ensure our terminals are equipped with best-in-class safety equipment and conduct regular trainings that protect our employees, contractors, and the communities where we operate. Zenith Energy is recognized within the industry as a model for safe operations.
+							p Zenith Energy is an active member of the International Liquid Terminals Association (ILTA) and we have won numerous awards for our strict standards for the safe handling and shipment of products. Our goal is zero incidents, period.
 
 						//- topic 2
 						.mb-4
 							TopicHeading(
-								articleNumber!="{ 4 }",
+								articleNumber!="{ 3 }",
 								chapterNumber!="{ 3 }",
 								page!="{ page }",
 								topicNumber!="{ 2 }",
-								topicTitle!="Materiality Assessment & Reporting")
-							p Our reporting process began in 2021 with a materiality assessment conducted by a third-party consultant to support the development of our sustainability reporting initiatives and long-term sustainability strategy. The materiality assessment considered 29 topics within environmental, social, and governance categories. Our assessment captured the perspectives of stakeholders via surveys, proxy research, and an internal review exercise. The assessments findings were validated by the Zenith Energy Leadership Team to then become the foundation for our sustainability reporting. Our goal is to ensure our approach to sustainability is aligned with our internal business strategy and will resonate with our stakeholders as the landscape continues to evolve.
-							p The Zenith Energy Leadership Team continues to evaluate our reporting process, methods, and metrics to ensure we are providing efficient and relevant information to our stakeholders – our team members, customers, investors, communities, and the environments we work in. The materiality assessment identified eight priorities based on shared importance determined by both internal respondents and external benchmarks. These topics represent our highest ESG priorities and are the focus of this report and our over-arching company-wide goals.
+								topicTitle!="Environmental Stewardship")
+							p Zenith Energy works every day to responsibly operate our terminals to protect the environment and the products we handle and store. We understand the growing role of alternative energy sources in our society, and we see ourselves as a partner for customers in this transition. For example, we are overhauling our Portland terminal by converting approximately 500,000 barrels of storage capacity for renewable fuels, developing a safe, economic rail solution for renewable fuels and constructing a new offloading station to deliver renewable diesel across the Pacific Northwest.
 
-				aside
-					figure
-						h5.text-15.mb-4.border-t.pt-6.font-semibold(class="border-richBlack/20") Zenith's Material Priority Topics
-						.grid.grid-cols-4.gap-4
-							+each('topics as topic')
-								.w-full.rounded-md.px-4.py-3(class="bg-kellyGreen/20")
-									.text-11.mb-2.grid.h-8.w-8.grid-cols-1.place-content-center.text-center(
-										class="bg-white/80 text-slate-600/80") [icon]
-									.text-13.font-medium.leading-tight {  topic.name  }
+						//- topic 3
+						.mb-4
+							TopicHeading(
+								articleNumber!="{ 3 }",
+								chapterNumber!="{ 3 }",
+								page!="{ page }",
+								topicNumber!="{ 3 }",
+								topicTitle!="Customer Driven")
+							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
+
+						//- topic 4
+						.mb-4
+							TopicHeading(
+								articleNumber!="{ 3 }",
+								chapterNumber!="{ 3 }",
+								page!="{ page }",
+								topicNumber!="{ 4 }",
+								topicTitle!="Operational Excellence")
+							p We are committed to providing high quality service for our customers. If we give you our word, we promise to keep it. We share a collective goal of protecting our environment and optimizing safety as well as striving to operate at the highest standard possible to continue to be the partner of choice for our customers. Unlike other operators, Zenith Energy Terminals is a third-party terminal company that does not market, store, or own petroleum product. Because of this, we do not compete with our customers and are able to put their storage needs first.
 
 		ContentPageFooter
 </template>
