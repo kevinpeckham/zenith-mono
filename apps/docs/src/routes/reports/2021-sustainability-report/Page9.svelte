@@ -4,6 +4,7 @@
 	import ChapterHeading from "$atoms/ChapterHeading.svelte";
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
+	import IconFeather from "$atoms/IconFeather.svelte";
 	import Main from "$atoms/Main.svelte";
 	import { PageLayout } from "lj-svelte-ui";
 	import TerminalsMap from "$atoms/TerminalsMap.svelte";
@@ -29,27 +30,35 @@
 	const topics = [
 		{
 			name: "Workforce Health & Safety",
+			icon: "heart",
 		},
 		{
 			name: "Operational Excellence",
+			icon: "star",
 		},
 		{
 			name: "Environmental Compliance",
+			icon: "globe",
 		},
 		{
 			name: "Diversity & Inclusion",
+			customIcon: true,
 		},
 		{
 			name: "Air Quality",
+			icon: "wind",
 		},
 		{
 			name: "Greenhouse Gas (GHG) Emissions",
+			icon: "alert",
 		},
 		{
 			name: "Community Engagement",
+			icon: "user",
 		},
 		{
 			name: "ESG Board Oversight",
+			icon: "clipboard",
 		},
 	];
 </script>
@@ -105,7 +114,11 @@
 							+each('topics as topic')
 								.w-full.rounded-md.px-4.py-3(class="bg-kellyGreen/20")
 									.text-11.mb-2.grid.h-8.w-8.grid-cols-1.place-content-center.text-center(
-										class="bg-white/80 text-slate-600/80") [icon]
+										class=" text-richBlack/80")
+										+if('topic.customIcon')
+											.text-20.tracking-wider DEI
+											+else
+												IconFeather(icon!="{ (topic.icon) ? topic.icon : 'star' }")
 									.text-13.font-medium.leading-tight {  topic.name  }
 
 		ContentPageFooter

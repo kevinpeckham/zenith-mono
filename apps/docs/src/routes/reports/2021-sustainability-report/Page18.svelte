@@ -5,6 +5,7 @@
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
 	import IconAndText from "$atoms/IconAndText.svelte";
+	import IconFeather from "$atoms/IconFeather.svelte";
 	import Main from "$atoms/Main.svelte";
 	import TopicHeading from "$atoms/TopicHeading.svelte";
 	import TopicSubheading from "$atoms/TopicSubheading.svelte";
@@ -28,17 +29,17 @@
 	}
 	const initiatives = [
 		{
-			icon: "icon",
+			icon: "thermometer",
 			heading: "Industrial Hygiene Exposure Assessments",
 			text: "Conducted Industrial Hygiene Exposure Assessments for noise and light at all U.S. terminals to understand exposure levels and confirmed that employees have access and are using correct PPE for the required job",
 		},
 		{
-			icon: "icon",
+			icon: "database",
 			heading: "SMARTPLAN™ HSER Plans Digital Repository",
 			text: "Uploaded all regulatory and response plans into a digital platform to streamline and customize our regulatory plans and preparedness program",
 		},
 		{
-			icon: "icon",
+			icon: "zap",
 			heading: "Fire Contingency Planning",
 			text: "",
 			bullets: [
@@ -83,20 +84,22 @@
 					div
 						p.mt-0 Every year, Zenith Energy selects three initiatives to continue to propel our health and safety program to the forefront of the industry while not detracting the necessary attention from the day-to-day operations.
 
-						.mb-2
+						.mb-4
 							TopicSubheading 2021 HSE Initiatives
 
 						//- Icon & Text
 						+each('initiatives as initiative')
 							+if('initiative.text')
 								IconAndText
-									svelte:fragment(slot="icon") icon
+									svelte:fragment(slot="icon")
+										IconFeather(icon!="{ initiative.icon }")
 									svelte:fragment(slot="heading")
 										span {  initiative.heading  }
 									svelte:fragment(slot="text") {  initiative.text  }
 								+else
 									IconAndText
-										svelte:fragment(slot="icon") icon
+										svelte:fragment(slot="icon")
+											IconFeather(icon!="{ initiative.icon }")
 										svelte:fragment(slot="heading")
 											div {  initiative.heading  }
 											ul.font-normal.pl-3(class="text-[13.5px]")

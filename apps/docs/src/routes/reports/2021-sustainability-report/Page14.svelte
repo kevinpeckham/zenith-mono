@@ -8,7 +8,7 @@
 	import TopicHeading from "$atoms/TopicHeading.svelte";
 	import { midnight, PageLayout } from "lj-svelte-ui";
 	//-import { BubbleGraphic } from "lj-svelte-ui";
-	import { PieChart } from "lj-svelte-ui";
+	import { PieChart, PictureCloudinary } from "lj-svelte-ui";
 
 	// store
 	import { colors } from "lj-svelte-ui";
@@ -27,7 +27,7 @@
 
 		//- Main
 		Main
-			section.prose.prose-sm.prose-slate.relative.mb-8.grid.max-w-none.grid-cols-2.gap-8.leading-normal
+			section.prose.prose-sm.prose-slate.relative.mb-4.grid.max-w-none.grid-cols-2.gap-8.leading-normal
 				div
 					TopicHeading(
 						articleNumber!="{ 2 }",
@@ -60,7 +60,10 @@
 					p Zenith Energy has strong oversight of environmental issues, with the Vice President of Health, Safety, Environmental, and Regulatory (HSER) being a member of the Zenith Energy Executive Leadership team. Managing climate-related risks and opportunities and our carbon footprint is a focus for our entire organization, and we have integrated our approach to sustainability into our strategic planning, which includes evaluating how climate-related issues impact our business strategy and financial planning. This integration entails commencing a Task Force on Climate-Related Financial Disclosure (TCFD) scenario analysis regarding our exposure to climate-related transition and physical risks, which will be used in developing our strategic plan and will be detailed in our next Sustainability Report.
 
 			.grid.w-full.grid-cols-1.place-content-center.place-items-center.bg-slate-100
-				.text-12.h-72 [graphic]
+				//.text-12.h-72 [graphic]
+				PictureCloudinary(
+					aspectRatio!="400:180",
+					sourceUrl="https://res.cloudinary.com/dn0pqjjbq/image/upload/v1677009115/Bantry-Bay-01-Retouched-KPjpg_srihkt.jpg")
 
 		ContentPageFooter
 </template>
