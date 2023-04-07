@@ -48,7 +48,9 @@
 					liquids!="{ ['Bio Diesel', 'Ethanol', 'Renewable Diesel', 'Traditional Fuel', 'Vegetable Oils'] }",
 					stats!="{ [[22, 'terminals in North America'], [17, 'million barrels of storage capacity']] }")
 			.relative
-				TerminalsMap
+				//-TerminalsMap
+				.mt-8(class="bg-[#E3EDD7]")
+					img.pb-16(src="/images/map.webp")
 				.absolute.bottom-0.left-0.text-white.w-full
 					svg.w-full.h-auto(
 						role="img",
