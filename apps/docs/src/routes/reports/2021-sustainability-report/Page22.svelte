@@ -4,24 +4,40 @@
 	import ChapterHeading from "$atoms/ChapterHeading.svelte";
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
+	import IconAndText from "$atoms/IconAndText.svelte";
 	import Main from "$atoms/Main.svelte";
 	import TopicHeading from "$atoms/TopicHeading.svelte";
+	import TopicSubheading from "$atoms/TopicSubheading.svelte";
 	import { midnight, PageLayout } from "lj-svelte-ui";
-	//-import { BubbleGraphic } from "lj-svelte-ui";
+	import SidebarCallout from "$atoms/SidebarCallout.svelte";
 	import { PieChart } from "lj-svelte-ui";
 
 	// store
 	import { colors } from "lj-svelte-ui";
+	import { init } from "svelte/internal";
+
 	// props
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
 
-	const tableData = [
-		["", "Females", "Males", "Total"],
-		["Employees in position of VP or above", "5", "7", "12"],
-		["Employees ages 30-50 in positions of VP or above", "1", "3", "4"],
-		["Employees ages 50 + in positions of VP or above", "4", "4", "8"],
+	// set page context
+	import { setContext } from "svelte";
+	setContext("page", page);
+
+	interface Initiative {
+		icon: string;
+		heading: string;
+		text: string;
+		bullets?: string[];
+	}
+
+	const goals = [
+		"Zero safety incidents",
+		"Zero regulatory citations",
+		"Zero product quality incidents",
+		"Zero reportable spills",
+		"Zero injuries",
 	];
 </script>
 
@@ -33,93 +49,54 @@
 			{page})
 
 		//- Main
-		Main
-			ChapterHeading(
-				chapterNumber!="{ 6 }",
-				chapterTitle!="Our People",
-				page!="{ page }")
-
-			.relative.mb-2.grid.max-w-none.grid-cols-2.gap-8.pb-0.leading-normal(
+		Main(classes="h-[890px]")
+			//-top
+			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.grid.grid-cols-2.gap-8.leading-normal(
 				class="border-richBlack/40")
-				section.mt-0.pt-0
-					//- left column
-					ArticleHeading(
-						classes="mb-0",
-						articleNumber!="{ 1 }",
-						articleTitle!="Employee Engagement",
-						chapterNumber!="{ 6 }",
-						page!="{ page }")
-
-					//- text content
-					.prose.prose-sm.prose-slate.mb-6.leading-normal
-						p.mt-0 We believe our employees are the biggest contributor to our success. As such, we are committed to ensuring that our employees find value in their work and are being supported to succeed.
-						p In 2021, we conducted three employee engagement and employee satisfaction surveys at our terminals in Ohio, using in house resources, with response rates ranging from 87-percent to 100-percent.
-
-					.grid.grid-cols-1.gap-6
-						//- stat
-						.w-full.rounded-md.px-4.pt-4(class="bg-yellowGreen/10")
-							//- bubble graphic
-							.text-richBlack.grid.grid-cols-2.gap-4
-								.order-1
-									PieChart(
-										primaryColor!="{ $colors.yellowGreen }",
-										secondaryColor!="rgba(255, 255, 255, 1)",
-										value!="{ 42 }",
-										width!="{ 145 }")
-								.text-13.order-0.font-medium 42 percent female representation in Executive Team management, U.S. workforce
-
-						//- stat
-						.w-full.rounded-md.px-4.pt-4(class="bg-yellowGreen/10")
-							//- bubble graphic
-							.text-richBlack.grid.grid-cols-2.gap-4
-								.order-1
-									PieChart(
-										primaryColor!="{ $colors.yellowGreen }",
-										secondaryColor!="rgba(255, 255, 255, 1)",
-										value!="{ 28 }",
-										width!="{ 145 }")
-								.text-13.order-0.font-medium
-									div Percentage of minorities
-									div in the U.S. workforce
-
-				//- right column
-				section.mt-0.pt-0
-					//- left column
-					ArticleHeading(
-						classes="mb-0",
-						articleNumber!="{ 2 }",
-						articleTitle!="Human Capital",
-						chapterNumber!="{ 6 }",
-						page!="{ page }")
-
-					//- text content
-					.prose.prose-sm.prose-slate.leading-normal
-						p.mt-0.mb-4 From the beginning we understood that our people are the key to our success. We believe that a dedicated, diverse team makes our company stronger and more adaptable to changing market conditions. Our focus is on recruiting the talent that shares our commitment to integrity and operational excellence across our business functions.
-
+				section
 					.mb-2
 						TopicHeading(
-							articleNumber!="{ 2 }",
-							chapterNumber!="{ 6 }",
-							hideNumber!="{ true }",
+							articleNumber!="{ 1 }",
+							chapterNumber!="{ 5 }",
+							page!="{ page }",
+							topicNumber!="{ 9 }",
+							topicTitle!="Release Prevention")
+						//- content
+					.mb-0
+						p.mt-0 Given the nature of our business activities, the prevention of product releases is a top priority for us. Zenith Energy facilities have spill prevention systems to minimize leaks and spills and are constantly being upgraded to newer, more efficient technology. Modern infrastructure and efficient workflows, combined with preventive maintenance programs, serve to minimize the risk of spills at our terminals.
+						p As we continue to acquire new operations, our team is investing heavily in these assets to implement enhanced methods of operating to bring all terminals in line with our rigorous release prevention and safety programs.
+						p.m-0 If product leaks nevertheless occur, we are prepared to stop the leak as quickly as possible and recover the product quickly and effectively. We continuously analyze and improve our programs based on real time analysis and trends. We do this through surveys of containment areas to identify opportunities to ensure volume capture and improve structural integrity. When possible, we create filtration facilities to prevent discharge of runoff water to rivers and streams. Additionally, we identify methods to protect stormwater vaults from turbidity and other pollutants.
+
+				section
+					.mb-2
+						TopicHeading(
+							articleNumber!="{ 1 }",
+							chapterNumber!="{ 5 }",
 							page!="{ page }",
 							topicNumber!="{ 10 }",
-							topicTitle!="Supporting our People: Training & Development")
+							topicTitle!="Infrastructure Modernization")
 
-						.prose.prose-sm.prose-slate
-							p.mt-0.mb-4 We care about our employees’ futures. That is why we have invested our time into creating a mentor program and internship program to stimulate professional development. Our professional development program includes mentoring and learning management training.
-							p All personnel are required to receive training specific to their job responsibilities. Upon completion of training, each employee shall receive an acknowledgment or certificate that they have successfully completed each different type of training. It is of utmost importance that our employees understand and comply with our values and commitments. As part of this, they are required to adhere to the Code of Conduct, Anti-Harassment & Non-Discrimination Policy, New Employee safety Orientation and Driving Safety Policy.
+					p Zenith Energy continues to invest in infrastructure modernization to ensure their terminals are equipped with industry leading safety equipment as well as regularly conducting safety trainings, seeking to protect their employees, contractors, and the communities in which they operate.
+					p.mb-0 Investments in infrastructure including spending over $1.5 million to upgrade truck racks and rebuild a dock at our Mobile, Alabama location to modernize and expand our throughput capabilities at that location.
 
-			.grid.grid-cols-1.mt-8
-				figure.grid.w-full.w-full.grid-cols-1.place-content-start.place-items-start.gap-4.rounded-md.px-0.font-normal.leading-normal
-					.text-13.mb-4.w-full
-						table.border-richBlack.w-full.border-collapse.overflow-hidden.rounded-sm
-							+each('tableData as row, rowIndex')
-								tr
-									+each('row as cell, cellIndex')
-										+if('rowIndex == 0')
-											//- header row
-											td.bg-yellowGreen.text-14.border.px-2.font-medium.text-white(class="py-[6px]") {  cell  }
-											+else
-												td.bg-antiFlash.text-richBlack.border.px-2.py-2 {  cell  }
-		ContentPageFooter
+					.mt-10
+						SidebarCallout
+							ul
+								+each('goals as goal')
+									li.text-17.text-white.pl-4.mb-5.leading-none.text-16(class="marker:text-maize") {  goal  }
+			//- bottom
+		.absolute.bottom-0.w-full
+			img.w-full.h-auto.mt-0.relative.translate-y-32(
+				alt="zenith worker",
+				height="200",
+				src="/images/zenith-woker.webp",
+				width="300")
+		.text-white
+			ContentPageFooter
 </template>
+
+<style>
+	ul {
+		list-style-type: "\2714";
+	}
+</style>

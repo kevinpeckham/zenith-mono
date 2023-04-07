@@ -4,35 +4,28 @@
 	import ChapterHeading from "$atoms/ChapterHeading.svelte";
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
-	import IconAndText from "$atoms/IconAndText.svelte";
 	import Main from "$atoms/Main.svelte";
 	import TopicHeading from "$atoms/TopicHeading.svelte";
-	import TopicSubheading from "$atoms/TopicSubheading.svelte";
 	import { midnight, PageLayout } from "lj-svelte-ui";
 	//-import { BubbleGraphic } from "lj-svelte-ui";
 	import { PieChart } from "lj-svelte-ui";
 
 	// store
 	import { colors } from "lj-svelte-ui";
-	import { init } from "svelte/internal";
 	// props
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
 
-	interface Initiative {
-		icon: string;
-		heading: string;
-		text: string;
-		bullets?: string[];
-	}
+	// set page context
+	import { setContext } from "svelte";
+	setContext("page", page);
 
-	const goals = [
-		"Increase the proportion of female employees to align with the industry average",
-		"Partner with different organizations to bring more females in as operators",
-		"Create Employee Resource Groups (ERGs) for minorities and underrepresented workers",
-		"Continue to ensure equal compensation for men and women in each employee category",
-		"Work to disclose the percent of spending on minority and women owned businesses",
+	const tableData = [
+		["", "Females", "Males", "Total"],
+		["Employees in position of VP or above", "5", "7", "12"],
+		["Employees ages 30-50 in positions of VP or above", "1", "3", "4"],
+		["Employees ages 50 + in positions of VP or above", "4", "4", "8"],
 	];
 </script>
 
@@ -44,39 +37,93 @@
 			{page})
 
 		//- Main
-		Main(classes="h-[890px]")
-			.prose.prose-sm.prose-slate.relative.mb-6.max-w-none.grid.grid-cols-2.gap-8.leading-normal.h-full(
+		Main
+			ChapterHeading(
+				chapterNumber!="{ 6 }",
+				chapterTitle!="Our People",
+				page!="{ page }")
+
+			.relative.mb-2.grid.max-w-none.grid-cols-2.gap-8.pb-0.leading-normal(
 				class="border-richBlack/40")
-				// section
-				section
+				section.mt-0.pt-0
+					//- left column
+					ArticleHeading(
+						classes="!mb-4",
+						articleNumber!="{ 1 }",
+						articleTitle!="Employee Engagement",
+						chapterNumber!="{ 6 }",
+						page!="{ page }")
+
+					//- text content
+					.prose.prose-sm.prose-slate.mt-0.mb-6.leading-normal
+						p.mt-0 We believe our employees are the biggest contributor to our success. As such, we are committed to ensuring that our employees find value in their work and are being supported to succeed.
+						p In 2021, we conducted three employee engagement and employee satisfaction surveys at our terminals in Ohio, using in house resources, with response rates ranging from 87-percent to 100-percent.
+
+					.grid.grid-cols-1.gap-6
+						//- stat
+						.w-full.rounded-md.px-4.pt-4(class="bg-yellowGreen/10")
+							//- bubble graphic
+							.text-richBlack.grid.grid-cols-2.gap-4
+								.order-1
+									PieChart(
+										primaryColor!="{ $colors.yellowGreen }",
+										secondaryColor!="rgba(255, 255, 255, 1)",
+										value!="{ 42 }",
+										width!="{ 145 }")
+								.text-13.order-0.font-medium 42 percent female representation in Executive Team management, U.S. workforce
+
+						//- stat
+						.w-full.rounded-md.px-4.pt-4(class="bg-yellowGreen/10")
+							//- bubble graphic
+							.text-richBlack.grid.grid-cols-2.gap-4
+								.order-1
+									PieChart(
+										primaryColor!="{ $colors.yellowGreen }",
+										secondaryColor!="rgba(255, 255, 255, 1)",
+										value!="{ 28 }",
+										width!="{ 145 }")
+								.text-13.order-0.font-medium
+									div Percentage of minorities
+									div in the U.S. workforce
+
+				//- right column
+				section.mt-0.pt-0
+					//- left column
+					ArticleHeading(
+						classes="!mb-4",
+						articleNumber!="{ 2 }",
+						articleTitle!="Human Capital",
+						chapterNumber!="{ 6 }",
+						page!="{ page }")
+
+					//- text content
+					.prose.prose-sm.prose-slate.leading-normal
+						p.mt-0.mb-4 From the beginning we understood that our people are the key to our success. We believe that a dedicated, diverse team makes our company stronger and more adaptable to changing market conditions. Our focus is on recruiting the talent that shares our commitment to integrity and operational excellence across our business functions.
+
 					.mb-2
 						TopicHeading(
 							articleNumber!="{ 2 }",
 							chapterNumber!="{ 6 }",
+							hideNumber!="{ true }",
 							page!="{ page }",
-							topicNumber!="{ 2 }",
-							topicTitle!="Diversity, Equity, &amp; Inclusion")
-						//- content
-					.mb-8
-						p.mt-0 Zenith Energy is committed to supporting workplace diversity and inclusion by committing to equal employment opportunities. To promote a wide array of diversity amongst our employees and to support all religious preferences, we have zero tolerance for any form of discrimination and provide flexible leave.
-						p Creating a gender-inclusive world is important to us and essential to advancing progress and opportunities, particularly within the energy sector. We have made it our priority to achieve greater gender balance throughout our company and this starts at the top of our organization.
-						p To achieve our diversity goals, we also focus on increasing the diversity of our suppliers and examine the gender pay equity ratio annually across Zenith Energy, which is shared with our Board of Directors. Each year our compensation committee and board of directors conduct a review of the gender pay equity ratio at Zenith Energy to ensure women and men are compensated equally.
-						p Currently at Zenith Energy, 42 percent of the leadership team is comprised of women and there is a multi-generational workforce. Age, gender, and other indicators of diversity are tracked internally as a Human Resources practice. Zenith Energy set a goal for 2021 to increase the proportion of female employees to at least meet industry averages.
+							topicNumber!="{ 10 }",
+							topicTitle!="Supporting our People: Training & Development")
 
-				section
-					//- image
-					.bg-slate-200.rounded-sm.text-xs.flex.justify-center.items-center(class="h-[260px]")
-						.opacity-60.w-full.text-center.px-4 [ to do: enhance graphic ]
-							ul.px-3.text-left
-								+each('goals as goal')
-									li {  goal  }
-									// section
+						.prose.prose-sm.prose-slate
+							p.mt-0.mb-4 We care about our employees’ futures. That is why we have invested our time into creating a mentor program and internship program to stimulate professional development. Our professional development program includes mentoring and learning management training.
+							p All personnel are required to receive training specific to their job responsibilities. Upon completion of training, each employee shall receive an acknowledgment or certificate that they have successfully completed each different type of training. It is of utmost importance that our employees understand and comply with our values and commitments. As part of this, they are required to adhere to the Code of Conduct, Anti-Harassment & Non-Discrimination Policy, New Employee safety Orientation and Driving Safety Policy.
 
+			.grid.grid-cols-1.mt-8
+				figure.grid.w-full.w-full.grid-cols-1.place-content-start.place-items-start.gap-4.rounded-md.px-0.font-normal.leading-normal
+					.text-13.mb-4.w-full
+						table.border-richBlack.w-full.border-collapse.overflow-hidden.rounded-sm
+							+each('tableData as row, rowIndex')
+								tr
+									+each('row as cell, cellIndex')
+										+if('rowIndex == 0')
+											//- header row
+											td.bg-yellowGreen.text-14.border.px-2.font-medium.text-white(class="py-[6px]") {  cell  }
+											+else
+												td.bg-antiFlash.text-richBlack.border.px-2.py-2 {  cell  }
 		ContentPageFooter
 </template>
-
-<style>
-	::marker {
-		color: #7cc022;
-	}
-</style>

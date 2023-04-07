@@ -2,11 +2,10 @@
 @component
 Here's some documentation for this component.
 -->
-
 <script lang="ts">
 </script>
 
 <template lang="pug">
-	h5.mb-2.font-medium.italic
+	.mb-2.font-semibold.italic.text-14(class="text-richBlack/90")
 		slot
 </template>

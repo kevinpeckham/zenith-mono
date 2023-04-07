@@ -18,6 +18,10 @@
 	export let edition = "";
 	export let page = 0;
 
+	// set page context
+	import { setContext } from "svelte";
+	setContext("page", page);
+
 	const charities = [
 		//Nature Conservancy, Ozanam Family Shelter, Easter Seals, Volunteer for America, PHFS Homeless Shelter, Easter Seals, Gulf Coast Food Bank and Toys for Tots.
 		"Nature Conservancy",

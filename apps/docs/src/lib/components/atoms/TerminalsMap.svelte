@@ -2,13 +2,12 @@
 @component
 Here's some documentation for this component.
 -->
-
 <script lang="ts">
 </script>
 
 <template lang="pug">
-section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
-  .mt-8.flex.items-center.justify-center.py-4.pointer-events-none
+section#map.px-0.pb-0.w-full.rounded-sm.my-8(class="px-20 bg-kellyGreen/20")
+  .flex.items-center.justify-center.pt-8.pb-24.pointer-events-none
     .relative.w-full
       picture
         source(
@@ -36,7 +35,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:14%; left: 6%; transform:translate(0px, 0px);"
@@ -54,7 +53,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:32%; left: 85%; transform:translate(0px, 0px);"
@@ -72,7 +71,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:32.75%; left: 64.5%; transform:translate(0px, 0px);"
@@ -90,7 +89,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:33%; left: 87%; transform:translate(0px, 0px);"
@@ -108,7 +107,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:34%; left: 91%; transform:translate(0px, 0px);"
@@ -126,7 +125,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:35%; left: 73%; transform:translate(0px, 0px);"
@@ -144,7 +143,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
           .absolute.w-5.h-5.text-center.flex.items-center.justify-center.pointer-events-none.bg-neutral-200.rounded-full.transition-opacity.shadow(style="top:0.375rem; left:-0.875rem;")
             .number.text-xs(class="text-[#233343]") +2
@@ -168,7 +167,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:36.25%; left: 86%; transform:translate(0px, 0px);"
@@ -186,7 +185,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
           .absolute.w-5.h-5.text-center.flex.items-center.justify-center.pointer-events-none.bg-neutral-200.rounded-full.transition-opacity.shadow(style="top:0.375rem; left:-0.875rem;")
             .number.text-xs(class="text-[#233343]") +2
@@ -210,7 +209,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:37%; left: 82.25%; transform:translate(0px, 0px);"
@@ -228,7 +227,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:39%; left: 81%; transform:translate(0px, 0px);"
@@ -246,7 +245,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:40%; left: 37%; transform:translate(0px, 0px);"
@@ -264,7 +263,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:41.25%; left: 87%; transform:translate(0px, 0px);"
@@ -282,7 +281,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(-45deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:41.5%; left: 80.5%; transform:translate(0px, 0px);"
@@ -300,7 +299,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(135deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:50%; left: 89%; transform:translate(0px, 0px);"
@@ -318,7 +317,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(135deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:56%; left: 85%; transform:translate(0px, 0px);"
@@ -336,7 +335,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(135deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
           .absolute.w-5.h-5.text-center.flex.items-center.justify-center.pointer-events-none.bg-neutral-200.rounded-full.transition-opacity.shadow(style="top:-0.75rem; left:0.625rem;")
             .number.text-xs(class="text-[#233343]") +3
@@ -364,7 +363,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(135deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:60%; left: 79%; transform:translate(0px, 0px);"
@@ -382,7 +381,7 @@ section#map.px-0.pb-0.w-full.bg-neutral-300.rounded-sm(class="px-20")
           )
           .pin.relative.pointer-events-none.shadow.pointer-events-auto.border.border-white.rounded-t-full.rounded-br-full.w-full.h-full.transition-colors(
             style="transform:rotate(135deg);"
-            class="bg-[#6282d1] hover:bg-primary"
+            class="bg-kellyGreen hover:bg-primary"
             )
         dialog.pin-label.bg-white.pointer-events.none.opacity-0.absolute.py-1.px-2.transition-opacity.m-0.z-50(
           style="top:79.5%; left: 66.75%; transform:translate(0px, 0px);"

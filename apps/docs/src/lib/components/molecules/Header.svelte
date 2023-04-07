@@ -17,13 +17,13 @@ Displays document header.
 </script>
 
 <template lang="pug">
-	header.px-12.pt-8
+	//-header.px-12.pt-8
 		//- eyebrow
 		.mb-6.flex.justify-between
-			Eyebrow({doc})
+			//- Eyebrow({doc})
 
-			PageNumber(
-				page!="{ page }",
-				pageCount!="{ pageCount }")
+			//- PageNumber(
+			//- 	page!="{ page }",
+			//- 	pageCount!="{ pageCount }")
 		slot
 </template>

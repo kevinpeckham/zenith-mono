@@ -15,6 +15,10 @@
 	export let edition = "";
 	export let page = 0;
 
+	// set page context
+	import { setContext } from "svelte";
+	setContext("page", page);
+
 	// variables
 	let headingsNodeList: NodeListOf<Element>;
 	let headingsArray: HTMLElement[];
@@ -44,9 +48,9 @@
 </script>
 
 <template lang="pug">
-	PageLayout(classes!="font-sans !p-0 text-richBlack text-15 ")
+	PageLayout(classes!="!p-0 font-sans text-richBlack text-15 ")
 		//- Header
-		Header(
+		//-Header(
 			{doc},
 			{page})
 
@@ -57,33 +61,35 @@
 				chapterTitle!="Contents")
 
 			//- text columns
-			.prose.prose-sm.prose-slate.relative.max-w-none.columns-2.gap-8.leading-normal
+			.relative.max-w-none.columns-2.gap-8.leading-normal
 			+each('headingsArray as heading, index')
 				//- index
-				+if('heading.dataset.index != "0" && limit(index, 31)')
-					.mt-0.grid.grid-cols-3.text-slate-800(
-						style="grid-template-columns: 1fr 12fr 1fr"
-						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index == '1') ? 'font-semibold text-15 mb-2' : ''}"
-						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index != '1') ? 'font-semibold mt-6 mb-2 text-15' : ''}"
-						class!="{(heading.dataset.type == 'article') ? 'font-normal my-0 text-14 mb-1' : ''}"
-						class!="{(heading.dataset.type == 'topic') ? 'font-normal my-0 text-14 mb-1' : ''}"
+				+if('heading.dataset.index != "0" && limit(index, 80)')
+					.mt-0.grid.grid-cols-2.text-slate-800(
+						style="grid-template-columns: 12fr 1fr"
+						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index == '1') ? 'font-medium text-[14.5px] mb-1' : ''}"
+						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index != '1') ? 'font-medium mt-4 mb-1 text-[14.5px]' : ''}"
+						class!="{(heading.dataset.type == 'article') ? 'font-normal my-0 text-[13.5px] mb-1' : ''}"
+
 						)
 
 						//- if topic
-						+if('heading.dataset.type == "topic"')
-							.text-14.opacity-80 {  heading.dataset.index  }
+						//-+if('heading.dataset.type == "topic"')
+							//.text-14.opacity-80 {  heading.dataset.index  }
 							a.opacity-80.text-14(href!="#{heading.id}") {  heading.dataset.title  }
 							.font-normal.text-14.opacity-80 {	heading.dataset.page  }
 
-							+elseif('heading.dataset.type == "article"')
-								.text-14.opacity-80 {  heading.dataset.index  }
-								a.opacity-100.font-medium.text-14.text-kellyGreen(href!="#{heading.id}") {  heading.dataset.title  }
-								.font-normal.text-14.opacity-80 {	heading.dataset.page  }
+						+if('heading.dataset.type == "article"')
+							//.text-14.opacity-80 {  heading.dataset.index  }
+							a.opacity-80(href!="#{heading.id}") {  heading.dataset.title  }
+							.opacity-80 {	heading.dataset.page  }
 
 							+elseif('heading.dataset.type == "chapter"')
-								.text-15 {  heading.dataset.index  }.0
 								a(href!="#{heading.id}") {  heading.dataset.title  }
-								.font-extrabold.text-15.opacity-80 {	heading.dataset.page  }
+								.font-medium.opacity-80(class="text-[14px]") {	heading.dataset.page  }
 
-		ContentPageFooter
+		ContentPageFooter(
+			{doc}
+			{page}
+			)
 </template>

@@ -7,12 +7,14 @@ Here's some documentation for this component.
 	export let topicNumber = 0;
 	export let articleNumber = 0;
 	export let chapterNumber = 0;
-	export let hideNumber = false;
+	export let classes = "";
+	export let hideNumber = true;
 	export let page = 0;
 </script>
 
 <template lang="pug">
-	h4.prose.prose-slate.text-15.opacity-9.mt-0.mb-2.font-semibold.leading-tight(
+	h4.prose.prose-slate.opacity-9.mt-0.mb-4.font-semibold.leading-tight.text-kellyGreenDark(
+		class!="text-[15.5px] {classes}",
 		data-index!="{ chapterNumber }.{ articleNumber }.{ topicNumber }",
 		data-page!="{ page }",
 		data-title!="{ topicTitle }",

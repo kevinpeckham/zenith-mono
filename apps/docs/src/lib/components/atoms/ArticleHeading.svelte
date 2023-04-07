@@ -8,14 +8,18 @@ Here's some documentation for this component.
 	export let chapterNumber: number | string = 0;
 	export let classes = "";
 	export let page = 0;
+	export let showNumber = false;
+	export let hide = false;
+
+	const indexNumber = showNumber ? chapterNumber + "." + articleNumber : "";
 </script>
 
 <template lang="pug">
-	h3.prose.prose-slate.mb-3.font-semibold.leading-tight(
-		class!="{ classes }",
+	h3.prose.mb-6.font-semibold.leading-tight(
+		class!="text-richBlack/80 {(hide) ? 'opacity-0 pointer-events-none absolute' : ''} { classes }",
 		data-index!="{ chapterNumber}.{articleNumber }",
 		data-page!="{ page }",
 		data-title!="{ articleTitle }",
 		data-type="article",
-		id!="article-{ chapterNumber }.{ articleNumber }") {  chapterNumber  }.{  articleNumber  } {  articleTitle  }
+		id!="article-{ chapterNumber }.{ articleNumber }") {  indexNumber  } {  articleTitle  }
 </template>

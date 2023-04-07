@@ -8,11 +8,115 @@
 	import Main from "$atoms/Main.svelte";
 	import { PageLayout } from "lj-svelte-ui";
 	import { PictureCloudinary } from "lj-svelte-ui";
+	import SimpleInfographic from "$atoms/SimpleInfographic.svelte";
 
 	// props
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
+
+	// set page context
+	import { setContext } from "svelte";
+	setContext("page", page);
+
+	// stats
+	interface Stat {
+		stat?: string;
+		label: string;
+		heading?: string;
+		number?: string;
+	}
+
+	const stats: Stat[] = [
+		{
+			heading: "Renewable Fuels",
+			number: "17%",
+			label:
+				"17% of storage capacity used for renewable fuel storage in 2021 with a contracted capacity of 29% in 2022",
+		},
+		{
+			heading: "Portland, OR",
+			label:
+				"Replacing 100% of crude oil storage at the Portland, Oregon terminal with renewable fuels in five years",
+		},
+		{
+			heading: "Emissions Intensity",
+			label:
+				"50% reduction in Scope 1 and 2 Emissions Intensity per BOE throughput",
+		},
+		{
+			heading: "Carbon Neutrality",
+			label:
+				"Achieved Carbon Neutrality for Zenith Energy U.S. Terminals in 2021",
+		},
+		{
+			heading: "Energy Intensity",
+			label:
+				"64% reduction in energy intensity at Portland terminal in 2 yrs. + received Energy Star Challenge award",
+		},
+		{
+			heading: "Energy Consumption",
+			label:
+				"8% Reduction in energy consumption in one year (2021) vs. goal of 10% within 3 years from 2020 baseline",
+		},
+		{
+			heading: "SASB Framework",
+			label: "Adopted SASB Framework for reporting",
+		},
+		{
+			heading: "GHG Emissions",
+			label: "Third-party review and verification of GHG emissions",
+		},
+		{
+			heading: "TCFD Assessment",
+			label:
+				"Conducted 3rd-party risk assessment in alignment with the Task Force on Climate-Related Financial Disclosures",
+		},
+		{
+			heading: "Energy Management",
+			label:
+				"Adopted organizational Energy Management Policy and GHG Data Quality Management Plan",
+		},
+		{
+			heading: "EH&S Training",
+			label:
+				"300% increase in Environmental, Health, & Safety (EH&S) workforce training hrs. in 2021 vs. prior year",
+		},
+		{
+			heading: "Safety",
+			label: "Achieved 89.9 Incident Composite Rate versus annual goal of 90",
+		},
+		{
+			heading: "Leadership",
+			label: "42% of Executive Leadership team is comprised of women",
+		},
+		{
+			heading: "Charitable Giving",
+			label: "$14,000+ donated to local communities in which we operate",
+		},
+		{
+			heading: "Employment",
+			label:
+				"77% of new hires in 2021 were local to the communities we operate within",
+		},
+		{
+			stat: "",
+			heading: "Veriforce",
+			label:
+				"Launched Veriforce software for contractor safety management, operator qualifications & compliance",
+		},
+		{
+			stat: "",
+			heading: "SmartPlan",
+			label:
+				"Adopted SmartPlan software for maintaining regulatory & response plans + long-term compliance",
+		},
+		{
+			stat: "",
+			heading: "Fire Contingency",
+			label: "Established an advanced fire contingency framework",
+		},
+	];
 </script>
 
 <template lang="pug">
@@ -24,41 +128,22 @@
 
 		//- Main
 		Main
-			//-ChapterHeading(
-				chapterNumber!="{ 1 }",
-				chapterTitle!="Message from the CEO")
-
-			ArticleHeading(
-				articleNumber!="{ 2 }",
-				articleTitle!="Commitment to ESG",
-				chapterNumber!="{ 1 }",
+			ChapterHeading(
+				chapterNumber!="{ 2 }",
+				chapterTitle!="Report Highlights",
 				page!="{ page }")
+			//-ArticleHeading(
+				articleNumber!="{ 1 }",
+				articleTitle!="Report Highlights",
+				chapterNumber!="{ 2 }")
 
 			//- text columns
-			.relative.grid.grid-cols-2.gap-8.leading-normal
-				//- col left
-				.prose.prose-sm.prose-slate
-					ArticleSubheading
-						| Dedicated to the sustainability of our environment, business, and community.
+			.relative.grid.grid-cols-3.gap-6.pt-0.leading-normal
+				+each('stats as stat')
+					SimpleInfographic(
+						heading!="{ stat.heading }",
+						label!="{ stat.label }",
+						stat!="{ stat.stat }")
 
-					p Zenith Energy is committed to protecting the health and safety of our employees and community and minimizing the impact of our operations on the environment. We work every day to responsibly operate our terminals and protect the environment and the products we handle and store. Through rigorous trainings, extensive emergency response planning, and investments in our infrastructure, Zenith Energy is helping to ensure that our business is sustainable and well-prepared to serve our communities for years to come.
-
-					p In 2021, Zenith Energy built on our commitments established in our inaugural Sustainability Report, further solidifying our Environmental, Social and Governance (ESG) practices. Advancements include establishing sustainability targets, including commitments to reduce greenhouse gas (GHG) emissions to support a low carbon future, as well as taking steps toward greater transparency, including adopting the Sustainability Accounting Standards Board (SASB) framework for reporting.
-
-					p We also created a number of new ESG policies and procedures in our Employee Handbook to facilitate employee contribution to our ESG targets to better reflect our commitments to ensure all our associates and partners are aligned with our values.
-
-				//- col right
-				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-4
-					.prose.prose-sm.order-1
-						blockquote.text-kellyGreen.order-1.italic.leading-relaxed
-							.mb-4 “Sustainability is not only a core part of our values but is essential to the future of our business. Our focus to build more sustainable practices provides us with our social license to operate. We are committed to institutionalizing sustainability into all areas of our business and improving our performance based on best practices.”
-							.font-normal - Jeff Armstrong, CEO
-
-					//- image
-					.order-0
-						PictureCloudinary(
-							alt="3:2",
-							aspectRatio!="3:2",
-							sourceUrl="https://res.cloudinary.com/dn0pqjjbq/image/upload/v1676225453/image-from-rawpixel-id-31304-jpeg_edhqqk.jpg")
 		ContentPageFooter
 </template>

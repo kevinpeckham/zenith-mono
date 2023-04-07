@@ -14,6 +14,7 @@ Here's some documentation for this component.
 
 	//  components
 	import Page1 from "./Page1.svelte";
+	import Page1b from "./Page1b.svelte";
 	import Page2 from "./Page2.svelte";
 	import Page3 from "./Page3.svelte";
 	import Page4 from "./Page4.svelte";
@@ -40,7 +41,9 @@ Here's some documentation for this component.
 	import Page25 from "./Page25.svelte";
 	import Page26 from "./Page26.svelte";
 	import Page27 from "./Page27.svelte";
+	import Page28 from "./Page28.svelte";
 	import Appendix1 from "./Appendix1.svelte";
+	import BackCover from "./BackCover.svelte";
 
 	// global stores
 	import { documents } from "$stores/documentTracking";
@@ -65,6 +68,7 @@ Here's some documentation for this component.
 	// page refs
 	let pages: HTMLDivElement[];
 	let page1: HTMLDivElement;
+	let page1b: HTMLDivElement;
 	let page2: HTMLDivElement;
 	let page3: HTMLDivElement;
 	let page4: HTMLDivElement;
@@ -92,6 +96,8 @@ Here's some documentation for this component.
 	let page26: HTMLDivElement;
 	let page27: HTMLDivElement;
 	let page28: HTMLDivElement;
+	let page29: HTMLDivElement;
+	let page30: HTMLDivElement;
 
 	$: {
 		//- collect pages into array
@@ -124,6 +130,8 @@ Here's some documentation for this component.
 			page26,
 			page27,
 			page28,
+			page29,
+			page30,
 		];
 		//- update page count
 		pageCount = pages.length;
@@ -142,6 +150,14 @@ Here's some documentation for this component.
 			{doc},
 			{edition})
 
+	#page-1b(
+		data-description="cover page alt",
+		data-page="1b")
+		Page1b(
+			page!="{ 1 }",
+			{doc},
+			{edition})
+
 	//- toc
 	#page-2(
 		bind:this!="{ page2 }",
@@ -152,10 +168,8 @@ Here's some documentation for this component.
 			{doc},
 			{edition})
 
-	//- toc continued
 	#page-3(
 		bind:this!="{ page3 }",
-		data-description="table of contents - continued",
 		data-page="3")
 		Page3(
 			page!="{ 3 }",
@@ -358,8 +372,25 @@ Here's some documentation for this component.
 	#page-28(
 		bind:this!="{ page28 }",
 		data-page="28")
-		Appendix1(
+		Page28(
 			page!="{ 28 }",
+			{doc},
+			{edition})
+
+	#page-29(
+		bind:this!="{ page29 }",
+		data-page="29")
+		Appendix1(
+			page!="{ 29 }",
+			{doc},
+			{edition})
+
+	//- back cover
+	#page-30(
+		bind:this!="{ page30 }",
+		data-page="30")
+		BackCover(
+			page!="{ 30 }",
 			{doc},
 			{edition})
 </template>

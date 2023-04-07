@@ -72,19 +72,26 @@ module.exports = {
 		extend: {
 			colors: {
 				antiFlash: "#eef0f2", // zenith light default -- anti-flash white
-				oxford: {
-					DEFAULT: "hsla(218, 100%, 16%, 1.0)",
-				},
-				midnight: {
-					DEFAULT: "hsla(210, 31%, 20%, 1.0)",
-				},
-				cultured: "#ECECEC",
+				cadetGray: "#859AAB", // zenith map - east coast -- cadet gray
+				charcoal: "#34404C", // zenith map - west coast -- charcoal
+				paynesGray: "#475C6A", // zenith map (texas & gulf) -- payne's gray
+				charcoalLight: "#3E4E5D", // zenith map - midwest -- charcoal light
+				slateGray: "#5D7789", // zenith map - Idaho etc -- slate gray
+				cultured: "#ECECEC", // zenith light
 				gunmetal: "#292f36", // zenith brand black
-				richBlack: "#081526",
 				selectiveYellow: "#FFBB00",
 				yellowGreen: "#7BC021", // zenith brand green
 				kellyGreen: "#6cad18", // zenith dark green
+				kellyGreenDark: "#6CA91C", // zenith dark green
 				maize: "#FDE74C", //zenith brand yellow
+				richBlack: "#081526",
+				oxford: {
+					DEFAULT: "hsla(218, 100%, 16%, 1.0)",
+				},
+
+				midnight: {
+					DEFAULT: "hsla(210, 31%, 20%, 1.0)",
+				},
 			},
 			fontFamily: {
 				apple:

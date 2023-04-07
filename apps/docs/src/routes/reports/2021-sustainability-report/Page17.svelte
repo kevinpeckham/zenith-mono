@@ -12,10 +12,15 @@
 
 	// store
 	import { colors } from "lj-svelte-ui";
+
 	// props
 	export let doc: Document;
 	export let edition = "";
 	export let page = 0;
+
+	// set page context
+	import { setContext } from "svelte";
+	setContext("page", page);
 </script>
 
 <template lang="pug">
@@ -27,54 +32,49 @@
 
 		//- Main
 		Main
-			ChapterHeading(
-				chapterNumber!="{ 5 }",
-				chapterTitle!="Health, Safety, Environment & Quality",
-				page!="{ page }")
-
-			ArticleHeading(
-				articleNumber!="{ 1 }",
-				articleTitle!="Workforce Health & Safety",
-				chapterNumber!="{ 5 }",
-				page!="{ page }")
-
-			.prose.prose-sm.prose-slate.relative.mb-6.grid.max-w-none.grid-cols-2.gap-8.pb-4.leading-normal(
-				class="border-richBlack/40")
+			.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-normal
+				//- left column
 				div
-					p.mt-0 Zenith Energy recognizes the importance of Health, Safety, Environment and Quality and the impact that it has on our business, employees, and surrounding environments in which we operate. Our culture of Health & Safety places employees at the core of day-to-day operations and the center of our vision for the future. We are committed to high standards for Health, Safety, and Environmental practices. Our Vision is to have zero recordable injuries, zero regulatory citations, zero product quality incidents, and zero reportable spills. We work every day to make this goal a reality, achieve full compliance with regulatory and corporate standards, and seek continuous improvement.
-					p To fulfill our commitments, we have implemented specific programs designed to prevent and mitigate safety incidents. Since beginning operations in 2017, Zenith Energy has established a team of experts to address topics ranging from environmental management to site assessments and emergency response.
-					p To monitor our progress, we have tracked metrics such as the number of first aid cases per year, medical treatment cases, total recordable incident rate (TRIR), and restricted work and lost time cases every year since 2019.
+					ArticleHeading(
+						classes="mt-0",
+						articleNumber!="{ 4 }",
+						articleTitle!="Air Quality",
+						chapterNumber!="{ 4 }",
+						page!="{ page }")
 
-				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-6
-					.prose.prose-sm.w-full
-						//- quote
-						.bg-antiFlash.order-1.grid.grid-cols-2.place-content-center.place-items-center.gap-4.rounded-md.px-4.py-4.font-normal.leading-normal
-							.mb-2
-								.text-26.mb-1 300%
-								.text-13.italic.leading-snug
-									div increase in training
-									div hours year over year
-							.mb-2
-								.text-26.mb-1 3,842
-								.text-13.italic.leading-snug
-									div EH&amp;S training
-									div hours in 2021
+					p.mt-0 We are committed to maintaining all emissions levels at or below the state and federally permitted quantities as well as minimizing emissions by operating our facilities in a manner that is consistent with industry recognized air quality control standards. We manage our air permitting and compliance programs by quantifying facility annual emissions per federal, state, provincial, or local requirements, providing necessary documentation to regulators, and training our operations, engineering, and maintenance employees on permit requirements. Emissions are further reduced through preventative measures such as regular leak monitoring, floating roofs, and seal inspection programs. Zenith Energy U.S. has been in compliance with all U.S. air quality regulatory requirements the past two years (2020 and 2021).
 
-					.bg-antiFlash.w-full.rounded-md.px-4.pt-4
-						//- bubble graphic
-						.text-richBlack.grid.grid-cols-1.gap-1
-							.order-1
-								//-PieChart(
-									primaryColor!="{ $colors.yellowGreen }",
-									secondaryColor!="rgba(255, 255, 255, 1)",
-									value!="{ 29 }",
-									width!="{ 145 }")
-								.grid.grid-cols-1.place-content-center.place-items-center
-									img.px-12(
-										height="312",
-										src="/images/award-medallion.webp",
-										width="312")
-							.text-13.order-0.font-medium We have won numerous awards for our strict standards for the safe handling and shipment of products such as the Safe Handling Award from CN Railroad for the past three years (2019-2021)
+					ul.list-outside.list-disc.pl-3(class="text-[13.5px]")
+						li.mb-2.leading-snug(class="marker:text-yellowGreen") We track our total criteria air emissions in tons per year (tpy). We continue to develop policies and internal procedures focused on the reduction of air emissions not only as an opportunity to conserve assets, but also as a goal for improving the air quality in the areas that we operate.
 
+					p To achieve these goals, we have committed to:
+
+					ul.list-outside.list-disc.pl-3(class="text-[13.5px]")
+						li.mb-2.leading-snug(class="marker:text-yellowGreen") Implement three projects per year to improve or upgrade our control devices including vapor control devices and floating roof installation.
+						li.leading-snug Enhance employee training opportunities on maintaining air quality compliance and how to work towards zero incidents.
+
+					p The ESG Content Index included in this report provides our organization’s ongoing criteria pollutant reporting efforts we are using to track year-over-year performance.
+
+					//-aside.grid.grid-cols-1.place-content-start.place-items-start.gap-4.bg-white
+						.prose.prose-sm
+							//- quote
+							.bg-antiFlash.order-1.rounded-md.px-4.py-4.font-normal.italic.leading-normal
+								.text-13.mb-2.font-medium Progress against goal: 8% reduction in one year (2021) since 2020 baseline
+
+				//- right
+				div
+					ArticleHeading(
+						classes="mt-0",
+						articleNumber!="{ 5 }",
+						articleTitle!="Environmental Management",
+						chapterNumber!="{ 4 }",
+						page!="{ page }")
+
+					p Since beginning operations in 2017, Zenith Energy has established a team of experts to address topics ranging from environmental management to site assessments and emergency response. Our environmental management is incorporated as part of our company-wide risk management program. Zenith Energy’s Vice President of HSER is responsible for executing our program and ensuring we are on progress with reaching our commitments and goals. We have operationalized our environmental management by incorporating regulatory plans into our SMARTPLAN™ HSE Plans Digital Repository platform.
+					p We comply with all environmental regulation and legislative requirements to protect the diverse ecosystems within the footprint of our facilities and operations, manage the use of our shared natural resources, and minimize our waste generation and air emissions for a sustainable future. It is our belief that we have a responsibility for environmental stewardship using conservation and sustainable practices as well as continuous compliance with all federal and local regulatory obligations, including EPA and individual state and county environmental departments. Through internal review, we identify and comply with any updates to laws and regulations concerning environmental compliance. Additionally, we educate and encourage employees and contractors to identity and mitigate environmental risks while providing HSER training on Zenith Energy requirements, regulations, and best practices. Our state-of-the-art asset management approach through Site Docs – our incident management system – utilizes real-time inspection tracking and incident management documentation.
+					p In support of the SASB Index and ecological impacts, we will be reporting the percentage of land owned, leased and/or operated within areas of protected conservation status or endangered species habitat.
+
+		//-.absolute.w-full.bottom-0.grid.grid-cols-2.translate-y-8
+			img.pr-12.pl-6.-translate-x-2(src="/images/air.webp")
 		ContentPageFooter
 </template>

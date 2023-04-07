@@ -8,6 +8,6 @@ Adds padding for body of page (below header and above footer).
 </script>
 
 <template lang="pug">
-	main.px-12(class!="{ classes }")
+	main.px-12(class!="mt-[40px] h-[931px] { classes }")
 		slot
 </template>

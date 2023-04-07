@@ -17,7 +17,7 @@ Set's up the basic layout for different page sizes and types.
 		class="min-w-[816px] min-h-[1056px] print-w-[816px] min-h-screen w-full items-center justify-center bg-slate-200 p-4 print:block print:h-[1056px] print:min-h-[1056px] print:p-0")
 		//- Page Container
 		.bg-white.relative(
-			class="h-[1056px] w-[816px] min-w-[816px] min-h-[1056px] print:bg-white {classes}"
+			class="h-[1056px] w-[816px] min-w-[816px] min-h-[1056px] max-w-[816px] max-h-[816px] print:bg-white {classes} overflow-hidden"
 			style!="padding: {padding};"
 			)
 			slot
