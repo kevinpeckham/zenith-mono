@@ -49,10 +49,24 @@
 							topicTitle!="Energy Star Award")
 
 						//- text
-						.prose.prose-sm.prose-slate.relative.max-w-none.leading-normal
+						.prose.prose-sm.prose-slate.relative.max-w-none.leading-normal.mb-4
 							p We are pleased that our ESG efforts are being recognized. Our Portland Terminal achieved the U.S. Environmental Protection Agency (EPA) ENERGY STAR Challenge for Industry. This challenge recognizes that we achieved at least a 10-percent reduction in energy intensity within 5 years. Zenith Energy achieved a 64-percent reduction in energy intensity in two years. We are incredibly proud of all of our teams that worked together to make this significant reduction and achievement.
-					//- section 2
-					section
+
+						//- graphic
+						.w-full.mb-6
+							.grid.pr-6.py-6.rounded-sm.bg-slate-100.grid-cols-2.gap-8.text-white(
+								class="h-auto")
+								.order-0.relative.grid.grid-cols-1.place-content-center.place-items-end
+									.text-richBlack
+										PieChart(
+											primaryColor!="{ $colors.yellowGreen }",
+											secondaryColor!="#F1F5F9",
+											value!="{ 64 }",
+											width!="{ 120 }")
+								.text-13.text-richBlack.order-1.flex.items-center.font-medium(
+									class="text-[12px] leading-[1.35]")
+									div Reduced energy intensity at the Portland site by 64% in 2 years
+					section.break-after-column
 						//- text columns
 						.relative.max-w-none.leading-snug
 							ArticleHeading(
@@ -73,19 +87,20 @@
 
 					section.mt-6
 						//- graph
-						.w-full.mb-6.break-after-column
-							.grid.pr-6.py-6.rounded-sm.bg-slate-100.grid-cols-2.gap-8.text-white(
-								class="h-auto")
-								.order-0.relative.grid.grid-cols-1.place-content-center.place-items-end
-									.text-richBlack
-										PieChart(
-											primaryColor!="{ $colors.yellowGreen }",
-											secondaryColor!="#F1F5F9",
-											value!="{ 64 }",
-											width!="{ 120 }")
-								.text-13.text-richBlack.order-1.flex.items-center.font-medium(
-									class="text-[12px] leading-[1.35]")
-									div Reduced energy intensity at the Portland site by 64% in 2 years
+						//- .w-full.mb-6.break-after-column
+						//- 	.grid.pr-6.py-6.rounded-sm.bg-slate-100.grid-cols-2.gap-8.text-white(
+						//- 		class="h-auto")
+						//- 		.order-0.relative.grid.grid-cols-1.place-content-center.place-items-end
+						//- 			.text-richBlack
+						//- 				PieChart(
+						//- 					primaryColor!="{ $colors.yellowGreen }",
+						//- 					secondaryColor!="#F1F5F9",
+						//- 					value!="{ 64 }",
+						//- 					width!="{ 120 }")
+						//- 		.text-13.text-richBlack.order-1.flex.items-center.font-medium(
+						//- 			class="text-[12px] leading-[1.35]")
+						//- 			div Reduced energy intensity at the Portland site by 64% in 2 years
+
 						.mb-4.leading-normal.prose.prose-sm.prose-slate
 							TopicHeading(
 								articleNumber!="{ 3 }",

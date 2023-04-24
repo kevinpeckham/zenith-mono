@@ -23,5 +23,5 @@ Footer component
 				polygon(class!="{ svgFillClass }", points="0,80 768,80 768,0")
 		.absolute.right-0.bottom-0.pr-8.pb-4
 			LogoZenith
-		.absolute.left-0.bottom-2.pl-8.text-11.tracking-wide.opacity-70 p. {  page  }
+		.absolute.left-0.bottom-2.pl-8.text-11.tracking-wide.opacity-70 {  page  }
 </template>

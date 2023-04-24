@@ -41,7 +41,7 @@
 
 			.prose.prose-sm.prose-slate.relative.grid.max-w-none.grid-cols-2.gap-8.leading-normal
 				//- left column
-				.grid.grid-cols-1.gap-8
+				.grid.grid-cols-1.gap-6
 					div
 						p.mt-0 We know one of the most impactful ways to reduce our overall GHG emissions is by expanding energy efficiency across our business. As such, one of our sustainability initiatives was establishing an organizational energy management and conservation plan with the goal of reducing organizational power consumption by 10-percent within 3 years from the baseline year of 2020. In support of the organizational energy management plan, we have instituted an Energy Management Policy that provides the foundation for setting performance goals and integrating energy management throughout our business.
 						p We are an active participant of the EPA’s Energy Star Program. After just one year of implementing these changes, we’ve almost achieved our goal of reducing our organization power consumption by a minimum of 10-percent within 3 years of our 2020 baseline.
@@ -55,8 +55,8 @@
 							| reduction in total energy consumption in one year (2021) since 2020 baseline
 
 				//- right column
-				div
-					.mb-16
+				.flex.flex-col.justify-between
+					div(class="")
 						TopicHeading(
 							articleNumber!="{ 3 }",
 							chapterNumber!="{ 4 }",
@@ -67,10 +67,10 @@
 						p We are investigating alternative power generation solutions for the Dominguez Hills, California terminal to become more cost effective, sustainable, and self-sufficient. We have engaged Norwest Engineering and WSP USA to perform an engineering feasibility study and identify all permits and utility requirements needed for the project. This project will potentially reduce our impact on the environment as well as protect the terminal against brown outs, common in the LA basin. It should also insulate us from rising energy costs. We are looking at a wide range of possible onsite power generation methods including solar photovoltaic array, natural gas generators and battery storage. We are also considering offsite wind or solar power generation due to restricted space at the terminal. Should this be successful at Dominguez Hills, we hope to expand it to our other California terminals and eventually across the United States.
 
 						p.mb-0.block Zenith Energy’s commitment to sustainability extends beyond the solutions we can provide to our customers through examining our own carbon footprint and working to identify where we can make feasible reductions in our GHG emissions.
-					.m-0.p-0
-						img.block.w-full.m-0.translate-y-0(
-							class="scale-[1.2]",
-							src="/images/renewable.webp")
+					.p-0.w-full.bg-blue-500.overflow-hidden.rounded-md(class="h-[264px]")
+						picture.flex.w-full.h-full
+							img.min-w-full.min-h-full.object-cover.m-0(
+								src="/images/wind-in-yellow-field.webp")
 
 		ContentPageFooter
 </template>

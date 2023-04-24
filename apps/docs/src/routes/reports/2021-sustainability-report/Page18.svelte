@@ -59,7 +59,7 @@
 							span increase in training hours year over year
 					.mb-7
 						SidebarCallout
-							svelte:fragment(slot="number") 3,942
+							svelte:fragment(slot="number") 3,842
 							//- svelte:fragment(slot="symbolAfter") %
 							span EH&amp;S training hours in 2021
 

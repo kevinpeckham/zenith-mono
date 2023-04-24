@@ -11,6 +11,7 @@
 	import { midnight, PageLayout } from "lj-svelte-ui";
 	import SidebarCallout from "$atoms/SidebarCallout.svelte";
 	import { PieChart } from "lj-svelte-ui";
+	import PictureCloudinary from "lj-svelte-ui/src/lib/components/pictures/PictureCloudinary.svelte";
 
 	// store
 	import { colors } from "lj-svelte-ui";
@@ -76,14 +77,19 @@
 							.text-14.italic As we look forward in our DEI journey, we aim to achieve the following:
 							ul.pl-2
 								+each('goals as goal')
-									li.text-14.text-white.pl-4.mb-5.leading-tight.text-14(
+									li.text-14.text-white.pl-2.mb-5.leading-tight.text-14(
 										class="marker:text-maize") {  goal  }
+		.absolute.bottom-0.left-0.w-full.place-content-center.place-items-center.bg-slate-100.overflow-hidden
+			//.text-12.h-72 [graphic]
+			PictureCloudinary(
+				aspectRatio!="300:124",
+				imageTypes!="{ ['webp'] }",
+				quality!="{ 60 }",
+				resolutions!="{ [2] }",
+				sizes!="{ ['900'] }",
+				sourceUrl="https://res.cloudinary.com/dn0pqjjbq/image/upload/v1677009115/Bantry-Bay-01-Retouched-KPjpg_srihkt.jpg")
 
-		//-.absolute.w-full.bottom-0(class="h-[340px]")
-			img(
-				alt="Diversity, Equity, &amp; Inclusion",
-				src="/images/dei.webp")
-		.text-white
+		div
 			ContentPageFooter
 </template>
 
@@ -91,11 +97,11 @@
 	::marker {
 		/* color: white; */
 		/* content: ":"; */
-		font-size: 20px;
+		/* font-size: 20px; */
 	}
 
 	ul {
 		/* list-style-type: "\2714"; */
-		list-style-type: "\2610";
+		/* list-style-type: "\2610"; */
 	}
 </style>

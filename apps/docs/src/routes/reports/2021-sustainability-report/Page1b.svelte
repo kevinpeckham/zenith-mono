@@ -67,12 +67,12 @@ PageLayout(classes="font-montserrat")
 
 		//- title
 		.absolute.top-0.left-0.text-white.text-30.font-bold.font-sans.pl-10.mb-2(class="bg-[#557BCF]/0 border-0 border-b-white w-full h-auto translate-y-[204px]")
-			div.text-28.mb-2 2021
+			//- div.text-28.mb-2 2021 Sustainability Report
 			h1.leading-none(class="text-[80px] text-[#FCE74C]")
 				| Storage for the
 				br
 				| New Energy Age
-
+			div.text-28.mt-2.font-normal 2021 Sustainability Report
 
 		//- footer w/ angled background
 		//-.absolute.bottom-0.left-0.w-full(class="h-[80px]")

@@ -133,16 +133,13 @@
 							topicTitle!="Safety in Our Facilities")
 
 						//- content
-						.mb-6
+						.mb-8
 							p.mt-0 As part of our comprehensive Health, Safety, Environmental, and Regulatory (HSER) framework we have implemented specific safety measures and procedures at all our facilities ranging from training of site management and staff to monitoring and inspections of facilities, and incident related protocols. Frontline supervisors must complete a verification to evaluate on-site personnel safety performance and utilize reporting channels in place for disclosure of unsafe conditions including an anonymous hotline. There are onsite safety personnel at our four largest terminals, rigorous on-site inspections at all our facilities, and routine incident response drills and training of our operations teams. In an effort to continuously improve, Zenith Energy conducts annual assessments and has digitized our plan management.
 
-						.w-full.flex.justify-center
-							img.h-auto.mt-6(
-								class="w-[240px]",
-								alt="hard hat",
-								height="200",
-								src="/images/hardhat.webp",
-								width="300")
+						.m-0.p-0.w-full.bg-blue-500.h-56.overflow-hidden.rounded-md
+							picture.flex.w-full.h-full
+								img.min-w-full.min-h-full.object-cover.m-0(
+									src="/images/tank-stairs.webp")
 
 					//- shunt to the bottom
 					div

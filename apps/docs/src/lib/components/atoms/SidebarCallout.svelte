@@ -17,7 +17,7 @@ Here's some documentation for this component.
 			+if('$$slots.symbolAfter')
 				.inline-block.ml-1
 					slot(name="symbolAfter")
-					+if('$$slots.unit')
+			+if('$$slots.unit')
 				.inline-block(class="text-[.95em]") &nbsp;
 					slot(name="unit")
 		.text-14.leading-snug

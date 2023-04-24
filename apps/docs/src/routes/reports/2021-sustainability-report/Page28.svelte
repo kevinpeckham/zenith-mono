@@ -63,11 +63,11 @@
 							chapterNumber!="{ 8 }",
 							page!="{ page }")
 						//- content
-					.mb-8.prose.prose-sm.prose-slate
-						p.mt-0 Zenith Energy has the following policies and training programs, which guide our employees every day:
-						ul.px-3
+					.mb-8
+						p.mb-4.text-14 Zenith Energy has the following policies and training programs, which guide our employees every day:
+						ul.px-3.list-disc
 							+each('policies as policy')
-								li {  policy  }
+								li.pl-2.mb-2.text-14.font-medium {  policy  }
 
 			section
 				//- image

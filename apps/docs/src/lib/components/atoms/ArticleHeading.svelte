@@ -15,8 +15,8 @@ Here's some documentation for this component.
 </script>
 
 <template lang="pug">
-	h3.prose.mb-6.font-semibold.leading-tight(
-		class!="text-richBlack/80 {(hide) ? 'opacity-0 pointer-events-none absolute' : ''} { classes }",
+	h3.prose.mb-6.font-semibold.leading-tight.text-18(
+		class!="text-richBlack {(hide) ? 'opacity-0 pointer-events-none absolute' : ''} { classes }",
 		data-index!="{ chapterNumber}.{articleNumber }",
 		data-page!="{ page }",
 		data-title!="{ articleTitle }",

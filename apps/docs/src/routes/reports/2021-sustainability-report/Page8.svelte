@@ -117,15 +117,15 @@
 						h5.text-15.mb-4.border-t.pt-6.font-semibold(
 							class="border-richBlack/20 text-richBlack/90") Zenith's Material ESG Priority Topics
 						.grid.grid-cols-4.gap-4
-							+each('topics as topic')
+							+each('topics as topic, index')
 								.w-full.rounded-md.px-4.py-3(class="bg-kellyGreen text-white/90")
-									.text-11.mb-2.grid.h-8.w-8.grid-cols-1.place-content-center.text-center(
+									//-.text-11.mb-2.grid.h-8.w-8.grid-cols-1.place-content-center.text-center(
 										class=" text-maize")
-										+if('topic.customIcon')
+										//-+if('topic.customIcon')
 											.text-20(class="tracking-wide") {  topic.customIcon  }
-											+else
-												IconFeather(icon!="{ (topic.icon) ? topic.icon : 'star' }")
-									.text-13.font-medium.leading-tight {  topic.name  }
+											//- +else
+											//- 	IconFeather(icon!="{ (topic.icon) ? topic.icon : 'star' }")
+									.text-16.py-4.font-medium.leading-tight.text-maize {  topic.name  }
 
 		ContentPageFooter
 </template>

@@ -9,12 +9,12 @@ Here's some documentation for this component.
 <template lang="pug">
 	.mb-4
 		//- icon
-		.mb-3.grid.h-16.w-16.grid-cols-1.place-content-center.place-items-center.rounded-full(
+		//-.mb-3.grid.h-16.w-16.grid-cols-1.place-content-center.place-items-center.rounded-full(
 			class="bg-yellowGreen/20")
 			div
 				slot(name="icon")
 		//- heading
-		.text-13.mb-1.font-semibold.leading-normal
+		.mb-1.font-medium.leading-normal(class="text-[14.5px] richBlack/80")
 			slot(name="heading")
 		//- text
 		+if('$$slots.text')

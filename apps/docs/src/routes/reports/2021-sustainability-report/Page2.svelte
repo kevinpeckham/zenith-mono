@@ -61,32 +61,34 @@
 				chapterTitle!="Contents")
 
 			//- text columns
-			.relative.max-w-none.columns-2.gap-8.leading-normal
-			+each('headingsArray as heading, index')
-				//- index
-				+if('heading.dataset.index != "0" && limit(index, 80)')
-					.mt-0.grid.grid-cols-2.text-slate-800(
-						style="grid-template-columns: 12fr 1fr"
-						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index == '1') ? 'font-medium text-[14.5px] mb-1' : ''}"
-						class!="{(heading.dataset.type == 'chapter' && heading.dataset.index != '1') ? 'font-medium mt-4 mb-1 text-[14.5px]' : ''}"
-						class!="{(heading.dataset.type == 'article') ? 'font-normal my-0 text-[13.5px] mb-1' : ''}"
+			.mb-6.relative.max-w-none.columns-2.gap-8.leading-normal(class="")
+				+each('headingsArray as heading, index')
+					+if('heading.dataset.index != "0" && limit(index, 80)')
 
-						)
+						//- description
+						.mt-0.text-slate-800(
+							style="grid-template-columns: 12fr 1fr"
+							class!="{(heading.dataset.type == 'chapter' && heading.dataset.index == '1') ? 'font-medium text-[14.5px] mb-1' : ''}"
+							class!="{(heading.dataset.type == 'chapter' && heading.dataset.index != '1') ? 'font-medium mt-4 mb-1 text-[14.5px]' : ''}"
+							class!="{(heading.dataset.type == 'article') ? 'font-normal my-0 text-[13.5px] mb-1' : ''}"
+							)
+							+if('heading.dataset.type == "article"')
+								a.flex.relative.block.w-full.whitespace-nowrap(href!="#{heading.id}")
+									div.grow-0 {  heading.dataset.title  }
+									.w-full.pl-0.pr-0.relative(class="px-[2px]")
+										.grow-1.border-b-2.border-dotted.w-full(class="border-richBlack/60 -translate-y-[7px]") &nbsp;
+									.absolute.right-0.top-0.bg-white {	heading.dataset.page  }
 
-						//- if topic
-						//-+if('heading.dataset.type == "topic"')
-							//.text-14.opacity-80 {  heading.dataset.index  }
-							a.opacity-80.text-14(href!="#{heading.id}") {  heading.dataset.title  }
-							.font-normal.text-14.opacity-80 {	heading.dataset.page  }
-
-						+if('heading.dataset.type == "article"')
-							//.text-14.opacity-80 {  heading.dataset.index  }
-							a.opacity-80(href!="#{heading.id}") {  heading.dataset.title  }
-							.opacity-80 {	heading.dataset.page  }
-
-							+elseif('heading.dataset.type == "chapter"')
-								a(href!="#{heading.id}") {  heading.dataset.title  }
-								.font-medium.opacity-80(class="text-[14px]") {	heading.dataset.page  }
+								+elseif('heading.dataset.type == "chapter"')
+									a.flex.relative.block.w-full.whitespace-nowrap(href!="#{heading.id}")
+										div.grow-0 {  heading.dataset.title  }
+										.w-full.pl-0.pr-0.relative(class="px-[2px]")
+											.grow-1.border-b-2.border-dotted.w-full.border-black(class="-translate-y-[7px]") &nbsp;
+										.absolute.right-0.top-0.bg-white {	heading.dataset.page  }
+			//- bottom image
+			div.w-full.overflow-hidden.rounded(class="aspect-[4/2]")
+				picture.flex.w-full.h-full
+					img(src="/images/mountain-lake.webp" alt="Mountain Lake" class="object-cover min-w-full min-h-full")
 
 		ContentPageFooter(
 			{doc}

@@ -3,10 +3,8 @@
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
 	import Main from "$atoms/Main.svelte";
-	import TopicHeading from "$atoms/TopicHeading.svelte";
 	import { midnight, PageLayout } from "lj-svelte-ui";
-	//-import { BubbleGraphic } from "lj-svelte-ui";
-	import { PieChart } from "lj-svelte-ui";
+	import QuotationMarkGraphic from "$atoms/QuotationMarkGraphic.svelte";
 
 	// store
 	import { colors } from "lj-svelte-ui";
@@ -34,10 +32,15 @@
 					.absolute.inset-0(
 						class="bg-gradient-to-t from-richBlack/0 via-richBlack/20 to-richBlack/80")
 				//- foreground
-				.z-20.w-full.h-full.px-16.pt-12
+				.z-20.w-full.h-full.px-16.pt-12.text-white
+					.div.w-8.h-8.mb-3
+						QuotationMarkGraphic
 					.font-normal.italic.leading-normal.text-white
-						.mb-10.font-medium(class="text-[34px] leading-[1.375]") “Because renewable diesel works with the transportation industry's existing distribution infrastructure and engines, Oregon's network of pipelines, storage tanks, and fueling sites can be repurposed to rapidly scale its availability. This is a major advantage that will enable renewable diesel to replace fossil fuels faster and more affordably."
-						.text-18.font-normal - Jeff Armstrong, CEO
+						.mb-3.font-medium(class="text-[34px] leading-[1.375]") We acquired the Portland Terminal to capitalize on the growing demand for renewable fuels in Oregon and throughout the western US. The Portland Terminal can play a significant role in helping Oregon meet its carbon reduction goals by making clean, renewable fuels readily available for public and private sectors.
+
+					.div.w-8.h-8.mb-10.rotate-180
+						QuotationMarkGraphic
+					.text-18.font-normal - Jeff Armstrong, CEO
 
 		//- ContentPageFooter
 </template>

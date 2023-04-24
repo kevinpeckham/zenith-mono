@@ -70,7 +70,7 @@
 										secondaryColor!="rgba(255, 255, 255, 1)",
 										value!="{ 42 }",
 										width!="{ 145 }")
-								.text-13.order-0.font-medium 42 percent female representation in Executive Team management, U.S. workforce
+								.text-13.order-0.font-medium Percentage of female representation in Executive Team, Management, U.S. workforce
 
 						//- stat
 						.w-full.rounded-md.px-4.pt-4(class="bg-yellowGreen/10")
@@ -111,7 +111,7 @@
 
 						.prose.prose-sm.prose-slate
 							p.mt-0.mb-4 We care about our employees’ futures. That is why we have invested our time into creating a mentor program and internship program to stimulate professional development. Our professional development program includes mentoring and learning management training.
-							p All personnel are required to receive training specific to their job responsibilities. Upon completion of training, each employee shall receive an acknowledgment or certificate that they have successfully completed each different type of training. It is of utmost importance that our employees understand and comply with our values and commitments. As part of this, they are required to adhere to the Code of Conduct, Anti-Harassment & Non-Discrimination Policy, New Employee safety Orientation and Driving Safety Policy.
+							p All personnel are required to receive training specific to their job responsibilities. Upon completion of training, each employee shall receive an acknowledgment or certificate that they have successfully completed each different type of training. It is of utmost importance that our employees understand and comply with our values and commitments. As part of this, they are required to adhere to the Code of Conduct, Anti-Harassment &amp; Non-Discrimination Policy, New Employee safety Orientation and Driving Safety Policy.
 
 			.grid.grid-cols-1.mt-8
 				figure.grid.w-full.w-full.grid-cols-1.place-content-start.place-items-start.gap-4.rounded-md.px-0.font-normal.leading-normal
@@ -120,10 +120,16 @@
 							+each('tableData as row, rowIndex')
 								tr
 									+each('row as cell, cellIndex')
-										+if('rowIndex == 0')
-											//- header row
+										+if('rowIndex == 0 && cellIndex ==0')
+											//- header row, first cell
 											td.bg-yellowGreen.text-14.border.px-2.font-medium.text-white(class="py-[6px]") {  cell  }
-											+else
+											+elseif('rowIndex == 0')
+											//- header row, other cells
+											td.bg-yellowGreen.text-14.text-center.border.px-2.font-medium.text-white(
+												class="py-[6px] w-24") {  cell  }
+											+elseif('cellIndex == 0')
 												td.bg-antiFlash.text-richBlack.border.px-2.py-2 {  cell  }
+											+else
+												td.bg-antiFlash.text-richBlack.border.px-2.py-2.text-center {  cell  }
 		ContentPageFooter
 </template>

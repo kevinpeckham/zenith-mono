@@ -33,11 +33,11 @@
 	}
 
 	const goals = [
-		"Zero safety incidents",
-		"Zero regulatory citations",
-		"Zero product quality incidents",
-		"Zero reportable spills",
-		"Zero injuries",
+		"Safety incidents",
+		"Regulatory citations",
+		"Product quality incidents",
+		"Reportable spills",
+		"Injuries",
 	];
 </script>
 
@@ -81,6 +81,7 @@
 
 					.mt-10
 						SidebarCallout
+							svelte:fragment(slot="symbolAfter") Zero
 							ul
 								+each('goals as goal')
 									li.text-17.text-white.pl-4.mb-5.leading-none.text-16(class="marker:text-maize") {  goal  }

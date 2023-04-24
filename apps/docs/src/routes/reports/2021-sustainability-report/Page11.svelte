@@ -9,6 +9,7 @@
 	import { midnight, PageLayout } from "lj-svelte-ui";
 	//-import { BubbleGraphic } from "lj-svelte-ui";
 	import { PieChart } from "lj-svelte-ui";
+	import QuotationMarkGraphic from "$atoms/QuotationMarkGraphic.svelte";
 
 	// store
 	import { colors } from "lj-svelte-ui";
@@ -130,11 +131,15 @@
 								div The purchase of carbon offsets negates the remainder of the terminal’s emissions, allowing the terminal to be carbon neutral for scope 1, scope 2, and limited scrope 3 emissions starting in 2022.
 
 			//- quote
-			.border-t.border-b.border-yellowGreen.mt-10.pt-6.pb-6.bg-transparent.order-1.px-4.font-normal.italic.leading-normal
-				.text-14.mb-2.font-medium(class="text-richBlack/90") "We acquired the Portland Terminal to capitalize on the growing demand for renewable fuels in Oregon and throughout the western United States. The terminal can play a significant role in helping Oregon meet its carbon reduction goals by making clean, renewable fuels readily available for public and private sector fleet owners."
-				.text-12.font-normal - Jeff Armstrong, CEO
+			.relative.border-t.border-b.border-yellowGreen.mt-10.pt-4.pb-6.bg-transparent.order-1.px-4.font-normal.leading-normal
+				.h-5.w-5.mb-2.text-yellowGreen
+					QuotationMarkGraphic
+				.text-14.mb-2.font-medium(class="text-richBlack/90") Because renewable diesel works with the transportation industry's existing distribution infrastructure and engines, Oregon's network of pipelines, storage tanks, and fueling sites can be repurposed to rapidly scale its availability. This is a major advantage that will enable renewable diesel to replace fossil fuels faster and more affordably.
+				.h-5.w-5.mb-0.rotate-180.text-yellowGreen
+					QuotationMarkGraphic
+				.absolute.bottom-0.px-6.pb-4.text-12.w-full.text-right.font-normal.opacity-80 - Jeff Armstrong, CEO
 
-			.max-w-sm.pt-10
+			.max-w-sm.pt-4
 				.text-10.italic.text-slate-600.opacity-60
 					span 1.&nbsp;
 					san California Energy Commission Clean Transportation Program, Final Project Report: Renewable Diesel Production, January 2022 (CEC-600-2022-034).

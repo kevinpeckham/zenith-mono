@@ -45,10 +45,10 @@
 
 				//- Bullets
 				ul.text-13.pl-3.list-disc
-					li Investment in the low carbon future and strategic terminal locations
-					li Ability to support energy reliability and security
-					li Our commitment to safety and operational excellence
-					li Achievements in Environmental Stewardship
+					li Zenith's investment in the low carbon future and strategic terminal locations
+					li Zenith's ability to support energy reliability and security
+					li Zenith's commitment to safety and operational excellence
+					li Zenith's achievements in Environmental Stewardship
 
 				p In 2021, we continued our investment in our renewable fuels campaign at our Portland terminal that includes biodiesel and renewable diesel blending services, additional tankage for renewable fuel storage, renewables rail service and an offloading station to deliver renewable diesel to the Pacific Northwest. Our Portland terminal serves as a critical entry point and logistics hub for distribution of renewable diesel to the Greater Portland area. Zenith is also moving forward with new projects to bring Sustainable Aviation Fuel (SAF) into the west coast via Portland.
 

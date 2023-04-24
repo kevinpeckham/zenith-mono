@@ -97,6 +97,5 @@
 										td.bg-yellowGreen.text-14.border.px-2.font-medium.text-white(class="py-[6px]") {  cell  }
 										+else
 											td.bg-antiFlash.text-richBlack.border.px-2.py-2 {  cell  }
-
 					ContentPageFooter
 </template>

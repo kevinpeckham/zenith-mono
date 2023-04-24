@@ -80,9 +80,9 @@
 				div
 					//- leading
 					TopicHeading(
+						classes="mb-4",
 						articleNumber!="{ 1 }",
 						chapterNumber!="{ 5 }",
-						classes="mb-4"
 						page!="{ page }",
 						topicNumber!="{ 1 }",
 						topicTitle!="Leading Initiatives")
@@ -91,7 +91,7 @@
 						p.mt-0 Every year, Zenith Energy selects three initiatives to continue to propel our health and safety program to the forefront of the industry while not detracting the necessary attention from the day-to-day operations.
 
 						.mb-4
-							TopicSubheading 2021 HSE Initiatives
+							.uppercase.font-bold.underline-offset-4.text-15 2021 HSE Initiatives
 
 						//- Icon & Text
 						+each('initiatives as initiative')

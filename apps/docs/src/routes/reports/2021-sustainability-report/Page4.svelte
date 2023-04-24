@@ -52,7 +52,7 @@
 				//- col right
 				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-6.mt-4
 					SidebarQuote
-						| “Sustainability is not only a core part of our values but is essential to the future of our business. Our focus to build more sustainable practices provides us with our social license to operate. We are committed to institutionalizing sustainability into all areas of our business and improving our performance based on best practices.”
+						| Sustainability is not only a core part of our values but is essential to the future of our business. Our focus to build more sustainable practices provides us with our social license to operate. We are committed to institutionalizing sustainability into all areas of our business and improving our performance based on best practices.
 						svelte:fragment(slot="name")
 							| Jeff Armstrong, CEO
 
