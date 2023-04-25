@@ -91,7 +91,8 @@
 						p.mt-0 Every year, Zenith Energy selects three initiatives to continue to propel our health and safety program to the forefront of the industry while not detracting the necessary attention from the day-to-day operations.
 
 						.mb-4
-							.uppercase.font-bold.underline-offset-4.text-15 2021 HSE Initiatives
+							.uppercase.font-semibold.underline-offset-4.text-15(
+								class="opacity-95 !text-ricBlack") 2021 HSE Initiatives
 
 						//- Icon & Text
 						+each('initiatives as initiative')
@@ -100,14 +101,14 @@
 									svelte:fragment(slot="icon")
 										IconFeather(icon!="{ initiative.icon }")
 									svelte:fragment(slot="heading")
-										span {  initiative.heading  }
+										span(class="!text-richBlack") {  initiative.heading  }
 									svelte:fragment(slot="text") {  initiative.text  }
 								+else
 									IconAndText
 										svelte:fragment(slot="icon")
 											IconFeather(icon!="{ initiative.icon }")
 										svelte:fragment(slot="heading")
-											div {  initiative.heading  }
+											div(class="!text-richBlack") {  initiative.heading  }
 											ul.font-normal.pl-3(class="text-[13.5px]")
 												+each('initiative.bullets as bullet')
 													li.mb-2 {  bullet  }

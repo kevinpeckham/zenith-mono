@@ -58,16 +58,16 @@
 
 					p.m-0.leading-normal The Zenith Energy U.S. Terminals have achieved carbon neutrality in 2021 for greenhouse gas (GHG) emissions by using emission reduction credits to offset all direct operational GHG emissions (Scope 1), all indirect GHG emissions from purchased electricity (Scope 2), and all company business travel and employee commuting (limited Scope 3). Zenith Energy U.S. Terminals acquired approximately 41 thousand unique carbon credits verified using the Verified Carbon Standard (VCS). Emissions were quantified in terms of metric tons of carbon dioxide equivalent (CO2e) in accordance with the WRI/WBCSD GHG Protocol and SASB Midstream Standard for the reporting of GHG emissions. Achieving carbon neutrality in 2021 is a significant milestone for Zenith Energy U.S. and further supports the goal of achieving a carbon neutral society. Since the founding of Zenith Energy U.S. in 2017, we have worked hard to fulfill our mission of creating a sustainable, independent liquid storage terminals business and we are entirely committed to environmental sustainability and are unaware of any other U.S. liquids storage terminals that has achieved carbon neutrality. We are proud to be the first major U.S. terminal company to achieve this milestone.
 
-				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-8.mt-2.bg-white
+				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-6.mt-2.bg-white
 					SidebarQuote
 						| "At Zenith Energy, actions speak louder than words. Our team devised aggressive ESG goals &amp; targets and made fantastic headway executing the plan. The organization is carbon neutral for 2021 operations, becoming the first terminal company to earn this achievement."
 						svelte:fragment(slot="name") Grady Reamer
 						svelte:fragment(slot="title") VP of U.S. West Operations
 
 					.overflow-hidden.rounded-md.relative.grid.grid-cols-1(class="h-auto")
-						img.order-1.w-full.h-auto.mb-8.rounded-md.overflow-hidden(
+						img.order-1.w-full.h-auto.mb-6.rounded-md.overflow-hidden(
 							src="/images/joliet.webp")
-						img.order-0.w-full.h-auto.mb-8.rounded-md.overflow-hidden(
+						img.order-0.w-full.h-auto.mb-6.rounded-md.overflow-hidden(
 							src="/images/climbing-tank.webp")
 						//-.w-full.rounded-md.overflow-hidden
 							PictureCloudinary(

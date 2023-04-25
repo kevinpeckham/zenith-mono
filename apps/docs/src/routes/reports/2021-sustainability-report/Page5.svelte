@@ -133,6 +133,7 @@
 				},
 				{
 					heading: "100%",
+					colspan: 2,
 					text: "replacement of crude oil storage with renewable fuels at the Portland Terminal in 5 years",
 				},
 			],
@@ -145,7 +146,7 @@
 					text: "reduction in Scope 1 and 2 Emissions Intensity per BOE throughput",
 				},
 				{
-					heading: "Carbon Neutral",
+					heading: "Net Zero",
 					text: "carbon neutrality achieved for Zenith Energy U.S. Terminals in 2021",
 				},
 				{
@@ -171,6 +172,7 @@
 				},
 				{
 					heading: "77%",
+					colspan: 2,
 					text: "of new hires in 2021 were local to the communities we operate within",
 				},
 			],
@@ -188,12 +190,14 @@
 				},
 				{
 					heading: "8%",
+					colspan: 2,
 					text: "reduction in Energy Consumption in one year (2021) vs. goal of 10% within three years (from the baseline year of 2020)",
 				},
 
 				{
 					heading: "Adopted",
 					text: "",
+					colspan: 2,
 					bullets: [
 						"Energy Management Policy",
 						"GHG Data Quality Management Plan",
@@ -216,6 +220,7 @@
 				{
 					heading: "Implemented",
 					text: "",
+					colspan: 2,
 					bullets: [
 						"Veriforce software for contractor safety management and operator qualifications",
 						"Smart Plan software for regulatory and response plans and compliance",

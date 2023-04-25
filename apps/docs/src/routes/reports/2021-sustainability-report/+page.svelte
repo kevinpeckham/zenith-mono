@@ -43,6 +43,8 @@ Here's some documentation for this component.
 	import Page27 from "./Page27.svelte";
 	import Page28 from "./Page28.svelte";
 	import Appendix1 from "./Appendix1.svelte";
+	import Appendix2 from "./Appendix2.svelte";
+	import ContentIndex1 from "./ContentIndex1.svelte";
 	import BackCover from "./BackCover.svelte";
 
 	// global stores
@@ -98,6 +100,8 @@ Here's some documentation for this component.
 	let page28: HTMLDivElement;
 	let page29: HTMLDivElement;
 	let page30: HTMLDivElement;
+	let page31: HTMLDivElement;
+	let page32: HTMLDivElement;
 
 	$: {
 		//- collect pages into array
@@ -132,6 +136,8 @@ Here's some documentation for this component.
 			page28,
 			page29,
 			page30,
+			page31,
+			page32,
 		];
 		//- update page count
 		pageCount = pages.length;
@@ -385,12 +391,28 @@ Here's some documentation for this component.
 			{doc},
 			{edition})
 
-	//- back cover
 	#page-30(
 		bind:this!="{ page30 }",
 		data-page="30")
-		BackCover(
+		Appendix2(
 			page!="{ 30 }",
+			{doc},
+			{edition})
+
+	#page-31(
+		bind:this!="{ page31 }",
+		data-page="31")
+		ContentIndex1(
+			page!="{ 31 }",
+			{doc},
+			{edition})
+
+	//- back cover
+	#page-32(
+		bind:this!="{ page32 }",
+		data-page="32")
+		BackCover(
+			page!="{ 32 }",
 			{doc},
 			{edition})
 </template>

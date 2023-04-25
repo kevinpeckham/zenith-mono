@@ -35,7 +35,7 @@
 				.z-20.w-full.h-full.px-16.pt-12.text-white
 					.div.w-8.h-8.mb-3
 						QuotationMarkGraphic
-					.font-normal.italic.leading-normal.text-white
+					.font-normal.leading-normal.text-white
 						.mb-3.font-medium(class="text-[34px] leading-[1.375]") We acquired the Portland Terminal to capitalize on the growing demand for renewable fuels in Oregon and throughout the western US. The Portland Terminal can play a significant role in helping Oregon meet its carbon reduction goals by making clean, renewable fuels readily available for public and private sectors.
 
 					.div.w-8.h-8.mb-10.rotate-180

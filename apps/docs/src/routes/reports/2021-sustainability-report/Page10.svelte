@@ -45,5 +45,6 @@
 						QuotationMarkGraphic
 					.text-18.font-normal - Jeff Armstrong, CEO
 
-		//- ContentPageFooter
+		//-.text-white
+			ContentPageFooter(svgFillClass="!bg-red-500/10")
 </template>
