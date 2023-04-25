@@ -8,6 +8,7 @@ Footer component
 
 	// props
 	export let svgFillClass = "fill-current";
+	export let showLogo = true;
 
 	$: page = getContext("page");
 </script>
@@ -22,6 +23,7 @@ Footer component
 				xmlns="http://www.w3.org/2000/svg")
 				polygon(class!="{ svgFillClass }", points="0,80 768,80 768,0")
 		.absolute.right-0.bottom-0.pr-8.pb-4
-			LogoZenith
+			+if('showLogo')
+				LogoZenith
 		.absolute.left-0.bottom-2.pl-8.text-11.tracking-wide.opacity-70 {  page  }
 </template>

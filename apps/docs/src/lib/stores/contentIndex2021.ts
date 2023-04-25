@@ -17,8 +17,8 @@ export const array = [
 		"2019": "26,028",
 		"2020": "33,123",
 		"2021": "31,348",
-		"topic": "Greenhouse Gas (GHG) Emissions",
-		"metric": "Total gross Scope 1 emissions (direct GHG emissions)",
+		"topic": "Greenhouse Gas (GHG) emissions",
+		"metric": "Total gross scope 1 emissions (direct GHG emissions)",
 		"units": "metric tons (t) CO2-e",
 		"sasb_code": "EM-MD-110a.1",
 		"gri_code": "305-1 / 11.1.5",
@@ -29,7 +29,7 @@ export const array = [
 		"2020": "32,838",
 		"2021": "31,057",
 		"topic": "",
-		"metric": "Scope 1 CO2 emissions - total</span>",
+		"metric": "Total scope 1 CO2 emissions</span>",
 		"units": "metric tons (t)",
 		"sasb_code": "EM-MD-110a.1",
 		"gri_code": "305-1 / 11.1.5",
@@ -40,7 +40,7 @@ export const array = [
 		"2020": 19.6,
 		"2021": 19.6,
 		"topic": "",
-		"metric": "Scope 1 methane emissions - total",
+		"metric": "Total scope 1 methane emissions",
 		"units": "metric tons (t) CO2-e",
 		"sasb_code": "EM-MD-110a.1",
 		"gri_code": "305-1 / 11.1.5",
@@ -63,7 +63,7 @@ export const array = [
 		"2021": "6.45%",
 		"topic": "",
 		"metric":
-			"Percentage of Scope 1 emissions covered under emissions-limiting regulations",
+			"Percentage of scope 1 emissions covered under emissions-limiting regulations",
 		"units": "percentage (%)",
 		"sasb_code": "EM-MD-110a.1",
 		"gri_code": "305-1 / 11.1.5",
@@ -74,7 +74,7 @@ export const array = [
 		"2020": "8,785",
 		"2021": "8,984",
 		"topic": "",
-		"metric": "Total gross location-based Scope 2 GHG Emissions",
+		"metric": "Total gross location-based Scope 2 GHG emissions",
 		"units": "metric tons (t) CO2-e",
 		"sasb_code": "-",
 		"gri_code": "305-2 / 11.1.6",
@@ -85,7 +85,7 @@ export const array = [
 		"2020": "41,908",
 		"2021": "40,332",
 		"topic": "",
-		"metric": "Total GHG Emissions (Scope 1 + Scope 2)",
+		"metric": "Total GHG emissions (scope 1 + scope 2)",
 		"units": "metric tons (t) CO2-e",
 		"sasb_code": "-",
 		"gri_code": "-",
@@ -96,7 +96,8 @@ export const array = [
 		"2020": 0.001,
 		"2021": 0.0005,
 		"topic": "",
-		"metric": "Scope 1 and 2 emission intensity [1]",
+		"metric":
+			"Scope 1 and 2 emission intensity<sup class='inline-block ml-[1px] text-7'>[1]</sup>",
 		"units": "metric tons (t) CO2-e per BOE throughput",
 		"sasb_code": "-",
 		"gri_code": "305-4 / 11.1.8",
@@ -107,7 +108,8 @@ export const array = [
 		"2020": 793,
 		"2021": 809,
 		"topic": "",
-		"metric": "Scope 3 GHG Emissions [2]",
+		"metric":
+			"Scope 3 GHG emissions<sup class='inline-block ml-[1px] text-7'>[2]</sup>",
 		"units": "metric tons (t) CO2-e",
 		"sasb_code": "-",
 		"gri_code": "305-3 / 11.1.7",
@@ -118,7 +120,7 @@ export const array = [
 		"2020": "operational",
 		"2021": "operational",
 		"topic": "",
-		"metric": "Carbon Accounting Basis for Data",
+		"metric": "Carbon accounting basis for data",
 		"units": "operational / equity / financial",
 		"sasb_code": "-",
 		"gri_code": "-",
@@ -154,7 +156,7 @@ export const array = [
 		"2021": "613,620",
 		"topic": "Energy Management",
 		"metric": "Total energy consumed",
-		"units": "Gigajoules (GJ)",
+		"units": "gigajoules (GJ)",
 		"sasb_code": "RT-CH-130a.1",
 		"gri_code": "302-1 / 11.1.2",
 		"eic": "-",
@@ -165,7 +167,7 @@ export const array = [
 		"2021": "80,279,425",
 		"topic": "",
 		"metric":
-			"Gross Energy Throughput converted to barrel of oil equivalents (BOE)",
+			"Gross energy throughput converted to barrel of oil equivalents (BOE)",
 		"units": "BOE",
 		"sasb_code": "-",
 		"gri_code": "-",
@@ -199,7 +201,7 @@ export const array = [
 		"2021": 0,
 		"topic": "",
 		"metric": "Total self-generated energy",
-		"units": "Gigajoules (GJ)",
+		"units": "gigajoules (GJ)",
 		"sasb_code": "RT-CH-130a.1",
 		"gri_code": "-",
 		"eic": "-",
@@ -207,7 +209,7 @@ export const array = [
 	{
 		"2019": "-",
 		"2020": "-",
-		"2021": "Energy Management Section",
+		"2021": "energy management section",
 		"topic": "",
 		"metric":
 			"Discuss efforts to reduce energy consumption and/or improve energy efficiency.",
@@ -221,7 +223,7 @@ export const array = [
 		"2020": 32.5,
 		"2021": 35.4,
 		"topic": "Air Quality",
-		"metric": "Nitrogen oxides (NOX) - Air Emissions",
+		"metric": "Nitrogen oxides (NO<sub>x</sub>) - air emissions",
 		"units": "metric tons (t)",
 		"sasb_code": "EM-MD-120a.1",
 		"gri_code": "305-7 / 11.3.2",
@@ -232,7 +234,7 @@ export const array = [
 		"2020": 32.6,
 		"2021": 32.6,
 		"topic": "",
-		"metric": "Sulfur oxides (SOX) - Air Emissions",
+		"metric": "Sulfur oxides (SO<sub>x</sub>) - air emissions",
 		"units": "metric tons (t)",
 		"sasb_code": "EM-MD-120a.1",
 		"gri_code": "305-7 / 11.3.2",
@@ -243,7 +245,7 @@ export const array = [
 		"2020": 241.3,
 		"2021": 316.5,
 		"topic": "",
-		"metric": "Volatile Organic Compounds (VOC) - Air Emissions",
+		"metric": "Volatile Organic Compounds (VOC) - air emissions",
 		"units": "metric tons (t)",
 		"sasb_code": "EM-MD-120a.1",
 		"gri_code": "305-7 / 11.3.2",
@@ -254,7 +256,7 @@ export const array = [
 		"2020": 17.2,
 		"2021": 17.3,
 		"topic": "",
-		"metric": "Particulate Matter (PM10) - Air Emissions",
+		"metric": "Particulate Matter (PM<sub>10</sub>) - air emissions",
 		"units": "metric tons (t)",
 		"sasb_code": "EM-MD-120a.1",
 		"gri_code": "305-7 / 11.3.2",
@@ -263,7 +265,8 @@ export const array = [
 	{
 		"2019": "-",
 		"2020": "-",
-		"2021": "Environmental Management & Stewardship Section",
+		"2021":
+			"<span class='text-8'>environmental management & stewardship section</span>",
 		"topic": "Ecological Impacts",
 		"metric":
 			"Description of environmental management policies and practices for active operations",
@@ -279,7 +282,7 @@ export const array = [
 		"topic": "",
 		"metric":
 			"Percentage of land operated within or near areas of protected conservation status or endangered species habitat, based on acreage where we have active operations",
-		"units": "percentage (%)\nby acreage",
+		"units": "percentage&nbsp;(%)<br>by acreage",
 		"sasb_code": "EM-MD-160a.2",
 		"gri_code": "304-1 / 11.4.2\n304-4 / 11.4.5",
 		"eic": "-",
@@ -287,10 +290,10 @@ export const array = [
 	{
 		"2019": "-",
 		"2020": "-",
-		"2021": "0.6 acres [3]",
+		"2021": "0.6&nbsp;acres<sup class='inline-block ml-[1px] text-8'>[3]</sup>",
 		"topic": "",
 		"metric": "Terrestrial acreage disturbed",
-		"units": "Acres (ac)",
+		"units": "acres (ac)",
 		"sasb_code": "EM-MD-160a.3",
 		"gri_code": "-",
 		"eic": "-",
@@ -298,10 +301,10 @@ export const array = [
 	{
 		"2019": "-",
 		"2020": "-",
-		"2021": "100% [3]",
+		"2021": "100% <sup class='inline-block ml-[1px] text-8'>[3]</sup>",
 		"topic": "",
 		"metric": "Percentage of impacted area restored",
-		"units": "percentage (%)",
+		"units": "percentage&nbsp;(%)",
 		"sasb_code": "EM-MD-160a.3",
 		"gri_code": "304-3 / 11.4.4",
 		"eic": "-",
@@ -318,23 +321,23 @@ export const array = [
 		"eic": 2.1,
 	},
 	{
-		"2019": "Unknown",
+		"2019": "unknown",
 		"2020": 40,
 		"2021": 19,
 		"topic": "",
 		"metric": "Aggregate volume of hydrocarbon spills",
-		"units": "Barrels (bbls)",
+		"units": "barrels<br>(bbls)",
 		"sasb_code": "EM-MD-160a.4",
 		"gri_code": "306-3 / 11.8.2",
 		"eic": 2.2,
 	},
 	{
-		"2019": "Unknown",
+		"2019": "unknown",
 		"2020": 20,
 		"2021": 9.5,
 		"topic": "",
 		"metric": "Volume recovered",
-		"units": "Barrels (bbls)",
+		"units": "barrels<br>(bbls)",
 		"sasb_code": "EM-MD-160a.4",
 		"gri_code": "306-3 / 11.8.3",
 		"eic": "-",
@@ -344,8 +347,8 @@ export const array = [
 		"2020": "n/a",
 		"2021": "n/a",
 		"topic": "",
-		"metric": "Aggregate volume of hydrocarbon spills in Arctic",
-		"units": "Barrels (bbls)",
+		"metric": "Aggregate volume of hydrocarbon spills in artic",
+		"units": "barrels<br>(bbls)",
 		"sasb_code": "EM-MD-160a.4",
 		"gri_code": "-",
 		"eic": "-",
@@ -356,8 +359,8 @@ export const array = [
 		"2021": 0,
 		"topic": "",
 		"metric":
-			"Aggregate volume of hydrocarbon spills in Unusually Sensitive Areas (USAs)",
-		"units": "Barrels (bbls)",
+			"Aggregate volume of hydrocarbon spills in unusually densitive areas (USAs)",
+		"units": "barrels<br>(bbls)",
 		"sasb_code": "EM-MD-160a.4",
 		"gri_code": "306-3 / 11.8.2",
 		"eic": "-",
@@ -649,7 +652,7 @@ const note_a =
 	"Version 2018-10: Version 2018-10: SASB Extractives & Minerals Processing Sector Oil & Gas Midstream Standard EM-MD, SASB Extractives & Minerals Processing Sector Exploration & Production Standard EM-EP, SASB Resource Transformation Sector - Chemicals RT-CH, SASB Resource Transformation Sector - Electrical & Electronic Equipment Standard RT-EE, and SASB Consumer Goods Sector - E-Commerce Standard CG-EC.";
 
 const note_b =
-	"GRI 11: Oil and Gas Sector 2021, GRI 3: Material Topics 2021, GRI 302: Energy 2016, GRI 304: Biodiversity 2016, GRI 305: Emissions 2016, GRI 306: Waste 2020, GRI 401: Employment 2016, GRI 403: Occupational Health and Safety 2018, and GRI 405: Diversity and Equal Opportunity 2016.";
+	"GRI 11: Oil and Gas Sector 2021, GRI 3: Material Topics 2021, GRI 302: Energy 2016, GRI 304: Biodiversity 2016, GRI 305: emissions 2016, GRI 306: Waste 2020, GRI 401: Employment 2016, GRI 403: Occupational Health and Safety 2018, and GRI 405: Diversity and Equal Opportunity 2016.";
 
 const note_c =
 	"EIC/GPA Midstream ESG Reporting Template Metric developed by the Energy Infrastructure Council in collaboration with GPA Midstream.";
@@ -661,7 +664,7 @@ const note_2 =
 	"[2] Scope 3 categories include business travel (Scope 3, Category 6) and employee commuting (Scope 3, Category 7).";
 
 const note_3 =
-	"[3] An out-of-service pipeline was removed from a wetlands area in partnership with the Huntington Beach Wetlands Conservancy.  The entire project area is being restored to become a fully functioning wetlands area.";
+	"<sup class='inline-block ml-[1px] text-8'>[3]</sup> An out-of-service pipeline was removed from a wetlands area in partnership with the Huntington Beach Wetlands Conservancy.  The entire project area is being restored to become a fully functioning wetlands area.";
 
 export const contentIndex2021 = readable({
 	data: array,

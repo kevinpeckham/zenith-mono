@@ -89,17 +89,25 @@
 
 					//- table body section - GHG Emissions
 					CITableBodySection(
-						first_cell_value!="{$contentIndex2021.data[0].topic}"
+						first_cell_value!="{$contentIndex2021.data[18].topic}"
 						first_col_width!="{w_0}"
-						from!="{0}"
-						to!="{11}"
+						from!="{18}"
+						to!="{21}"
 						grid_template!="{body_template_columns}"
 						)
 					CITableBodySection(
-						first_cell_value!="{$contentIndex2021.data[12].topic}"
+						first_cell_value!="{$contentIndex2021.data[22].topic}"
 						first_col_width!="{w_0}"
-						from!="{12}"
-						to!="{17}"
+						from!="{22}"
+						to!="{30}"
+						grid_template!="{body_template_columns}"
+						)
+					CITableBodySection(
+						first_cell_value!="{$contentIndex2021.data[31].topic}"
+						first_col_width!="{w_0}"
+						classes!="bg-antiFlash min-h-[200px]"
+						from!="{31}"
+						to!="{31}"
 						grid_template!="{body_template_columns}"
 						)
 
