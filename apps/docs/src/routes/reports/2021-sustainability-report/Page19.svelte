@@ -112,7 +112,10 @@
 											ul.font-normal.pl-3(class="text-[13.5px]")
 												+each('initiative.bullets as bullet')
 													li.mb-2 {  bullet  }
-
+						.mt-6.w-full.bg-blue-500.h-56.overflow-hidden.rounded-md
+							picture.flex.w-full.h-full
+								img.min-w-full.min-h-full.object-cover.m-0(
+									src="/images/contingency-planning.webp")
 				div
 					//- leading
 					TopicHeading(

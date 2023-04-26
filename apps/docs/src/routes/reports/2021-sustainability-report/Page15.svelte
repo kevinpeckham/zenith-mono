@@ -67,8 +67,9 @@
 					p.mt-4 Zenith Energy has strong oversight of environmental issues, with the Vice President of Health, Safety, Environmental, and Regulatory (HSER) being a member of the Zenith Energy Executive Leadership team. Managing climate-related risks and opportunities and our carbon footprint is a focus for our entire organization, and we have integrated our approach to sustainability into our strategic planning, which includes evaluating how climate-related issues impact our business strategy and financial planning. This integration entails commencing a Task Force on Climate-Related Financial Disclosure (TCFD) scenario analysis regarding our exposure to climate-related transition and physical risks, which will be used in developing our strategic plan and will be detailed in our next Sustainability Report.
 
 			.absolute.bottom-0.left-0.w-full.place-content-center.place-items-center.bg-slate-100.overflow-hidden
-				img.w-full.h-auto(src="/images/guy-on-stairs.webp")
+				//- img.w-full.h-auto(src="/images/guy-on-stairs.webp")
+				img.w-full.h-auto(src="/images/solar-on-site.webp")
 
 		.text-white
-			ContentPageFooter(svgFillClass="!fill-transparent")
+			//-ContentPageFooter(svgFillClass="!fill-transparent")
 </template>
