@@ -60,7 +60,7 @@
 
 				aside.grid.grid-cols-1.place-content-start.place-items-start.gap-6.mt-2.bg-white
 					SidebarQuote
-						| "At Zenith Energy, actions speak louder than words. Our team devised aggressive ESG goals &amp; targets and made fantastic headway executing the plan. The organization is carbon neutral for 2021 operations, becoming the first terminal company to earn this achievement."
+						| At Zenith Energy, actions speak louder than words. Our team devised aggressive ESG goals &amp; targets and made fantastic headway executing the plan. The organization is carbon neutral for 2021 operations, becoming the first terminal company to earn this achievement.
 						svelte:fragment(slot="name") Grady Reamer
 						svelte:fragment(slot="title") VP of U.S. West Operations
 

@@ -1,15 +1,12 @@
 <script lang="ts">
 	// components
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
-	import Header from "$molecules/Header.svelte";
 	import Main from "$atoms/Main.svelte";
-	// import TopicHeading from "$atoms/TopicHeading.svelte";
 	import { PageLayout } from "lj-svelte-ui";
 	import CITableBodySection from "$atoms/CITableBodySection.svelte";
 	import CITableHeader from "$atoms/CITableHeader.svelte";
 
 	// store
-	import { colors } from "lj-svelte-ui";
 	import { contentIndex2021 } from "$stores/contentIndex2021";
 
 	// props
@@ -21,18 +18,6 @@
 	import { setContext } from "svelte";
 	setContext("page", page);
 
-	const tableData = [
-		// ["", "Units", "2019", "2020", "2021"],
-		//-[...$contentIndex2021.headings],
-		[
-			$contentIndex2021.data[0].topic,
-			$contentIndex2021.data[0].metric,
-			"CO2e (t)",
-			"26,028",
-			"33,123",
-			"31,348",
-		],
-	];
 	const topic_width = 48;
 	const w_0 = "42px"; // topic
 	const w_1 = "1fr"; // metric
@@ -76,39 +61,38 @@
 			.text-14.text-richBlack.mb-2.font-medium.leading-tight Zenith Energy - ESG Content Index
 
 			//-table
-			.font-mono.text-9.rounded-md.leading-snug
+			.mb-6.font-mono.text-9.rounded-md.leading-snug
 				.w-full.border-richBlack.w-full.border-collapse.overflow-hidden.rounded-sm
 					//- table header
 					CITableHeader(grid_template!="{ header_template_columns }")
-					//- .w-full.grid.text-9(
-					//- 	style!="grid-template-columns:{ header_template_columns }")
-					//- 	+each('$contentIndex2021.headings as cell, i')
-					//- 		.header-cell(
-					//- 			class!="py-[4px] {(i == 0 | i == 1) ? 'pl-2 !justify-start' : 'text-center px-0'}")
-					//- 			span {  cell  }
 
 					//- table body section - GHG Emissions
 					CITableBodySection(
-						first_cell_value!="{ $contentIndex2021.data[18].topic }",
+						classes!="bg-[#F8F9FA]",
+						first_cell_value!="<div class='tracking-tight translate-x-[-8px] !text-10'>Employee Recruitment</div><div class='tracking-tight translate-x-[-8px] !text-10'>Inclusion & Performance</div>",
 						first_col_width!="{ w_0 }",
-						from!="{ 18 }",
+						from!="{ 48 }",
 						grid_template!="{ body_template_columns }",
 						hide_top_border!="{ true }",
-						to!="{ 21 }")
+						to!="{ 50 }")
+					CITableBodySection(
+						classes!="bg-antiFlash min-h-[106px]",
+						first_cell_value!="{ $contentIndex2021.data[51].topic }",
+						first_col_width!="{ w_0 }",
+						from!="{ 51 }",
+						grid_template!="{ body_template_columns }",
+						to!="{ 55 }")
 
-					CITableBodySection(
-						first_cell_value!="{ $contentIndex2021.data[22].topic }",
-						first_col_width!="{ w_0 }",
-						from!="{ 22 }",
-						grid_template!="{ body_template_columns }",
-						to!="{ 30 }")
-					CITableBodySection(
-						classes!="bg-[#F8F9FA]",
-						first_cell_value!="<div class='-translate-x-[6px]'>Competitive</div><div class='-translate-x-[6px]'>Behavior</div>",
-						first_col_width!="{ w_0 }",
-						from!="{ 31 }",
-						grid_template!="{ body_template_columns }",
-						to!="{ 31 }")
+			//- notes
+			.text-11.font
+				div.mb-2.font-semibold.font-mono notes:
+				.grid.grid-cols-2.gap-x-2.gap-y-4(style="grid-template-columns: 16px 1fr;")
+					+each('$contentIndex2021.notes as note, index')
+						+if('!Number(note[0])')
+							div.text-10 ({@html note[0]})
+							+else
+								div.text-10 [{@html note[0]}]
+						div {@html note[1]}
 
 		ContentPageFooter(
 			showLogo!="{ false }",

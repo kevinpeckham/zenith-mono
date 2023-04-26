@@ -3,6 +3,7 @@
 	import { contentIndex2021 } from "$stores/contentIndex2021";
 
 	// props
+	export let hide_top_border = false;
 	export let first_cell_value = "";
 	export let first_col_width = "";
 	export let grid_template = "";
@@ -41,14 +42,14 @@
 	.w-full.flex(class!="{classes}")
 		//- first cell
 		.border.text-richBlack.overflow-x-hidden.shrink-0.border-t(
-			class!="bg-slate-100 border-t-richBlack/40"
+			class!="bg-slate-100 {hide_top_border ? 'border-t-0' : 'border-t-yellowGreen/100'}"
 			style!="width:{first_col_width}!important;"
 			)
-			.leading-none.whitespace-nowrap.rotate-90.origin-center.pl-8.text-11.font-semibold {  first_cell_value  }
+			.leading-snug.whitespace-nowrap.rotate-90.origin-center.pl-7.text-10.font-semibold {@html first_cell_value }
 
 		//- other cells
-		.h-full.grid.text-richBlack.bg-antiFlash.place-content-center.place-items-center.border-t(
-			class="border-t-richBlack/40"
+		.h-full.grid.text-richBlack.place-content-center.place-items-center.border-t(
+			class!="{hide_top_border ? 'border-t-0' : 'border-t-yellowGreen/100 border-1'}"
 			style!="grid-template-columns:{grid_template};"
 			)
 			+each('$contentIndex2021.data as row, index')
@@ -73,13 +74,4 @@
 </template>
 
 <style>
-	.header-cell {
-		@apply flex items-center justify-center bg-yellowGreen uppercase border-[.5px] font-normal text-white leading-tight overflow-hidden;
-	}
-	.text-cell {
-		@apply w-full h-full bg-antiFlash border border-[.5px] text-richBlack px-2 py-2;
-	}
-	.cell {
-		@apply w-full h-full flex items-center justify-center bg-antiFlash border border-[.5px] px-1 text-richBlack text-center py-2 overflow-hidden;
-	}
 </style>

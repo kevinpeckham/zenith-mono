@@ -74,41 +74,35 @@
 	PageLayout(classes!="font-sans !p-0 text-richBlack text-15 ")
 		Main
 			.text-14.text-richBlack.mb-2.font-medium.leading-tight Zenith Energy - ESG Content Index
-
 			//-table
 			.font-mono.text-9.rounded-md.leading-snug
 				.w-full.border-richBlack.w-full.border-collapse.overflow-hidden.rounded-sm
 					//- table header
 					CITableHeader(grid_template!="{ header_template_columns }")
-					//- .w-full.grid.text-9(
-					//- 	style!="grid-template-columns:{ header_template_columns }")
-					//- 	+each('$contentIndex2021.headings as cell, i')
-					//- 		.header-cell(
-					//- 			class!="py-[4px] {(i == 0 | i == 1) ? 'pl-2 !justify-start' : 'text-center px-0'}")
-					//- 			span {  cell  }
 
 					//- table body section - GHG Emissions
 					CITableBodySection(
-						first_cell_value!="{ $contentIndex2021.data[18].topic }",
+						classes!="bg-antiFlash",
+						first_cell_value!="{ $contentIndex2021.data[32].topic }",
 						first_col_width!="{ w_0 }",
-						from!="{ 18 }",
+						from!="{ 32 }",
 						grid_template!="{ body_template_columns }",
 						hide_top_border!="{ true }",
-						to!="{ 21 }")
-
+						to!="{ 36 }")
 					CITableBodySection(
-						first_cell_value!="{ $contentIndex2021.data[22].topic }",
+						classes!="bg-antiFlash",
+						first_cell_value!="{ $contentIndex2021.data[37].topic }",
 						first_col_width!="{ w_0 }",
-						from!="{ 22 }",
+						from!="{ 37 }",
 						grid_template!="{ body_template_columns }",
-						to!="{ 30 }")
+						to!="{ 38 }")
 					CITableBodySection(
-						classes!="bg-[#F8F9FA]",
-						first_cell_value!="<div class='-translate-x-[6px]'>Competitive</div><div class='-translate-x-[6px]'>Behavior</div>",
+						classes!="bg-antiFlash min-h-[200px]",
+						first_cell_value!="{ $contentIndex2021.data[39].topic }",
 						first_col_width!="{ w_0 }",
-						from!="{ 31 }",
+						from!="{ 39 }",
 						grid_template!="{ body_template_columns }",
-						to!="{ 31 }")
+						to!="{ 47 }")
 
 		ContentPageFooter(
 			showLogo!="{ false }",

@@ -51,7 +51,7 @@
 
 					ul.list-outside.list-disc.pl-3(class="text-[13.5px]")
 						li.mb-2.leading-snug(class="marker:text-yellowGreen") Implement three projects per year to improve or upgrade our control devices including vapor control devices and floating roof installation.
-						li.leading-snug Enhance employee training opportunities on maintaining air quality compliance and how to work towards zero incidents.
+						li.leading-snug(class="marker:text-yellowGreen") Enhance employee training opportunities on maintaining air quality compliance and how to work towards zero incidents.
 
 					p The ESG Content Index included in this report provides our organization’s ongoing criteria pollutant reporting efforts we are using to track year-over-year performance.
 

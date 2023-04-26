@@ -3,12 +3,11 @@
 	import ContentPageFooter from "$molecules/ContentPageFooter.svelte";
 	import Header from "$molecules/Header.svelte";
 	import Main from "$atoms/Main.svelte";
-	// import TopicHeading from "$atoms/TopicHeading.svelte";
 	import { PageLayout } from "lj-svelte-ui";
 	import CITableBodySection from "$atoms/CITableBodySection.svelte";
+	import CITableHeader from "$atoms/CITableHeader.svelte";
 
 	// store
-	import { colors } from "lj-svelte-ui";
 	import { contentIndex2021 } from "$stores/contentIndex2021";
 
 	// props
@@ -20,19 +19,6 @@
 	import { setContext } from "svelte";
 	setContext("page", page);
 
-	const tableData = [
-		// ["", "Units", "2019", "2020", "2021"],
-		//-[...$contentIndex2021.headings],
-		[
-			$contentIndex2021.data[0].topic,
-			$contentIndex2021.data[0].metric,
-			"CO2e (t)",
-			"26,028",
-			"33,123",
-			"31,348",
-		],
-	];
-	const topic_width = 48;
 	const w_0 = "42px"; // topic
 	const w_1 = "1fr"; // metric
 	const w_2 = "90px"; // unit
@@ -71,55 +57,31 @@
 
 <template lang="pug">
 	PageLayout(classes!="font-sans !p-0 text-richBlack text-15 ")
-
 		Main
-			.text-15.text-richBlack.mb-2.font-semibold.leading-tight ESG Content Index
+			.text-14.text-richBlack.mb-2.font-medium.leading-tight Zenith Energy - ESG Content Index
 
 			//-table
 			.font-mono.text-9.rounded-md.leading-snug
 				.w-full.border-richBlack.w-full.border-collapse.overflow-hidden.rounded-sm
-
-					//- table header
-					.w-full.grid.text-9(
-						style!="grid-template-columns:{ header_template_columns }")
-						+each('$contentIndex2021.headings as cell, i')
-							.header-cell(
-								class!="py-[4px] {(i == 0 | i == 1) ? 'pl-2 !justify-start' : 'text-center px-0'}")
-								span {  cell  }
+					CITableHeader(grid_template!="{ header_template_columns }")
 
 					//- table body section - GHG Emissions
 					CITableBodySection(
-						first_cell_value!="{$contentIndex2021.data[0].topic}"
-						first_col_width!="{w_0}"
-						from!="{0}"
-						to!="{11}"
-						grid_template!="{body_template_columns}"
-						)
+						classes!="!border-t-none",
+						first_cell_value!="{ $contentIndex2021.data[0].topic }",
+						first_col_width!="{ w_0 }",
+						from!="{ 0 }",
+						grid_template!="{ body_template_columns }",
+						hide_top_border!="{ true }",
+						to!="{ 11 }")
 					CITableBodySection(
-						first_cell_value!="{$contentIndex2021.data[12].topic}"
-						first_col_width!="{w_0}"
-						from!="{12}"
-						to!="{17}"
-						grid_template!="{body_template_columns}"
-						)
-
-
-
+						first_cell_value!="{ $contentIndex2021.data[12].topic }",
+						first_col_width!="{ w_0 }",
+						from!="{ 12 }",
+						grid_template!="{ body_template_columns }",
+						to!="{ 17 }")
 
 		ContentPageFooter(
-			showLogo!="{false}"
-			svgFillClass="fill-transparent"
-			)
+			showLogo!="{ false }",
+			svgFillClass="fill-transparent")
 </template>
-
-<style>
-	.header-cell {
-		@apply flex items-center justify-center bg-yellowGreen uppercase border-[.5px] font-normal text-white leading-tight overflow-hidden;
-	}
-	.text-cell {
-		@apply w-full h-full bg-antiFlash border border-[.5px] text-richBlack px-2 py-2;
-	}
-	.cell {
-		@apply w-full h-full flex items-center justify-center bg-antiFlash border border-[.5px] px-1 text-richBlack text-center py-2 overflow-hidden;
-	}
-</style>
