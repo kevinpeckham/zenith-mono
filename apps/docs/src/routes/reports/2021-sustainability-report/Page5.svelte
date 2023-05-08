@@ -146,8 +146,8 @@
 					text: "reduction in Scope 1 and 2 Emissions Intensity per BOE throughput",
 				},
 				{
-					heading: "Net Zero",
-					text: "carbon neutrality achieved for Zenith Energy U.S. Terminals in 2021",
+					heading: "Carbon<br>Neutrality",
+					text: "achieved for Zenith Energy U.S. Terminals in 2021",
 				},
 				{
 					heading: "Verification",
@@ -214,8 +214,8 @@
 					text: "increase in EH&S workforce training hours in 2021 since the prior year",
 				},
 				{
-					heading: "89.9%",
-					text: "incident composite rate achieved versus annual goal of 90",
+					heading: "90",
+					text: "incident composite rate achieved meeting our annual goal",
 				},
 				{
 					heading: "Implemented",

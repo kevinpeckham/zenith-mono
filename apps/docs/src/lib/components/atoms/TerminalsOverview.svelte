@@ -25,8 +25,8 @@ Here's some documentation for this component.
 		.bg-yellowGreen.rounded-md.w-full.h-auto.px-6.py-4
 			//-SidebarCallout(classes="pr-0")
 			//-svelte:fragment(slot="number") 22
-			.text-maize.text-15.font-semibold.mb-1 Now Storing
-			div biodiesel, ethanol, renewable diesel, traditional fuels, vegetable oils
+			.text-maize.text-20.font-semibold.mb-1 Now Storing
+			.text-white.leading-tight biodiesel, ethanol, renewable diesel, traditional fuels, vegetable oils
 		div
 			SidebarCallout
 				svelte:fragment(slot="number") 22

@@ -17,5 +17,5 @@ Here's some documentation for this component.
 	+each('$contentIndex2021.headings as cell, i')
 		.header-cell(
 			class!="py-[8px] {(i == 0 | i == 1) ? 'pl-2 !justify-start' : 'text-center px-0'}")
-			span {@html  cell  }
+			span.tracking-wider {@html  cell  }
 </template>

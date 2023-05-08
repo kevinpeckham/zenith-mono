@@ -79,7 +79,8 @@
 					p Zenith Energy continues to invest in infrastructure modernization to ensure their terminals are equipped with industry leading safety equipment as well as regularly conducting safety trainings, seeking to protect their employees, contractors, and the communities in which they operate.
 					p.mb-0 Investments in infrastructure including spending over $1.5 million to upgrade truck racks and rebuild a dock at our Mobile, Alabama location to modernize and expand our throughput capabilities at that location.
 
-					.mt-10
+					.mt-6
+						.mb-2 Our operational safety and excellence goals:
 						SidebarCallout
 							svelte:fragment(slot="symbolAfter") Zero
 							ul

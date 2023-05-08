@@ -156,7 +156,7 @@ Here's some documentation for this component.
 
 <template lang="pug">
 	//- cover
-	#page-1(
+	//-#page-1(
 		bind:this!="{ page1 }",
 		data-description="cover page",
 		data-page="1")

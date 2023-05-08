@@ -86,10 +86,10 @@
 				aside.grid.grid-cols-1.justify-content-start.place-content-start.gap-y-6
 					.mb-4
 						.mt-2.mb-4.font-medium.text-15(class="text-richBlack/90") Charitable Giving
-						.w-full.grid.grid-cols-2.gap-4
+						.w-full.grid.grid-cols-2.gap-x-4
 							+each('logos as logo, index')
 								picture.flex.justify-center.items-center.bg-white
-									img.border.rounded-md.bg-clip-border(
+									img.rounded-md.bg-clip-border(
 										alt!="{ charities[index] }",
 										height="200",
 										src!="/images/{logo}.webp",
@@ -101,7 +101,7 @@
 							| of new hires in 2021 were local to the community
 					.mb-0
 						SidebarCallout
-							svelte:fragment(slot="number") 2014
+							svelte:fragment(slot="number") 8 years
 							| Since our founding in 2014, we have focused on ways we can contribute to the communities where we are located
 
 		ContentPageFooter

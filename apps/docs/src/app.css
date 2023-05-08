@@ -7,12 +7,12 @@
 
 @layer components {
 	.header-cell {
-		@apply flex items-center justify-center bg-yellowGreen uppercase border-[.5px] font-normal text-white leading-tight overflow-hidden;
+		@apply flex items-center justify-center bg-yellowGreen uppercase border-[.5px] border-b-0 border-t-0 font-normal text-white leading-tight overflow-hidden;
 	}
 	.text-cell {
-		@apply w-full h-full bg-[#F8F9FA] border border-[.5px] border-slate-500/40 text-richBlack px-2 py-2;
+		@apply w-full h-full bg-[#F8F9FA] border border-[.5px] border-slate-400/40 text-richBlack px-2 py-2;
 	}
 	.cell {
-		@apply w-full h-full flex items-center justify-center bg-[#F8F9FA] border-slate-500/40 border-[.5px] px-1 text-richBlack text-center py-2 overflow-hidden;
+		@apply w-full h-full flex items-center justify-center bg-[#F8F9FA] border-slate-400/40 border-[.5px] px-1 text-richBlack text-center py-2 overflow-hidden;
 	}
 }

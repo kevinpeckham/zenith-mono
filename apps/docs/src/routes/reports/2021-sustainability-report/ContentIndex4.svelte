@@ -61,7 +61,7 @@
 			.text-14.text-richBlack.mb-2.font-medium.leading-tight Zenith Energy - ESG Content Index
 
 			//-table
-			.mb-6.font-mono.text-9.rounded-md.leading-snug
+			.mb-6.font-sans.rounded-md.leading-snug(class="text-[10.25px]")
 				.w-full.border-richBlack.w-full.border-collapse.overflow-hidden.rounded-sm
 					//- table header
 					CITableHeader(grid_template!="{ header_template_columns }")
@@ -84,8 +84,8 @@
 						to!="{ 55 }")
 
 			//- notes
-			.text-11.font
-				div.mb-2.font-semibold.font-mono notes:
+			.text-11
+				div.mb-2.font-semibold notes:
 				.grid.grid-cols-2.gap-x-2.gap-y-4(style="grid-template-columns: 16px 1fr;")
 					+each('$contentIndex2021.notes as note, index')
 						+if('!Number(note[0])')

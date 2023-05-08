@@ -265,8 +265,7 @@ export const array = [
 	{
 		"2019": "<span class='opacity-40'>-</span>",
 		"2020": "<span class='opacity-40'>-</span>",
-		"2021":
-			"<span class='text-8'>environmental management & stewardship section</span>",
+		"2021": "<span class='text-[9]'>environmental management section</span>",
 		"topic": "Ecological Impacts",
 		"metric":
 			"Description of environmental management policies and practices for active operations",

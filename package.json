@@ -9,8 +9,8 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@prettier/plugin-pug": "^2.4.2",
-		"eslint": "^8.39.0",
+		"@prettier/plugin-pug": "^2.5.0",
+		"eslint": "^8.40.0",
 		"eslint-config-custom": "workspace:./packages/eslint-config-custom",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.0",

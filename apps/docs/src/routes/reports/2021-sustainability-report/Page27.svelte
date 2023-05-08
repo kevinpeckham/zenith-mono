@@ -79,8 +79,7 @@
 						//- text content
 						.prose.prose-sm.prose-slate.mb-6.leading-normal
 							div
-								p.mt-0 Zenith Energy’s Board of Directors is comprised of business leaders with demonstrated experience in finance, risk, and relevant industry backgrounds.
-								p The board consists of nine directors and is led by the Chairman & CEO. It is comprised of two committees: the Audit Committee and the Compensation Committee. On a quarterly basis the Board meets to discuss the enterprise risk management of the company and its significant risks related to the business.
+								p.mt-0 Over the past year we increased the frequency of our Board level discussions regarding ESG strategy, risks, and opportunities, which are reviewed at the at our annual and quarterly Board meetings. As we continue to develop our ESG program we will align our Board oversight to ensure that we are maintaining the appropriate level of Board oversight regarding ESG.
 
 						ArticleHeading(
 							classes="mb-0",

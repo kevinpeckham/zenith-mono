@@ -98,15 +98,15 @@
 					div
 						.mb-6
 							SidebarCallout
-								svelte:fragment(slot="number") 89.9
+								svelte:fragment(slot="number") 90
 								//- svelte:fragment(slot="unit") ICR
-								| Achieved ICR of 89.9 in 2021 meeting annual goal of 90
+								| Achieved ICR in 2021 meeting our annual goal
 						div
 							SidebarCallout
 								svelte:fragment(slot="number") 100
 								svelte:fragment(slot="symbolAfter") %
 								//- svelte:fragment(slot="unit") ICR
-								| During 2021, all our terminals had industrial hygiene surveys conducted.
+								| During 2021, all our terminals had industrial hygiene surveys conducted
 
 				//-right column
 

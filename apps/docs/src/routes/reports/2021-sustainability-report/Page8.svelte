@@ -45,7 +45,7 @@
 			icon: "globe",
 		},
 		{
-			name: "Diversity & Inclusion",
+			name: "Diversity, Equity <br>& Inclusion",
 			customIcon: "DEI",
 		},
 		{
@@ -125,7 +125,7 @@
 											.text-20(class="tracking-wide") {  topic.customIcon  }
 											//- +else
 											//- 	IconFeather(icon!="{ (topic.icon) ? topic.icon : 'star' }")
-									.text-16.py-4.font-medium.leading-tight.text-maize {  topic.name  }
+									.text-16.py-4.font-medium.leading-tight.text-maize { @html topic.name  }
 
 		ContentPageFooter
 </template>

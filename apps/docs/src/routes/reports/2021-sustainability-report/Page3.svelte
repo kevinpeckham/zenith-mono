@@ -61,22 +61,22 @@
 				p As you read this report, you will not only learn about our approach to sustainability, you will also gain insight into Zenith Energy’s performance in the areas of environment, energy transition, health and safety, our employees, our customers, community involvement, and governance during the 2021 calendar year. Thank you for your interest in Zenith Energy and, on behalf of our dedicated team, we look forward to continuing to share our progress with you.
 
 				.block.flex.items-center.mt-2
-					img.block.mr-6(
+					//-img.block.mr-6(
 						class="mb-2 w-28 h-28",
 						alt="Jeff Armstrong",
 						src="/images/jeff-armstrong.webp")
 					div
-						.font-semibold.text-13.mb-1 Jeff Armstrong
-						.text-13.italic Chief Executive Officer
+						//-.font-semibold.text-13.mb-1 Jeff Armstrong
+
 						//-signature
-						img.block.mb-0.mt-2.w-full.h-auto(
-							class="w-[136px] max-w-[136px]",
+						img.block.mb-1.mt-2.w-full.h-auto(
+							class="max-w-[72px]",
 							alt="Jeff Armstrong Signature",
-							height="119",
-							src="/images/jeff-armstrong-signature.svg",
-							width="476")
-						//- .font-semibold.text-13.mb-1 Jeff Armstrong
-						//- .text-13.italic Chief Executive Officer
+							height="111",
+							src="/images/signature.jpg",
+							width="131")
+						.font-semibold.text-13.mb-1 Jeff Armstrong
+						.text-13.italic.bg-white Chief Executive Officer
 
 		ContentPageFooter
 </template>
